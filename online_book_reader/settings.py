@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
@@ -76,12 +77,11 @@ WSGI_APPLICATION = 'online_book_reader.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# Postgres database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
 
 
 # Password validation
@@ -127,3 +127,9 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.gitpod.io/",
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
