@@ -1,5 +1,34 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <h1>About Us</h1>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="d-none d-lg-flex col-lg-5 align-items-center justify-content-center">
+                <img class="border img-fluid rounded mx-auto w-auto vh-75 " src="{% static 'images/stacked_books.webp' %}" alt="A stack of books.">
+            </div>
+            <article class="col pr-5">
+                <h1 class="text-center pt-3 pb-1">About Us</h1>
+                <hr>
+                <p class="text-center">
+                    OnlineBookReader is a site for reading books. Provide us with a link to a text file, and we will split it
+                    into easily digestable pages. We'll save your current books, and keep track of your reading position.
+                    <br><br>
+                    OnlineBookReader does not provide books, we simply present them. The best place to find free, well-formatted 
+                    books in the public domain is
+                    <a href="https://www.gutenberg.org/browse/scores/top" target="_blank">Project Gutenberg</a>, a site designed
+                    with the mission statement of making public domain books easily accessible - our site was designed
+                    with these books in mind.
+                    <br><br>
+                    OnlineBookReader is not designed for books outside of the public domain, and encourages all users to check
+                    they are complying with their country's copyright law at all times. OnlineBookReader does not filter hate speech
+                    or adult language from books, so choose books at your own discretion and risk.
+                </p>
+                <hr>
+                <blockquote class="blockquote text-center mx-3">
+                    <p class="mb-2 lead">“You can never get a cup of tea large enough or a book long enough to suit me.”</p>
+                    <footer class="blockquote-footer">C.S Lewis</footer>
+                  </blockquote>
+            </article>
+        </div>
+    </div>
 {% endblock content %}
