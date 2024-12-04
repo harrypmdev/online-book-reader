@@ -60,7 +60,7 @@
     <!-- Messages -->
     <div class="text-center">
         {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-info" id="msg" role="alert">
+        <div class="alert {{ message.tags }}" id="msg" role="alert">
         {{ message | safe }}
         <button type="button" class="btn btn-secondary ml-2"
             data-dismiss="alert" aria-label="Close"><i class="fa-solid fa-circle-xmark fa-xl"></i></button>
@@ -68,7 +68,7 @@
         {% endfor %}
     </div>
     </div>
-    <main class="h-100">
+    <main>
         {% block content %}
         <!-- Varying page content goes here -->
         {% endblock content %}

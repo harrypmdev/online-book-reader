@@ -24,7 +24,17 @@ def register(request):
                 messages.SUCCESS,
                 'Account Registered!'
             )
+            username = register_form.cleaned_data['username']
+            password = register_form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
             return redirect('about_us')
+        else:
+            messages.add_message(
+                request, 
+                messages.ERROR,
+                'Registration unsuccessful! Try another username or password.'
+            )
     register_form = RegisterForm()
     context = {"register_form": register_form}
     return render(
