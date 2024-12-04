@@ -8,3 +8,11 @@ def about_us(request):
         'books/about_us.html',
         context,
     )
+
+def register(request):
+    context = {}
+    return render(
+        request,
+        'books/register.html',
+        context,
+    )

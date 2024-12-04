@@ -1,5 +1,8 @@
 {% load static %}
 
+{% url 'about_us' as about_us_url %}
+{% url 'register' as register_url %}
+
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -9,24 +12,46 @@
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
+    
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+    <!-- Custome CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <main>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <!-- Site Header -->
+            <a class="navbar-brand" href="#">OnlineBookReader</a>
+            <!-- Burger For Mobile Users -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link {% if request.path == about_us_url %}active{% endif %}" href="{% url 'about_us' %}">About Us <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link {% if request.path == register_url %}active{% endif %}" href="{% url 'register' %}">Register</a>
+              </div>
+            </div>
+            <span class="navbar-text">
+                Not logged in
+            </span>
+          </nav>
         {% block content %}
         <!-- Varying page content goes here -->
         {% endblock content %}
     </main>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
 </body>
-{% block extras %}
-{% endblock %}
 </html>
