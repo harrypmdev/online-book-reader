@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import redirect
 from .forms import RegisterForm
 
 # Create your views here.
@@ -21,6 +24,7 @@ def register(request):
                 messages.SUCCESS,
                 'Account Registered!'
             )
+            return redirect('about_us')
     register_form = RegisterForm()
     context = {"register_form": register_form}
     return render(
@@ -28,3 +32,39 @@ def register(request):
         'books/register.html',
         context,
     )
+
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.add_message(
+                request, 
+                messages.SUCCESS,
+                'Logged in!'
+            )
+            return redirect('about_us')
+        else:
+            messages.add_message(
+                request, 
+                messages.ERROR,
+                'Invalid credentials.'
+            )
+    authentication_form = AuthenticationForm()
+    context = {"authentication_form": authentication_form}
+    return render(
+        request,
+        'books/login.html',
+        context,
+    )
+
+def logout_view(request):
+    messages.add_message(
+        request, 
+        messages.SUCCESS,
+        'Logged out!'
+    )
+    logout(request)
+    return redirect('about_us')

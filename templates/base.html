@@ -2,6 +2,7 @@
 
 {% url 'about_us' as about_us_url %}
 {% url 'register' as register_url %}
+{% url 'login' as login_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -28,7 +29,11 @@
         <!-- Site Header -->
         <a class="navbar-brand" href="#">OnlineBookReader</a>
         <span class="navbar-text font-italic d-inline d-lg-none">
-            Not logged in
+            {% if user.is_authenticated %}
+                Logged in as {{ user }}.
+            {% else %}
+                Not logged in.
+            {% endif %}
         </span>
         <!-- Burger For Mobile Users -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,27 +43,32 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link {% if request.path == about_us_url %}active{% endif %}" href="{% url 'about_us' %}">About Us <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link {% if request.path == register_url %}active{% endif %}" href="{% url 'register' %}">Register</a>
+                {% if user.is_authenticated %}
+                    <a class="nav-link " aria-current="page" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                    <a class="nav-item nav-link {% if request.path == login_url %}active{% endif %}" href="{% url 'login' %}">Log in</a>
+                    <a class="nav-item nav-link {% if request.path == register_url %}active{% endif %}" href="{% url 'register' %}">Register</a>   
+                {% endif %}
             </div>
         </div>
         <span class="navbar-text d-none d-lg-inline">
-            Not logged in
+            {% if user.is_authenticated %}
+                Logged in as {{ user }}.
+            {% else %}
+                Not logged in.
+            {% endif %}
         </span>
-        </nav>
-    <!-- displaying Django messages -->
-    <div class="container">
-        <div class="row">
-        <div class="col-md-8 offset-md-2">
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible
-            fade show" id="msg" role="alert">
-            {{ message | safe }}
-            <button type="button" class="btn-close"
-                data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            {% endfor %}
+    </nav>
+    <!-- Messages -->
+    <div class="text-center">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-info" id="msg" role="alert">
+        {{ message | safe }}
+        <button type="button" class="btn btn-secondary ml-2"
+            data-dismiss="alert" aria-label="Close">Close Alert</button>
         </div>
-        </div>
+        {% endfor %}
+    </div>
     </div>
     <main>
         {% block content %}
