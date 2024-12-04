@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib import messages
+from .forms import RegisterForm
 
 # Create your views here.
 def about_us(request):
@@ -10,7 +12,17 @@ def about_us(request):
     )
 
 def register(request):
-    context = {}
+    if request.method == "POST":
+        register_form = RegisterForm(data=request.POST)
+        if register_form.is_valid():
+            register_form.save()
+            messages.add_message(
+                request, 
+                messages.SUCCESS,
+                'Account Registered!'
+            )
+    register_form = RegisterForm()
+    context = {"register_form": register_form}
     return render(
         request,
         'books/register.html',

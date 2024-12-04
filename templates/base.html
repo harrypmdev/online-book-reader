@@ -23,29 +23,44 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body class="d-flex flex-column h-100 bg-light">
-    <main>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2 px-3">
-            <!-- Site Header -->
-            <a class="navbar-brand" href="#">OnlineBookReader</a>
-            <!-- Burger For Mobile Users -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link {% if request.path == about_us_url %}active{% endif %}" href="{% url 'about_us' %}">About Us <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link {% if request.path == register_url %}active{% endif %}" href="{% url 'register' %}">Register</a>
-                </div>
-                <span class="navbar-text font-italic d-inline d-lg-none">
-                    Not logged in
-                </span>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2 px-3">
+        <!-- Site Header -->
+        <a class="navbar-brand" href="#">OnlineBookReader</a>
+        <span class="navbar-text font-italic d-inline d-lg-none">
+            Not logged in
+        </span>
+        <!-- Burger For Mobile Users -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link {% if request.path == about_us_url %}active{% endif %}" href="{% url 'about_us' %}">About Us <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link {% if request.path == register_url %}active{% endif %}" href="{% url 'register' %}">Register</a>
             </div>
-            <span class="navbar-text d-none d-lg-inline">
-                Not logged in
-            </span>
-          </nav>
+        </div>
+        <span class="navbar-text d-none d-lg-inline">
+            Not logged in
+        </span>
+        </nav>
+    <!-- displaying Django messages -->
+    <div class="container">
+        <div class="row">
+        <div class="col-md-8 offset-md-2">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible
+            fade show" id="msg" role="alert">
+            {{ message | safe }}
+            <button type="button" class="btn-close"
+                data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+    <main>
         {% block content %}
         <!-- Varying page content goes here -->
         {% endblock content %}
