@@ -8,7 +8,7 @@
             <img class="img-fluid rounded vh-75 text-center object-fit-contain my-3" src="{% static 'images/open_book.webp' %}" alt="A single book on a shelf.">
         </div>
         <div class="justify-content-center d-flex flex-column col-lg-6 mt-3 mb-3 mb-lg-0">
-            <h1 class="text-center">Manage your book: {{ book.title }}</h1>
+            <h1 class="text-center h2">Manage your book: {{ book.title }}</h1>
             <hr class="w-75">
             <form class="row" method="POST">
                 {% csrf_token %}

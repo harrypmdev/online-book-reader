@@ -41,6 +41,12 @@ def add_book(request):
                 book.save()
             try:
                 user_book = UserBook.objects.get(book=book.id, user=request.user.id)
+                messages.add_message(
+                    request, 
+                    messages.INFO,
+                    'You already had this book in your library. You can update its title and author any time, ' +
+                    'by clicking&emsp;<i class="fa-solid fa-pen-to-square"></i>&emsp;below the book you want to edit on the home screen.'
+                )
             except UserBook.DoesNotExist:
                 user_book = UserBook.objects.create(
                     user=request.user, 
@@ -54,7 +60,7 @@ def add_book(request):
     return render(
         request,
         'books/add_book.html',
-        context,
+        {},
     )
 
 def manage_book(request, id):
