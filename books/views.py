@@ -58,6 +58,19 @@ def add_book(request):
     )
 
 def manage_book(request, id):
+    if request.POST:
+        book = UserBook.objects.get(id=id, user=request.user)
+        manage_form = ManageForm(data=request.POST)
+        if manage_form.is_valid():
+            messages.add_message(
+                request, 
+                messages.SUCCESS,
+                'Book saved!'
+            )
+            book.title = manage_form.cleaned_data['title']
+            book.author = manage_form.cleaned_data['author']
+            book.save()
+            return redirect('home')
     context = {}
     try:
         book = UserBook.objects.get(id=id, user=request.user)
