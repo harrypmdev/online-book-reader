@@ -6,9 +6,9 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 my-4 add-book">
             <a href="{% url 'add_book' %}" type="button" class="add-book-card h-100 border border-secondary py-4 btn btn-light border w-100
             d-flex align-items-center justify-content-center">
-                <div class="">
+                <div>
                     <h1 class="h4">Add a book</h1>
-                    <hr class="">
+                    <hr>
                     <i class="fa-solid fa-plus fa-xl"></i>
                 </div>
             </a>
@@ -21,14 +21,15 @@
                     <p class="lead">{{ book.author }}</p>
                     <p class="fst-italic">{{ book.progress }}% Completed</p>
                 </a>
-                <div class="progress progress-lighten rounded-0 border border-primary border-top-0 border-bottom-0">
+                <div class="progress progress-lighten rounded-0 border border-{{ book.color }} border-top-0 border-bottom-0">
                     <div class="progress-bar bg-{{ book.color }} progress-bar-striped" role="progressbar" style="width: {{ book.progress }}%" aria-valuenow="{{ book.progress }}" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <button class="btn btn-warning w-100 rounded-top-0 text-center">
+                <a href="{% url 'manage_book' book.id %}" class="btn btn-warning w-100 rounded-top-0 text-center">
                     <i class="fa-solid fa-pen-to-square"></i>
-                </button>
+                </a>
             </div>
         {% endfor %}
     </div>
 </div>
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock content %}

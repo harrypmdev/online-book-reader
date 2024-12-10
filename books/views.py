@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import redirect
-from .forms import RegisterForm, URLForm
+from .forms import RegisterForm, URLForm, ManageForm
 from .models import Book, UserBook
 
 # Create your views here.
@@ -50,12 +50,29 @@ def add_book(request):
                 )
                 user_book.pick_color()
                 user_book.save()
-            return redirect('home')
-    url_form = URLForm()
-    context = {"form": url_form}
+            return redirect('manage_book', id=user_book.id)
     return render(
         request,
         'books/add_book.html',
+        context,
+    )
+
+def manage_book(request, id):
+    context = {}
+    try:
+        book = UserBook.objects.get(id=id, user=request.user)
+        context['book'] = book
+    except UserBook.DoesNotExist:
+        messages.add_message(
+            request, 
+            messages.ERROR,
+            'Authorisation error.'
+        )
+        return redirect('home')
+    context['book'] = book
+    return render(
+        request,
+        'books/manage_book.html',
         context,
     )
 
