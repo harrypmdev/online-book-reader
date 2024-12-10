@@ -1,0 +1,19 @@
+body {
+    font-family: "Merriweather", serif;
+}
+
+.vh-75 {
+    height: 75vh;
+  }
+
+.object-fit-contain {
+    object-fit: contain;
+}
+
+.flex-grow {
+    flex: 1 0 auto;
+}
+
+.mw-90 {
+    max-width: 90%;
+}
