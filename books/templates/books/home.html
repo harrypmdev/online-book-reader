@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h2>Home Page</h2>
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="justify-content-end justify-content-lg-center d-flex flex-column col-lg-6 mt-3 mb-3 mb-lg-0">
+            <h1 class="text-center">Read books online<br>- without the messing around</h1>
+            <hr class="row">
+            <div class="row">
+                <div class="col-6">
+                    <a href="{% url 'register' %}" class="btn btn-primary btn-lg w-100 " role="button" >Get Started</a>
+                </div>
+                <div class="col-6">
+                    <a href="{% url 'about_us' %}" class="btn btn-secondary w-100 btn-lg" role="button" >About Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block text-center">
+            <img class="img-fluid rounded vh-75 text-center object-fit-contain my-3 pl-5" src="{% static 'images/home_books.webp' %}" alt="Unusually stacked books.">
+        </div>
+        <div class="d-lg-none text-center">
+            <img class="img-fluid rounded text-center object-fit-contain my-1 mw-90" src="{% static 'images/wide_books.webp' %}" alt="Unusually stacked books.">
+        </div>
+    </div>
+    
+</div>
 {% endblock content %}
