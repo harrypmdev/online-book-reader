@@ -14,6 +14,17 @@ def about_us(request):
         context,
     )
 
+def home(request):
+    context = {}
+    link = 'books/home.html'
+    if request.user.is_authenticated:
+        link = 'books/dashboard.html'
+    return render(
+        request,
+        link,
+        context,
+    )
+
 def register(request):
     if request.method == "POST":
         register_form = RegisterForm(data=request.POST)
@@ -28,7 +39,7 @@ def register(request):
             password = register_form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
-            return redirect('about_us')
+            return redirect('home')
         else:
             messages.add_message(
                 request, 
@@ -55,7 +66,7 @@ def login_view(request):
                 messages.SUCCESS,
                 'Logged in!'
             )
-            return redirect('about_us')
+            return redirect('home')
         else:
             messages.add_message(
                 request, 
@@ -77,4 +88,4 @@ def logout_view(request):
         'Logged out!'
     )
     logout(request)
-    return redirect('about_us')
+    return redirect('home')
