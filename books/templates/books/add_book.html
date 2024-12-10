@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="justify-content-center d-flex flex-column col-lg-6 mt-3 mb-3 mb-lg-0">
+            <h1 class="text-center">Add a new book</h1>
+            <hr class="w-75">
+            <form class="row" method="POST">
+                {% csrf_token %}
+                <div class="form-group form-inline w-100 justify-content-center">
+                    <label for="url">URL</label>
+                    <input type="url" class="form-control w-75 mx-3" id="url" name="url" aria-describedby="url" placeholder="Your book's URL">
+                </div>
+                <input class="col-4 offset-4 my-2 btn btn-info" type="submit" value="Add book"></input>
+            </form>
+        </div>
+        <div class="d-none d-lg-block col-lg-6 text-center pl-5">
+            <img class="img-fluid rounded vh-75 text-center object-fit-contain my-3" src="{% static 'images/chosen_book.webp' %}" alt="A single book on a shelf.">
+        </div>
+    </div>
+    
+</div>
+{% endblock content %}

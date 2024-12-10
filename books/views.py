@@ -3,7 +3,8 @@ from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import redirect
-from .forms import RegisterForm
+from .forms import RegisterForm, URLForm
+from .models import Book, UserBook
 
 # Create your views here.
 def about_us(request):
@@ -18,10 +19,43 @@ def home(request):
     context = {}
     link = 'books/home.html'
     if request.user.is_authenticated:
+        user_books = UserBook.objects.filter(user=request.user.id)
+        context['user_books'] = user_books
         link = 'books/dashboard.html'
     return render(
         request,
         link,
+        context,
+    )
+
+def add_book(request):
+    if request.method == "POST":
+        url_form = URLForm(request.POST)
+        if url_form.is_valid():
+            book_url = url_form.cleaned_data['url']
+            try:
+                book = Book.objects.get(url=book_url)
+            except Book.DoesNotExist:
+                book = Book.objects.create(url=book_url)
+                book.scan()
+                book.save()
+            try:
+                user_book = UserBook.objects.get(book=book.id, user=request.user.id)
+            except UserBook.DoesNotExist:
+                user_book = UserBook.objects.create(
+                    user=request.user, 
+                    book=book,
+                    title = book.auto_title,
+                    author = book.auto_author
+                )
+                user_book.pick_color()
+                user_book.save()
+            return redirect('home')
+    url_form = URLForm()
+    context = {"form": url_form}
+    return render(
+        request,
+        'books/add_book.html',
         context,
     )
 

@@ -17,3 +17,23 @@ body {
 .mw-90 {
     max-width: 90%;
 }
+
+/* ------- Styles for dashboard ------- */
+
+.progress-lighten {
+    background-color: rgba(0, 0, 0, 0) !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+  
+.progress-darken {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+}
+  
+.book > .btn-warning {
+    transform: translate(0%, -140%);
+}
+  
+.progress {
+    transform: translate(0%, -325%);
+}
