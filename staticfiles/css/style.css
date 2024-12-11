@@ -18,11 +18,6 @@ body {
     max-width: 90%;
 }
 
-.asteriskField {
-    display: none;
-}
-
-
 /* ------- Styles for dashboard ------- */
 
 .progress-lighten {
@@ -47,3 +42,9 @@ body {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
+
+/* ------- Styles for star ratings ------- */
+
+[role=button] {
+    cursor: pointer;
+  }

@@ -21,15 +21,30 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
     <div class="row h-100">
         <div class="d-none d-lg-block col-lg-6 text-center">
             <img class="img-fluid rounded vh-75 text-center object-fit-contain my-3" src="{% static 'images/open_book.webp' %}" alt="A single book on a shelf.">
         </div>
         <div class="justify-content-center d-flex flex-column col-lg-6 mt-3 mb-2 mb-lg-0">
-            <h1 class="text-center h2">Manage your book: {{ book.title }}</h1>
+            <h1 class="text-center h2 mb-0">Manage your book: {{ book.title }}</h1>
             <hr class="w-75">
             <form class="row" method="POST">
+                <div class="col-7 text-right mb-3">
+                  <input type="number" class="d-none" id="rating" name="rating" value="0">
+                  <section data-rating="{{ average_rating }}" data-rated="{{ rated }}" id="star-rating">
+                    <i class="fa-regular fa-star fa-xl pointer"></i>
+                    <i class="fa-regular fa-star fa-xl pointer"></i>
+                    <i class="fa-regular fa-star fa-xl pointer"></i>
+                    <i class="fa-regular fa-star fa-xl pointer"></i>
+                    <i class="fa-regular fa-star fa-xl pointer"></i>
+                  </section>    
+                </div>
+                <div class="col-5 text-left">
+                  <small class="form-text text-muted">
+                    {{ rating_count }} rating(s)
+                  </small>      
+                </div>
                 {% csrf_token %}
                 <div class="form-group w-100 ml-3">
                     <div class="text-center">
@@ -55,8 +70,7 @@
                 This cannot be undone.
             </small>
         </div>
-
     </div>
-    
 </div>
+<script src="{% static 'js/manage.js' %}"></script>
 {% endblock content %}

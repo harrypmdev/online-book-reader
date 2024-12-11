@@ -4,7 +4,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import redirect
 from .forms import RegisterForm, URLForm, ManageForm
-from .models import Book, UserBook
+from .models import Book, UserBook, Rating
 
 # Create your views here.
 def about_us(request):
@@ -71,8 +71,20 @@ def add_book(request):
     )
 
 def manage_book(request, id):
+    user_book = UserBook.objects.get(id=id, user=request.user)
+    book = Book.objects.get(id=user_book.book.id)
     if request.POST:
-        book = UserBook.objects.get(id=id, user=request.user)
+        if request.POST['rating'] != 0:
+            try:
+                rating = Rating.objects.get(book=book, user=request.user)
+                rating.rating = request.POST['rating']
+                rating.save()
+            except Rating.DoesNotExist:
+                Rating.objects.create(
+                    book=book,
+                    user=request.user,
+                    rating=request.POST['rating'],
+                )
         manage_form = ManageForm(data=request.POST)
         if manage_form.is_valid():
             messages.add_message(
@@ -80,14 +92,22 @@ def manage_book(request, id):
                 messages.SUCCESS,
                 'Book saved!'
             )
-            book.title = manage_form.cleaned_data['title']
-            book.author = manage_form.cleaned_data['author']
-            book.save()
+            user_book.title = manage_form.cleaned_data['title']
+            user_book.author = manage_form.cleaned_data['author']
+            user_book.save()
             return redirect('home')
     context = {}
+    context['rating_count'] = Rating.objects.filter(book=book.id).count()
+    context['rated'] = 'false'
+    context['average_rating'] = book.average_rating()
     try:
-        book = UserBook.objects.get(id=id, user=request.user)
-        context['book'] = book
+        if Rating.objects.get(book=book.id, user=request.user):
+            context['rated'] = 'true'
+    except Rating.DoesNotExist:
+        context['rated'] = 'false'
+    try:
+        user_book = UserBook.objects.get(id=id, user=request.user)
+        context['book'] = user_book
     except UserBook.DoesNotExist:
         messages.add_message(
             request, 
@@ -95,7 +115,7 @@ def manage_book(request, id):
             'Authorisation error.'
         )
         return redirect('home')
-    context['book'] = book
+    context['book'] = user_book
     return render(
         request,
         'books/manage_book.html',
@@ -104,8 +124,11 @@ def manage_book(request, id):
 
 def delete_book(request, id):
     try:
-        book = UserBook.objects.get(user=request.user, id=id)
-        book.delete()
+        user_book = UserBook.objects.get(user=request.user, id=id)
+        book = Book.objects.get(id=user_book.book.id)
+        if book.total_readers() == 1:
+            book.delete()
+        user_book.delete()
         messages.add_message(
             request, 
             messages.SUCCESS,

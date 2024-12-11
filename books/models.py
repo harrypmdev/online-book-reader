@@ -35,6 +35,16 @@ class Book(models.Model):
                 done[0] = True
             if done[0] and done[1]:
                 break
+    
+    def total_readers(self):
+        return UserBook.objects.filter(book=self).count()
+    
+    def average_rating(self):
+        ratings = Rating.objects.filter(book=self)
+        rating_total = 0
+        for rating in ratings:
+            rating_total += rating.rating
+        return 0 if not ratings.count() else round(rating_total / ratings.count())
 
     @staticmethod
     def scan_for_auto(field, line):
@@ -63,6 +73,14 @@ class UserBook(models.Model):
         )
         self.color = random.choice(colors)
 
+class Rating(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    rating = models.IntegerField()
+    created_at = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user}'s rating for {self.book.auto_title}: {str(self.rating)}"
 
 
 
