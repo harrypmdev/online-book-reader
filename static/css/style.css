@@ -48,3 +48,46 @@ body {
 .pointer {
     cursor: pointer;
 }
+
+/* ------- Styles for reader ------- */
+
+.reader {
+    display: flex;
+    flex-direction: column;
+}
+
+#book-holder {
+    text-align: center;
+}
+
+#book-text {
+    height: 70vh;
+    width: 90vw;
+    overflow: hidden;
+    word-break: break-all;
+    font-family: monospace, monospace;
+    font-size: 16px;
+    text-align: center;
+    margin: auto;
+  }
+
+.page-counter {
+    height: 10vh;
+    flex-basis: 3;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.page-counter * {
+    margin: 0 10px 0 10px;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #book-text {
+        font-size: 18px;
+    }
+}

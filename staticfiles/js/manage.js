@@ -4,8 +4,10 @@ let stars = [...document.querySelectorAll('.fa-star')];
 stars.forEach((el, i) => {
 	
     el.onclick = () => {
-        document.querySelector('#star-rating')
-        .setAttribute('data-rating', (i+1)*2);
+        let starRating = document.querySelector('#star-rating');
+        starRating.setAttribute('data-rating', (i+1)*2);
+        starRating.setAttribute('data-rated', 'true');
+        document.querySelector('#rating').setAttribute('value', (i+1)*2)
         console.log((i+1)*2);
         updateRating()
     }
@@ -37,6 +39,13 @@ stars.forEach((el, i) => {
 function updateRating() {
     let rating = document.querySelector('#star-rating')
     .getAttribute('data-rating');
+    let starRating = document.querySelector('#star-rating');
+    if (starRating.getAttribute('data-rated') == 'true') {
+        for (let star of stars) {
+            star.classList.add('text-warning')
+            star.classList.remove('pointer')
+        }
+    }
     for (let star of stars.slice(0, rating/2)) {
         star.classList.remove('fa-regular'); 
         star.classList.add('fa-solid'); 

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="reader">
+<div id="book-holder">
+    <p data-book-id="{{ book_id }}" data-csrf-token="{{ csrf_token }}" data-ajax-url="{% url 'ajax' %}" id="book-text"></p>
+</div>
+<br>
+<div class="page-counter">
+    <button id="previous-button" class="btn"><i class="fa-solid fa-arrow-left fa-2xl"></i></button>
+    <h2 id="page-number" data-page-number="1">Page 1 of Loading...</h2>
+    <button id="next-button" class="btn"><i class="fa-solid fa-arrow-right fa-2xl"></i></button>
+</div>
+</div>
+{{ text_list|json_script:"text_list_json"}}
+<script src="{% static 'js/reader.js' %}"></script>
+{% endblock content %}

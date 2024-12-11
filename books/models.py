@@ -1,6 +1,7 @@
 import urllib.request
 import string
 import random
+import math
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -45,6 +46,54 @@ class Book(models.Model):
         for rating in ratings:
             rating_total += rating.rating
         return 0 if not ratings.count() else round(rating_total / ratings.count())
+
+    def return_text_list(self):
+        data = urllib.request.urlopen(self.url)
+        return [line.decode('utf-8') for line in data]
+    
+    def find_halfway(self, line):
+        rounded_halfway = math.ceil(len(line)/2)
+        new_halfway = rounded_halfway
+        try:
+            while line[new_halfway] != " ":
+                new_halfway += 1
+        except IndexError:
+            return rounded_halfway
+        return new_halfway
+
+    def smart_split(self, line, width_limit):
+        # Returns a list of lines from a single line
+        #print(f"{str(len(line))} > {width_limit}: {len(line) > width_limit}")
+        if len(line) > width_limit:
+            rounded_halfway = self.find_halfway(line)
+            return_list = []
+            if len(line[:rounded_halfway]) > width_limit:
+                return_list.extend(self.smart_split(line[:rounded_halfway], width_limit))  
+            else:
+                return_list.append(line[:rounded_halfway])     
+            if len(line[rounded_halfway:]) > width_limit:
+                return_list.extend(self.smart_split(line[rounded_halfway:], width_limit))
+            else:
+                return_list.append(line[rounded_halfway:])  
+            return return_list
+        return [line]
+
+    def return_split_text_list(self, width_limit):
+        new_text_list = []
+        stripped_text = [line.strip() for line in self.return_text_list()]
+        for line in stripped_text:
+            new_text_list.extend(self.smart_split(line, width_limit))
+        with open('local.txt', 'w') as f:
+            for line in new_text_list:
+                f.write(f"{line}\n")
+        return new_text_list
+    
+    def return_whole_text(self):
+        string_data = ""
+        for line in return_text_list():
+            line.replace("\n", " ")
+            string_data.append(line)
+        return string_data
 
     @staticmethod
     def scan_for_auto(field, line):
