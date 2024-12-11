@@ -102,6 +102,24 @@ def manage_book(request, id):
         context,
     )
 
+def delete_book(request, id):
+    try:
+        book = UserBook.objects.get(user=request.user, id=id)
+        book.delete()
+        messages.add_message(
+            request, 
+            messages.SUCCESS,
+            'Book successfully deleted from library.'
+        )
+    except Book.DoesNotExist:
+        messages.add_message(
+            request, 
+            messages.ERROR,
+            'You are not authorised to delete this book.'
+        )
+    return redirect('home')
+    
+
 def register(request):
     if request.method == "POST":
         register_form = RegisterForm(data=request.POST)
