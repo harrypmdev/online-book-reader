@@ -63,15 +63,16 @@ function getLineTotal(el) {
  * @return {integer} The number of characters counted.
  */
 function calculateCharacterLimit(el) {
-    let originalContent = el.innerText;
+    let originalContent = el.in
     el.innerHTML = '<span class="charcount">#</span>'.repeat(150);
     let allSpans = document.getElementsByClassName('charcount');
     let prevSpan;
     let i = 0;
     for (let span of allSpans) {
         i++;
+        console.log("Span number: " + i + ", offsetTop: " + span.offsetTop);
         if (typeof prevSpan != undefined && parseInt(span.offsetTop) > prevSpan) {
-            el.innerText = originalContent;
+            // el.innerText = originalContent;
             return i - 1;
         }
         prevSpan = parseInt(span.offsetTop);

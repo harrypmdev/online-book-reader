@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     bookText.setAttribute('data-char-limit', calculateCharacterLimit(bookText));
     console.log("data char limit: " + bookText.getAttribute('data-char-limit'))
     let pageNumber = document.getElementById('page-number').getAttribute('data-page-number')
-    // setPageContent(pageNumber)
+    setPageContent(pageNumber)
 }, false);
 
 $('next-button').addEventListener('click', function() {
@@ -63,14 +63,14 @@ function getLineTotal(el) {
  * @return {integer} The number of characters counted.
  */
 function calculateCharacterLimit(el) {
-    let originalContent = el.innerText;
+    let originalContent = el.in
     el.innerHTML = '<span class="charcount">#</span>'.repeat(150);
     let allSpans = document.getElementsByClassName('charcount');
     let prevSpan;
     let i = 0;
     for (let span of allSpans) {
         i++;
-        console.log("span number:" + i + ", offset: " + span.offsetTop);
+        console.log("Span number: " + i + ", offsetTop: " + span.offsetTop);
         if (typeof prevSpan != undefined && parseInt(span.offsetTop) > prevSpan) {
             // el.innerText = originalContent;
             return i - 1;

@@ -65,7 +65,7 @@ body {
     width: 90vw;
     overflow: hidden;
     word-break: break-all;
-    font-family: monospace, monospace;
+    font-family: "Roboto Mono", monospace;
     font-size: 16px;
     text-align: center;
     margin: auto;
