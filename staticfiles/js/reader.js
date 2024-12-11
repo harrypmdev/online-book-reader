@@ -4,11 +4,11 @@ function $(id) { return document.getElementById(id); }
 document.addEventListener('DOMContentLoaded', function() {
     let bookText = document.getElementById('book-text');
     bookText.setAttribute('data-lines', getLineTotal(bookText));
-    console.log(bookText.getAttribute('data-lines'))
+    console.log("data lines : " + bookText.getAttribute('data-lines'))
     bookText.setAttribute('data-char-limit', calculateCharacterLimit(bookText));
-    console.log(bookText.getAttribute('data-char-limit'))
+    console.log("data char limit: " + bookText.getAttribute('data-char-limit'))
     let pageNumber = document.getElementById('page-number').getAttribute('data-page-number')
-    setPageContent(pageNumber)
+    // setPageContent(pageNumber)
 }, false);
 
 $('next-button').addEventListener('click', function() {
@@ -64,15 +64,15 @@ function getLineTotal(el) {
  */
 function calculateCharacterLimit(el) {
     let originalContent = el.innerText;
-    el.innerHTML = '<span>#</span>'.repeat(150);
-    let allSpans = document.getElementsByTagName('span');
+    el.innerHTML = '<span class="charcount">#</span>'.repeat(150);
+    let allSpans = document.getElementsByClassName('charcount');
     let prevSpan;
     let i = 0;
     for (let span of allSpans) {
         i++;
-        console.log(span.offsetTop);
+        console.log("span number:" + i + ", offset: " + span.offsetTop);
         if (typeof prevSpan != undefined && parseInt(span.offsetTop) > prevSpan) {
-            el.innerText = originalContent;
+            // el.innerText = originalContent;
             return i - 1;
         }
         prevSpan = parseInt(span.offsetTop);
@@ -89,7 +89,7 @@ function setPageContent(pageNumber) {
     let start = lines*(pageNumber-1);
     getBook(characters).then((text_list) => {
         let totalPages = Math.floor(text_list.length / lines) + 1;
-        setPageNumbers(pageNumber, totalPages);
+        // setPageNumbers(pageNumber, totalPages);
         let end = Math.min(text_list.length, start+lines);
         // console.log(
         //     "Here's the rundown:\n" +
