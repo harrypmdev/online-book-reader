@@ -33,6 +33,13 @@ def add_book(request):
         url_form = URLForm(request.POST)
         if url_form.is_valid():
             book_url = url_form.cleaned_data['url']
+            if book_url[len(book_url)-4:len(book_url)] != ".txt":
+                messages.add_message(
+                    request, 
+                    messages.ERROR,
+                    'Your URL is not a text file. Please ensure your URL ends with ".txt".'
+                )
+                return redirect('add_book')
             try:
                 book = Book.objects.get(url=book_url)
             except Book.DoesNotExist:
