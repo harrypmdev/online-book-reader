@@ -4,9 +4,7 @@ function $(id) { return document.getElementById(id); }
 document.addEventListener('DOMContentLoaded', function() {
     let bookText = document.getElementById('book-text');
     bookText.setAttribute('data-lines', getLineTotal(bookText));
-    console.log("data lines : " + bookText.getAttribute('data-lines'))
     bookText.setAttribute('data-char-limit', calculateCharacterLimit(bookText));
-    console.log("data char limit: " + bookText.getAttribute('data-char-limit'))
     let pageNumber = document.getElementById('page-number').getAttribute('data-page-number')
     setPageContent(pageNumber)
 }, false);
@@ -70,9 +68,8 @@ function calculateCharacterLimit(el) {
     let i = 0;
     for (let span of allSpans) {
         i++;
-        console.log("Span number: " + i + ", offsetTop: " + span.offsetTop);
         if (typeof prevSpan != undefined && parseInt(span.offsetTop) > prevSpan) {
-            // el.innerText = originalContent;
+            el.innerText = originalContent;
             return i - 1;
         }
         prevSpan = parseInt(span.offsetTop);
@@ -89,15 +86,8 @@ function setPageContent(pageNumber) {
     let start = lines*(pageNumber-1);
     getBook(characters).then((text_list) => {
         let totalPages = Math.floor(text_list.length / lines) + 1;
-        // setPageNumbers(pageNumber, totalPages);
+        setPageNumbers(pageNumber, totalPages);
         let end = Math.min(text_list.length, start+lines);
-        // console.log(
-        //     "Here's the rundown:\n" +
-        //     `Evaluated lines: ${lines} ` + "\n" +
-        //     `Evaluated characters in one line: ${characters}` + "\n" +
-        //     `Calculated starting line: ${start}` + `\n` +
-        //     `Calculated ending line: ${end}`
-        // );
         for (let line of text_list.slice(start, end)) {
             content += line += "<br>"
         }
@@ -138,9 +128,9 @@ async function getBook(line_width, caching=true) {
 }
 
 function setPageNumbers(pageNumber, totalPages) {
-    $('page-number').innerHTML = `${pageNumber} of ${totalPages}`
-    $('next-button').style.display = pageNumber >= totalPages ?
-    'none' : 'inline';
-    $('previous-button').style.display = pageNumber <= 1 ?
-    'none' : 'inline';
+    document.querySelector('#page-number').innerHTML = `${pageNumber} of ${totalPages}`
+    document.querySelector('#next-button').style.visibility = pageNumber >= totalPages ?
+    'hidden' : 'visible';
+    document.querySelector('#previous-button').style.visibility = pageNumber <= 1 ?
+    'hidden' : 'visible';
 }
