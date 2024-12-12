@@ -5,10 +5,12 @@ from books.models import Book, UserBook
 
 # Create your views here.
 def read(request, id):
+    title = UserBook.objects.get(id=id).title
     current_page = 1
     context = {
         "current_page": current_page,
         "book_id": id,
+        "title": title,
     }
     return render(request, 'reader/read.html', context)
 
