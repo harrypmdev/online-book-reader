@@ -18,6 +18,10 @@ body {
     max-width: 90%;
 }
 
+.w-90 {
+    width: 90% !important;
+}
+
 /* ------- Styles for dashboard ------- */
 
 .progress-lighten {
@@ -61,14 +65,15 @@ body {
 }
 
 #book-text {
-    height: 70vh;
+    height: 68vh;
     width: 90vw;
     overflow: hidden;
     word-break: break-all;
-    font-family: "Roboto Mono", monospace;
+    font-family: monospace, monospace;
     font-size: 16px;
     text-align: center;
     margin: auto;
+    margin-top: 2vh;
   }
 
 .page-counter {
