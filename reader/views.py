@@ -15,7 +15,6 @@ def read(request, id):
     return render(request, 'reader/read.html', context)
 
 def ajax_book_info(request):
-    print("request received")
     if request.method == "POST":
         data = json.loads(request.body)
         book = Book.objects.get(id=UserBook.objects.get(id=data['book_id']).book.id)
@@ -25,3 +24,16 @@ def ajax_book_info(request):
             print(str(len(line)))
         return JsonResponse(return_data, safe=False)
     return JsonResponse({'text_list': 'Invalid: valid information was not posted.'})
+
+def ajax_update_progress(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        try:
+            user_book = UserBook.objects.get(id=data['book_id'], user=request.user)
+            user_book.progress = data['progress']
+            user_book.update_percent_progress(data['length'])
+            user_book.save()
+            return JsonResponse({'completion': 'Progress updated.'})
+        except UserBook.DoesNotExist:
+            return JsonResponse({'completion': 'Invalid: valid information was not posted.'})
+    return JsonResponse({'completion': 'Invalid: valid information was not posted.'})

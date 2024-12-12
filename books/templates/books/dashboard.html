@@ -19,10 +19,10 @@
                     <h1 class="h4">{{ book.title }}</h1>
                     <hr>
                     <p class="lead">{{ book.author }}</p>
-                    <p class="fst-italic">{{ book.progress }}% Completed</p>
+                    <p class="fst-italic">{{ book.percent_progress }}% Completed</p>
                 </a>
                 <div class="progress progress-lighten rounded-0 border border-{{ book.color }} border-top-0 border-bottom-0">
-                    <div class="progress-bar bg-{{ book.color }} progress-bar-striped" role="progressbar" style="width: {{ book.progress }}%" aria-valuenow="{{ book.progress }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-{{ book.color }} progress-bar-striped" role="progressbar" style="width: {{ book.percent_progress }}%" aria-valuenow="{{ book.percent_progress }}" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <a href="{% url 'manage_book' book.id %}" class="btn btn-warning w-100 rounded-top-0 text-center">
                     <i class="fa-solid fa-pen-to-square"></i>

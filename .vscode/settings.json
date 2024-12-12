@@ -15,4 +15,5 @@
    "files.autoSave": "off",
    "workbench.colorTheme": "Solarized Light",
    "terminal.integrated.gpuAcceleration": "canvas",
+   "python.REPL.enableREPLSmartSend": false,
 }

@@ -16,7 +16,7 @@ class Book(models.Model):
 
     def return_text_list(self):
         data = urllib.request.urlopen(self.url)
-        return [line.decode('utf-8') for line in data]
+        return [f"{i}𓀴" + line.decode('utf-8') for i, line in enumerate(data)]
 
     def scan(self):
         data = self.return_text_list()
@@ -46,10 +46,6 @@ class Book(models.Model):
         for rating in ratings:
             rating_total += rating.rating
         return 0 if not ratings.count() else round(rating_total / ratings.count())
-
-    def return_text_list(self):
-        data = urllib.request.urlopen(self.url)
-        return [line.decode('utf-8') for line in data]
     
     def find_halfway(self, line):
         rounded_halfway = math.ceil(len(line)/2)
@@ -108,11 +104,15 @@ class UserBook(models.Model):
     title = models.CharField(max_length=400)
     author = models.CharField(max_length=200)
     last_viewed = models.DateField(auto_now=True)
-    progress = models.FloatField(default=0)
+    progress = models.IntegerField(default=0)
+    percent_progress = models.IntegerField(default=0)
     color = models.CharField(max_length=20, default="primary")
 
     def __str__(self):
         return f"{self.user}'s {self.title}"
+    
+    def update_percent_progress(self, length):
+        self.percent_progress = round((int(self.progress) / length*100))
     
     def pick_color(self):
         colors = ("primary",

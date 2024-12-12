@@ -13,7 +13,7 @@ $('next-button').addEventListener('click', function() {
     pageNumberElement = document.getElementById('page-number')
     let pageNumber = parseInt(pageNumberElement.getAttribute('data-page-number'))
     pageNumberElement.setAttribute('data-page-number', pageNumber+1)
-    setPageContent(pageNumber + 1, )
+    setPageContent(pageNumber + 1, true)
 })
 
 $('previous-button').addEventListener('click', function() {
@@ -78,7 +78,7 @@ function calculateCharacterLimit(el) {
 }
       
 
-function setPageContent(pageNumber) {
+function setPageContent(pageNumber, shouldUpdate=false) {
     let bookText = document.getElementById('book-text');
     let lines = parseInt(bookText.getAttribute('data-lines'));
     let characters = parseInt(bookText.getAttribute('data-char-limit'));
@@ -88,23 +88,52 @@ function setPageContent(pageNumber) {
         let totalPages = Math.floor(text_list.length / lines) + 1;
         setPageNumbers(pageNumber, totalPages);
         let end = Math.min(text_list.length, start+lines);
+        let progress;
         for (let line of text_list.slice(start, end)) {
-            content += line += "<br>"
+            progress = progress === undefined ? line.split("𓀴")[0] : progress;
+            line = line.split("𓀴")[1];
+            content += line += "<br>";
+        }
+        if (shouldUpdate) {
+            updateProgress(progress, text_list.length);
         }
         bookText.innerHTML = content
     })
 }
 
+async function updateProgress(progress, length) {
+    let bookText = document.getElementById('book-text')
+    let url = bookText.getAttribute('data-ajax-update-url');
+    let csrfToken = bookText.getAttribute('data-csrf-token');
+    let bookID = bookText.getAttribute('data-book-id');
+    const response = await fetch(url, {
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json',
+            'X-CSRFToken':csrfToken,
+        }, 
+        body:JSON.stringify({
+            'progress': progress,
+            'book_id': bookID,
+            'length': length,
+            })
+    });
+    if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+    let data = await response.json()
+    return JSON.stringify(data);
+}
+
 async function getBook(line_width, caching=true) {
     let bookText = document.getElementById('book-text')
-    bookID = bookText.getAttribute('data-book-id');
+    let bookID = bookText.getAttribute('data-book-id');
     if (sessionStorage.getItem("id") == bookID && 
     sessionStorage.getItem("line-width") == line_width && caching) {
         return JSON.parse(sessionStorage.getItem('text_list'));
     }
-    url = bookText.getAttribute('data-ajax-url');
-    csrfToken = bookText.getAttribute('data-csrf-token');
-    console.log(url);
+    let url = bookText.getAttribute('data-ajax-url');
+    let csrfToken = bookText.getAttribute('data-csrf-token');
     const response = await fetch(url, {
        method:'POST',
        headers:{
