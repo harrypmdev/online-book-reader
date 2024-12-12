@@ -1,11 +1,15 @@
 import json
+from datetime import datetime
 from django.shortcuts import render
 from django.http import JsonResponse
 from books.models import Book, UserBook
 
 # Create your views here.
 def read(request, id):
-    title = UserBook.objects.get(id=id).title
+    user_book = UserBook.objects.get(id=id)
+    title = user_book.title
+    user_book.last_viewed = datetime.now()
+    user_book.save()
     current_page = 1
     context = {
         "current_page": current_page,

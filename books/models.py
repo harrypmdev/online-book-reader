@@ -103,7 +103,7 @@ class UserBook(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     title = models.CharField(max_length=400)
     author = models.CharField(max_length=200)
-    last_viewed = models.DateField(auto_now=True)
+    last_viewed = models.DateTimeField(auto_now_add=True)
     progress = models.IntegerField(default=0)
     percent_progress = models.IntegerField(default=0)
     color = models.CharField(max_length=20, default="primary")

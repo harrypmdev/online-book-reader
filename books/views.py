@@ -19,7 +19,7 @@ def home(request):
     context = {}
     link = 'books/home.html'
     if request.user.is_authenticated:
-        user_books = UserBook.objects.filter(user=request.user.id)
+        user_books = UserBook.objects.filter(user=request.user.id).order_by('-last_viewed')
         context['user_books'] = user_books
         link = 'books/dashboard.html'
     return render(
