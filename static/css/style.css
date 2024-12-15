@@ -76,12 +76,11 @@ body {
     margin-top: 2vh;
   }
 
-#book-title {
-    height: 5vh;
+#page-info {
+    height: 10vh;
 }
 
 .page-counter {
-    height: 5vh;
     flex-basis: 3;
     font-size: x-large;
     display: flex;

@@ -10,9 +10,8 @@ def read(request, id):
     title = user_book.title
     user_book.last_viewed = datetime.now()
     user_book.save()
-    current_page = 1
     context = {
-        "current_page": current_page,
+        "progress": user_book.progress,
         "book_id": id,
         "title": title,
     }

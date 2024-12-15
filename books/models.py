@@ -112,7 +112,7 @@ class UserBook(models.Model):
         return f"{self.user}'s {self.title}"
     
     def update_percent_progress(self, length):
-        self.percent_progress = round((int(self.progress) / length*100))
+        self.percent_progress = round((int(self.progress) / int(length)*100))
     
     def pick_color(self):
         colors = ("primary",

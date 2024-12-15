@@ -5,23 +5,48 @@ document.addEventListener('DOMContentLoaded', function() {
     let bookText = document.getElementById('book-text');
     bookText.setAttribute('data-lines', getLineTotal(bookText));
     bookText.setAttribute('data-char-limit', calculateCharacterLimit(bookText));
-    let pageNumber = document.getElementById('page-number').getAttribute('data-page-number')
-    setPageContent(pageNumber)
+    let progress = document.getElementById('page-number').getAttribute('data-progress')
+    setPageContent(progress)
 }, false);
 
 $('next-button').addEventListener('click', function() {
+    bookmarkReady();
     pageNumberElement = document.getElementById('page-number')
-    let pageNumber = parseInt(pageNumberElement.getAttribute('data-page-number'))
-    pageNumberElement.setAttribute('data-page-number', pageNumber+1)
-    setPageContent(pageNumber + 1, true)
+    let progress = parseInt(pageNumberElement.getAttribute('data-progress'))
+    setPageContent(progress, move=1);
 })
 
 $('previous-button').addEventListener('click', function() {
+    bookmarkReady();
     pageNumberElement = document.getElementById('page-number')
-    let pageNumber = parseInt(pageNumberElement.getAttribute('data-page-number'))
-    pageNumberElement.setAttribute('data-page-number', pageNumber-1)
-    setPageContent(pageNumber - 1)
+    let progress = parseInt(pageNumberElement.getAttribute('data-progress'))
+    setPageContent(progress, move=-1);
 })
+
+document.querySelector('#bookmark').addEventListener('click', async function() {
+    bookmarkDone();
+    try {
+        await updateProgress(this.getAttribute('data-progress'), this.getAttribute('data-length'));
+    } catch {
+        alert('Sorry, there was an issue bookmarking this page.');
+    }
+})
+
+function bookmarkDone() {
+    let bookmark = document.querySelector('#bookmark')
+    bookmark.innerHTML = 'Bookmarked<i class="fa-solid fa-bookmark fa-lg ml-2"></i>';
+    bookmark.classList.remove('btn-warning');
+    bookmark.classList.add('btn-success');
+    bookmark.classList.add('disabled');
+}
+
+function bookmarkReady() {
+    let bookmark = document.querySelector('#bookmark')
+    bookmark.innerHTML = 'Bookmark Page<i class="fa-regular fa-bookmark fa-lg ml-2"></i>';
+    bookmark.classList.add('btn-warning');
+    bookmark.classList.remove('btn-success');
+    bookmark.classList.remove('disabled');
+}
 
 /**
  * Return a boolean to indicate whether a paragraph element's text is larger
@@ -78,25 +103,36 @@ function calculateCharacterLimit(el) {
 }
       
 
-function setPageContent(pageNumber, shouldUpdate=false) {
+function setPageContent(progress, move=0) {
     let bookText = document.getElementById('book-text');
     let lines = parseInt(bookText.getAttribute('data-lines'));
     let characters = parseInt(bookText.getAttribute('data-char-limit'));
     let content = "";
-    let start = lines*(pageNumber-1);
+    let pageNumber = Math.floor(progress/lines) + move;
+    document.querySelector('#page-number').setAttribute('data-progress', pageNumber*lines);
+    console.log(`${progress}/${lines}`) 
+    let start = lines*(pageNumber);
     getBook(characters).then((text_list) => {
         let totalPages = Math.floor(text_list.length / lines) + 1;
         setPageNumbers(pageNumber, totalPages);
         let end = Math.min(text_list.length, start+lines);
-        let progress;
+        let progressToSet;
+        let lastNum = 0;
         for (let line of text_list.slice(start, end)) {
-            progress = progress === undefined ? line.split("𓀴")[0] : progress;
-            line = line.split("𓀴")[1];
-            content += line += "<br>";
+            let num = lastNum;
+            let text;
+            if (line.includes("𓀴")) {
+                let lines = line.split("𓀴");
+                num = lastNum = lines[0];
+                text = lines[1]    
+            } else {
+                text = line;
+            }
+            content += text += "<br>";
+            progressToSet = progressToSet === undefined ? num: progressToSet;
         }
-        if (shouldUpdate) {
-            updateProgress(progress, text_list.length);
-        }
+        document.querySelector('#bookmark').setAttribute('data-progress', progress)
+        document.querySelector('#bookmark').setAttribute('data-length', text_list.length)
         bookText.innerHTML = content
     })
 }
@@ -122,7 +158,9 @@ async function updateProgress(progress, length) {
         throw new Error(`Response status: ${response.status}`);
       }
     let data = await response.json()
-    return JSON.stringify(data);
+    if (!data['completion'].includes('Progress updated.')) {
+        throw new Error(`Error updating progress: ${data['completion']}`);
+    }
 }
 
 async function getBook(line_width, caching=true) {
