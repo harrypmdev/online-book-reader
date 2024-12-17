@@ -14,12 +14,15 @@ class Book(models.Model):
     def __str__(self):
         return f"{self.auto_title}: {self.url}"
 
-    def return_text_list(self):
+    def return_text_list(self, numbered=True):
         data = urllib.request.urlopen(self.url)
-        return [f"{i}𓀴" + line.decode('utf-8') for i, line in enumerate(data)]
+        if numbered:
+            return [f"{i}𓀴" + line.decode('utf-8') for i, line in enumerate(data)]
+        else:
+            return [line.decode('utf-8') for i, line in enumerate(data)]
 
     def scan(self):
-        data = self.return_text_list()
+        data = self.return_text_list(numbered=False)
         done = [False, False]
         three_lines = ["", "", ""]
         for line_number, line in enumerate(data):

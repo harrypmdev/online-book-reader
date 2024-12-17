@@ -101,33 +101,31 @@ function calculateCharacterLimit(el) {
     return 0;
 }
 
-function setPageContentByProgress(progress) {
+async function setPageContentByProgress(progress) {
     let bookText = document.getElementById('book-text');
     let lines = parseInt(bookText.getAttribute('data-lines'));
     let characters = parseInt(bookText.getAttribute('data-char-limit'));
-    getBook(characters).then((text_list) => {
-        let bookInPages = splitIntoNumberedPages(text_list, lines);
-        let pageNumber;
-        for (const [i, page] of bookInPages.entries()) {
-            if ((Number(progress) < page.num)) {
-                pageNumber = i-1;
-                break
-            }
+    let text_list = await getBook(characters);
+    let bookInPages = splitIntoNumberedPages(text_list, lines);
+    let pageNumber;
+    for (const [i, page] of bookInPages.entries()) {
+        if ((Number(progress) < page.num)) {
+            pageNumber = i-1;
+            break
         }
-        setPageNumbers(pageNumber, bookInPages.length);
-        setPageContent(bookInPages, 0);
-    })
+    }
+    setPageNumbers(pageNumber, bookInPages.length);
+    setPageContent(bookInPages, 0);
 }
 
-function setPageByTurns(turns){
+async function setPageByTurns(turns){
     let bookText = document.getElementById('book-text');
     let lines = parseInt(bookText.getAttribute('data-lines'));
     let characters = parseInt(bookText.getAttribute('data-char-limit'));
-    getBook(characters).then((text_list) => {
-        let bookInPages = splitIntoNumberedPages(text_list, lines);
-        document.querySelector('#bookmark').setAttribute('data-length', text_list.length);
-        setPageContent(bookInPages, turns);
-    });
+    let text_list = await getBook(characters)
+    let bookInPages = splitIntoNumberedPages(text_list, lines);
+    document.querySelector('#bookmark').setAttribute('data-length', text_list.length);
+    setPageContent(bookInPages, turns);
 }
 
 function setPageContent(bookInPages, turns) {
@@ -251,10 +249,10 @@ async function getBook(line_width, caching=true) {
 
 function setPageNumbers(pageNumber, totalPages) {
     let pageNumberElement = document.querySelector('#page-number');
-    pageNumberElement.innerHTML = `${pageNumber} of ${totalPages}`;
+    pageNumberElement.innerHTML = `${pageNumber+1} of ${totalPages}`;
     pageNumberElement.setAttribute('data-page-number', pageNumber);
-    document.querySelector('#next-button').style.visibility = pageNumber >= totalPages ?
+    document.querySelector('#next-button').style.visibility = pageNumber >= totalPages-1 ?
     'hidden' : 'visible';
-    document.querySelector('#previous-button').style.visibility = pageNumber <= 1 ?
+    document.querySelector('#previous-button').style.visibility = pageNumber <= 0 ?
     'hidden' : 'visible';
 }
