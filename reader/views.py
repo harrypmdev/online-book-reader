@@ -21,10 +21,7 @@ def ajax_book_info(request):
     if request.method == "POST":
         data = json.loads(request.body)
         book = Book.objects.get(id=UserBook.objects.get(id=data['book_id']).book.id)
-        print("RECEIVED NUM: " + str(data['num']))
         return_data = book.return_split_text_list(data['num'])
-        for line in return_data[:200]:
-            print(str(len(line)))
         return JsonResponse(return_data, safe=False)
     return JsonResponse({'text_list': 'Invalid: valid information was not posted.'})
 
@@ -33,6 +30,7 @@ def ajax_update_progress(request):
         data = json.loads(request.body)
         try:
             user_book = UserBook.objects.get(id=data['book_id'], user=request.user)
+            print("PROGRESS RECEIVED: " + data['progress'])
             user_book.progress = data['progress']
             user_book.update_percent_progress(data['length'])
             user_book.save()

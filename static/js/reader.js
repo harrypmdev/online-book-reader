@@ -6,21 +6,20 @@ document.addEventListener('DOMContentLoaded', function() {
     bookText.setAttribute('data-lines', getLineTotal(bookText));
     bookText.setAttribute('data-char-limit', calculateCharacterLimit(bookText));
     let progress = document.getElementById('page-number').getAttribute('data-progress')
-    setPageContent(progress)
+    console.log("PROGRESS: " + progress);
+    setPageContentByProgress(progress)
 }, false);
 
 $('next-button').addEventListener('click', function() {
     bookmarkReady();
     pageNumberElement = document.getElementById('page-number')
-    let progress = parseInt(pageNumberElement.getAttribute('data-progress'))
-    setPageContent(progress, move=1);
+    setPageByTurns(1);
 })
 
 $('previous-button').addEventListener('click', function() {
     bookmarkReady();
     pageNumberElement = document.getElementById('page-number')
-    let progress = parseInt(pageNumberElement.getAttribute('data-progress'))
-    setPageContent(progress, move=-1);
+    setPageByTurns(-1);
 })
 
 document.querySelector('#bookmark').addEventListener('click', async function() {
@@ -86,7 +85,7 @@ function getLineTotal(el) {
  * @return {integer} The number of characters counted.
  */
 function calculateCharacterLimit(el) {
-    let originalContent = el.in
+    let originalContent = el.innerText;
     el.innerHTML = '<span class="charcount">#</span>'.repeat(150);
     let allSpans = document.getElementsByClassName('charcount');
     let prevSpan;
@@ -101,40 +100,96 @@ function calculateCharacterLimit(el) {
     }
     return 0;
 }
-      
 
-function setPageContent(progress, move=0) {
+function setPageContentByProgress(progress) {
     let bookText = document.getElementById('book-text');
     let lines = parseInt(bookText.getAttribute('data-lines'));
     let characters = parseInt(bookText.getAttribute('data-char-limit'));
-    let content = "";
-    let pageNumber = Math.floor(progress/lines) + move;
-    document.querySelector('#page-number').setAttribute('data-progress', pageNumber*lines);
-    console.log(`${progress}/${lines}`) 
-    let start = lines*(pageNumber);
     getBook(characters).then((text_list) => {
-        let totalPages = Math.floor(text_list.length / lines) + 1;
-        setPageNumbers(pageNumber, totalPages);
-        let end = Math.min(text_list.length, start+lines);
-        let progressToSet;
-        let lastNum = 0;
-        for (let line of text_list.slice(start, end)) {
-            let num = lastNum;
-            let text;
-            if (line.includes("𓀴")) {
-                let lines = line.split("𓀴");
-                num = lastNum = lines[0];
-                text = lines[1]    
-            } else {
-                text = line;
+        let bookInPages = splitIntoNumberedPages(text_list, lines);
+        let pageNumber;
+        for (const [i, page] of bookInPages.entries()) {
+            if ((Number(progress) < page.num)) {
+                pageNumber = i-1;
+                break
             }
-            content += text += "<br>";
-            progressToSet = progressToSet === undefined ? num: progressToSet;
         }
-        document.querySelector('#bookmark').setAttribute('data-progress', progress)
-        document.querySelector('#bookmark').setAttribute('data-length', text_list.length)
-        bookText.innerHTML = content
+        setPageNumbers(pageNumber, bookInPages.length);
+        setPageContent(bookInPages, 0);
     })
+}
+
+function setPageByTurns(turns){
+    let bookText = document.getElementById('book-text');
+    let lines = parseInt(bookText.getAttribute('data-lines'));
+    let characters = parseInt(bookText.getAttribute('data-char-limit'));
+    getBook(characters).then((text_list) => {
+        let bookInPages = splitIntoNumberedPages(text_list, lines);
+        document.querySelector('#bookmark').setAttribute('data-length', text_list.length);
+        setPageContent(bookInPages, turns);
+    });
+}
+
+function setPageContent(bookInPages, turns) {
+    let pageNumberElement = document.querySelector('#page-number');
+    let pageNumber = pageNumberElement.getAttribute('data-page-number');
+    pageNumber = Number(pageNumber)+Number(turns);
+    let page = bookInPages[pageNumber];
+    renderPage(page.content);
+    setPageNumbers(pageNumber, bookInPages.length);
+    document.querySelector('#bookmark').setAttribute('data-progress', page.num);
+}
+
+function renderPage(page) {
+    let content = "";
+    for (let line of page) {
+        content += line += "<br>";
+    }
+    document.getElementById('book-text').innerHTML = content;
+}
+
+function splitIntoNumberedPages(book, pageSize) {
+    let numberedPages = [];
+    splitIntoPages(book, pageSize).forEach((page) => {
+        for (let line of page) {
+            if (hasNumLabel(line)) {
+                let [num, text] = getNumAndText(line);
+                numberedPages.push({
+                    "num": num,
+                    "content": removeNumbers(page)
+                });
+                break;
+            }
+        }
+    })
+    return numberedPages;
+}
+
+function removeNumbers(text_list) {
+    return text_list.map((line) => {
+        if (hasNumLabel(line)) {
+            return getNumAndText(line)[1];
+        }
+        return line;
+    })
+    
+}
+
+function splitIntoPages(book, pageSize) {
+    let pages = [];
+    for (let i = 0; i < book.length; i += pageSize) {
+        pages.push(book.slice(i, i + pageSize));
+    }
+    return pages;
+}
+
+function hasNumLabel(line) {
+    return line.includes("𓀴");
+}
+
+function getNumAndText(line) {
+    let lines = line.split("𓀴");
+    return [lines[0], lines[1]];
 }
 
 async function updateProgress(progress, length) {
@@ -195,7 +250,9 @@ async function getBook(line_width, caching=true) {
 }
 
 function setPageNumbers(pageNumber, totalPages) {
-    document.querySelector('#page-number').innerHTML = `${pageNumber} of ${totalPages}`
+    let pageNumberElement = document.querySelector('#page-number');
+    pageNumberElement.innerHTML = `${pageNumber} of ${totalPages}`;
+    pageNumberElement.setAttribute('data-page-number', pageNumber);
     document.querySelector('#next-button').style.visibility = pageNumber >= totalPages ?
     'hidden' : 'visible';
     document.querySelector('#previous-button').style.visibility = pageNumber <= 1 ?
