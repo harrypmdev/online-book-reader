@@ -74,7 +74,7 @@ def manage_book(request, id):
     user_book = UserBook.objects.get(id=id, user=request.user)
     book = Book.objects.get(id=user_book.book.id)
     if request.POST:
-        if request.POST['rating'] != 0:
+        if int(request.POST['rating']) != 0:
             try:
                 rating = Rating.objects.get(book=book, user=request.user)
                 rating.rating = request.POST['rating']
