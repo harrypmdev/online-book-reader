@@ -6,26 +6,38 @@ document.addEventListener('DOMContentLoaded', function() {
     bookText.setAttribute('data-lines', getLineTotal(bookText));
     bookText.setAttribute('data-char-limit', calculateCharacterLimit(bookText));
     let progress = document.getElementById('page-number').getAttribute('data-progress')
-    console.log("PROGRESS: " + progress);
+    if (Number(progress) > 0) {
+        bookmarkDone();
+    }
     setPageContentByProgress(progress)
 }, false);
 
-$('next-button').addEventListener('click', function() {
-    bookmarkReady();
-    pageNumberElement = document.getElementById('page-number')
-    setPageByTurns(1);
+$('next-button').addEventListener('click', async function() {
+    let bookmark = document.querySelector('#bookmark');
+    let startPage = Number(bookmark.getAttribute('data-starting-page'));
+    let currentPage = (await setPageByTurns(1)) + 1;
+    if (startPage != currentPage) {
+        bookmarkReady();
+    } else {
+        bookmarkDone();
+    }
 })
 
-$('previous-button').addEventListener('click', function() {
-    bookmarkReady();
-    pageNumberElement = document.getElementById('page-number')
-    setPageByTurns(-1);
+$('previous-button').addEventListener('click', async function() {
+    let bookmark = document.querySelector('#bookmark');
+    let startPage = Number(bookmark.getAttribute('data-starting-page'));
+    let currentPage = (await setPageByTurns(-1)) + 1;
+    if (startPage != currentPage) {
+        bookmarkReady();
+    } else {
+        bookmarkDone();
+    }
 })
 
 document.querySelector('#bookmark').addEventListener('click', async function() {
     bookmarkDone();
     try {
-        await updateProgress(this.getAttribute('data-progress'), this.getAttribute('data-length'));
+        await updateProgress();
     } catch {
         alert('Sorry, there was an issue bookmarking this page.');
     }
@@ -36,7 +48,7 @@ function bookmarkDone() {
     bookmark.innerHTML = 'Bookmarked<i class="fa-solid fa-bookmark fa-lg ml-2"></i>';
     bookmark.classList.remove('btn-warning');
     bookmark.classList.add('btn-success');
-    bookmark.classList.add('disabled');
+    bookmark.setAttribute('disabled', '');
 }
 
 function bookmarkReady() {
@@ -44,7 +56,7 @@ function bookmarkReady() {
     bookmark.innerHTML = 'Bookmark Page<i class="fa-regular fa-bookmark fa-lg ml-2"></i>';
     bookmark.classList.add('btn-warning');
     bookmark.classList.remove('btn-success');
-    bookmark.classList.remove('disabled');
+    bookmark.removeAttribute('disabled');
 }
 
 /**
@@ -114,6 +126,10 @@ async function setPageContentByProgress(progress) {
             break
         }
     }
+    if (Number(progress) == text_list.length) {
+        pageNumber = bookInPages.length - 1;
+    }
+    document.querySelector('#bookmark').setAttribute('data-starting-page', pageNumber+1);
     setPageNumbers(pageNumber, bookInPages.length);
     setPageContent(bookInPages, 0);
 }
@@ -125,7 +141,8 @@ async function setPageByTurns(turns){
     let text_list = await getBook(characters)
     let bookInPages = splitIntoNumberedPages(text_list, lines);
     document.querySelector('#bookmark').setAttribute('data-length', text_list.length);
-    setPageContent(bookInPages, turns);
+    console.log("Length: " + text_list.length);
+    return setPageContent(bookInPages, turns);
 }
 
 function setPageContent(bookInPages, turns) {
@@ -136,6 +153,17 @@ function setPageContent(bookInPages, turns) {
     renderPage(page.content);
     setPageNumbers(pageNumber, bookInPages.length);
     document.querySelector('#bookmark').setAttribute('data-progress', page.num);
+    return pageNumber;
+}
+
+function updateProgress() {
+    let bookmark = document.querySelector('#bookmark');
+    let progress = bookmark.getAttribute('data-progress');
+    let length = bookmark.getAttribute('data-length');
+    if (bookmark.getAttribute('data-final-page') == 'true') {
+        progress = length;
+    }
+    postProgressToServer(progress, length);
 }
 
 function renderPage(page) {
@@ -170,7 +198,6 @@ function removeNumbers(text_list) {
         }
         return line;
     })
-    
 }
 
 function splitIntoPages(book, pageSize) {
@@ -190,7 +217,7 @@ function getNumAndText(line) {
     return [lines[0], lines[1]];
 }
 
-async function updateProgress(progress, length) {
+async function postProgressToServer(progress, length) {
     let bookText = document.getElementById('book-text')
     let url = bookText.getAttribute('data-ajax-update-url');
     let csrfToken = bookText.getAttribute('data-csrf-token');
@@ -251,8 +278,13 @@ function setPageNumbers(pageNumber, totalPages) {
     let pageNumberElement = document.querySelector('#page-number');
     pageNumberElement.innerHTML = `${pageNumber+1} of ${totalPages}`;
     pageNumberElement.setAttribute('data-page-number', pageNumber);
-    document.querySelector('#next-button').style.visibility = pageNumber >= totalPages-1 ?
-    'hidden' : 'visible';
+    if (pageNumber >= totalPages-1) {
+        document.querySelector('#next-button').style.visibility = 'hidden';
+        document.querySelector('#bookmark').setAttribute('data-final-page', 'true');
+    } else {
+        document.querySelector('#next-button').style.visibility = 'visible';
+        document.querySelector('#bookmark').setAttribute('data-final-page', 'false');
+    }
     document.querySelector('#previous-button').style.visibility = pageNumber <= 0 ?
     'hidden' : 'visible';
 }

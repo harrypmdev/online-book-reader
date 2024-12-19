@@ -74,6 +74,7 @@ body {
     text-align: center;
     margin: auto;
     margin-top: 2vh;
+    max-width: 100%;
   }
 
 #page-info {
