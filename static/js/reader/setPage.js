@@ -10,7 +10,6 @@ function setPageContent(bookInPages, turns) {
     renderPage(page.content);
     setPageNumbers(pageNumber, bookInPages.length);
     let progress = calculateProgress(page.num);
-    console.log("Setting progress: " + progress);
     document.querySelector('#page-number').setAttribute('data-progress', progress);
     return pageNumber;
 }

@@ -3,26 +3,23 @@ import { calculateCharacterLimit, getLineTotal} from './calculatePage.js';
 import { getLastLineNumber } from './numbering.js';
 import { setPageByTurns, setPageByProgress } from './setPage.js';
 
-window.onresize = async function() {
+window.onresize = function() {
     let pageNumberEl = document.getElementById('page-number');
     let progress = parseInt(pageNumberEl.getAttribute('data-progress'));
     let bookmark = document.querySelector('#bookmark');
-    // if (bookmark.getAttribute('data-clicked') == 'false') {
-    //     await handleBookMarkClick();
-    // } else {
-    //     updateProgress();
-    // }
-    console.log("Sending progress: " + progress);
-    loadPage(progress=progress);
-    // alert("Refreshing or resizing the window may affect how we present your book. " +
-    //     "Your page has been bookmarked so your progress is not affected."
-    // );
+    let clicked = true;
+    if (bookmark.getAttribute('data-clicked') == 'false') {
+        console.log("Clicked is false.");
+        bookmarkReady();
+        clicked = false;
+    }
+    loadPage(Event, progress, clicked);
 }
 
 //window.onresize = function(){ location.reload(); }
 document.addEventListener('DOMContentLoaded', loadPage, false);
 
-async function loadPage(e, progress="default") {
+async function loadPage(e, progress="default", bookmarkClicked=true) {
     let bookText = document.getElementById('book-text');
     bookText.setAttribute('data-lines', getLineTotal(bookText));
     let chars = calculateCharacterLimit(bookText);
@@ -34,7 +31,7 @@ async function loadPage(e, progress="default") {
         let pageNumberEl = document.getElementById('page-number');
         progress = parseInt(pageNumberEl.getAttribute('data-progress'));
     }
-    if (Number(progress) > 0) {
+    if (Number(progress) > 0 && bookmarkClicked) {
         bookmarkDone();
     }
     console.log("PROGRESS: at time ot setPageContentByProgress: "+ progress);
