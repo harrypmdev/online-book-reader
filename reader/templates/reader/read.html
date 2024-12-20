@@ -22,5 +22,5 @@
 </div>
 </div>
 {{ text_list|json_script:"text_list_json"}}
-<script src="{% static 'js/reader.js' %}"></script>
+<script type="module" src="{% static 'js/reader/reader.js' %}"></script>
 {% endblock content %}

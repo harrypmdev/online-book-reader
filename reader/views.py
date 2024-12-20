@@ -30,7 +30,6 @@ def ajax_update_progress(request):
         data = json.loads(request.body)
         try:
             user_book = UserBook.objects.get(id=data['book_id'], user=request.user)
-            print("PROGRESS RECEIVED: " + data['progress'])
             user_book.progress = data['progress']
             user_book.update_percent_progress(data['length'])
             user_book.save()

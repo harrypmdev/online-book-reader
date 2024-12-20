@@ -1,32 +1,47 @@
-0𓀴﻿The Project Gutenberg eBook of A Modest Proposal
+0𓀴﻿The Project Gutenberg eBook
+ of A Modest Proposal
 1𓀴
-2𓀴This ebook is for the use of anyone anywhere in the United States and
-3𓀴most other parts of the world at no cost and with almost no restrictions
-4𓀴whatsoever. You may copy it, give it away or re-use it under the terms
-5𓀴of the Project Gutenberg License included with this ebook or online
-6𓀴at www.gutenberg.org. If you are not located in the United States,
-7𓀴you will have to check the laws of the country where you are located
+2𓀴This ebook is for the use of anyone
+ anywhere in the United States and
+3𓀴most other parts of the world at no
+ cost and with almost no restrictions
+4𓀴whatsoever. You may copy it, give it
+ away or re-use it under the terms
+5𓀴of the Project Gutenberg
+ License included
+ with this ebook or online
+6𓀴at www.gutenberg.org. If you are
+ not located in the United States,
+7𓀴you will have to check the laws of
+ the country where you are located
 8𓀴before using this eBook.
 9𓀴
 10𓀴Title: A Modest Proposal
 11𓀴
 12𓀴Author: Jonathan Swift
 13𓀴
-14𓀴Release date: October 1, 1997 [eBook #1080]
-15𓀴                Most recently updated: October 29, 2024
+14𓀴Release date: October
+ 1, 1997 [eBook #1080]
+15𓀴                Most recently
+ updated: October 29, 2024
 16𓀴
 17𓀴Language: English
 18𓀴
-19𓀴Credits: An Anonymous Volunteer and David Widger
+19𓀴Credits: An Anonymous Volunteer
+ and David Widger
 20𓀴
 21𓀴
-22𓀴*** START OF THE PROJECT GUTENBERG EBOOK A MODEST PROPOSAL ***
+22𓀴*** START OF THE PROJECT GUTENBERG
+ EBOOK A MODEST PROPOSAL ***
 23𓀴
 24𓀴A Modest Proposal
 25𓀴
-26𓀴For preventing the children of poor people in Ireland,
-27𓀴from being a burden on their parents or country,
-28𓀴and for making them beneficial to the publick.
+26𓀴For preventing the children
+ of poor people in Ireland,
+27𓀴from being a burden on their
+ parents or country,
+28𓀴and for making them beneficial
+ to the publick.
 29𓀴
 30𓀴by Dr. Jonathan Swift
 31𓀴
@@ -35,682 +50,1487 @@
 34𓀴
 35𓀴
 36𓀴
-37𓀴It is a melancholy object to those, who walk through this great town,
-38𓀴or travel in the country, when they see the streets, the roads, and
-39𓀴cabbin-doors crowded with beggars of the female sex, followed by three,
-40𓀴four, or six children, all in rags, and importuning every passenger for
-41𓀴an alms. These mothers, instead of being able to work for their honest
-42𓀴livelihood, are forced to employ all their time in stroling to beg
-43𓀴sustenance for their helpless infants who, as they grow up, either turn
-44𓀴thieves for want of work, or leave their dear native country, to fight
-45𓀴for the Pretender in Spain, or sell themselves to the Barbadoes.
+37𓀴It is a melancholy object to those,
+ who walk through this great town,
+38𓀴or travel in the country, when they
+ see the streets, the roads, and
+39𓀴cabbin-doors crowded
+ with beggars of
+ the female sex, followed by three,
+40𓀴four, or six children, all in rags,
+ and importuning every passenger for
+41𓀴an alms. These mothers, instead of
+ being able to work for their honest
+42𓀴livelihood, are forced to employ
+ all their time in stroling to beg
+43𓀴sustenance for their
+ helpless infants
+ who, as they grow up, either turn
+44𓀴thieves for want of work, or leave
+ their dear native country, to fight
+45𓀴for the Pretender in Spain, or sell
+ themselves to the Barbadoes.
 46𓀴
-47𓀴I think it is agreed by all parties, that this prodigious number of
-48𓀴children in the arms, or on the backs, or at the heels of their
-49𓀴mothers, and frequently of their fathers, is in the present deplorable
-50𓀴state of the kingdom, a very great additional grievance; and therefore
-51𓀴whoever could find out a fair, cheap and easy method of making these
-52𓀴children sound and useful members of the commonwealth, would deserve so
-53𓀴well of the publick, as to have his statue set up for a preserver of
+47𓀴I think it is agreed
+ by all parties,
+ that this prodigious number of
+48𓀴children in the arms, or on the
+ backs, or at the heels of their
+49𓀴mothers, and frequently
+ of their fathers,
+ is in the present deplorable
+50𓀴state of the kingdom, a very great
+ additional grievance; and therefore
+51𓀴whoever could find
+ out a fair, cheap
+ and easy method of making these
+52𓀴children sound and
+ useful members of
+ the commonwealth, would deserve so
+53𓀴well of the publick, as to have his
+ statue set up for a preserver of
 54𓀴the nation.
 55𓀴
-56𓀴But my intention is very far from being confined to provide only for
-57𓀴the children of professed beggars: it is of a much greater extent, and
-58𓀴shall take in the whole number of infants at a certain age, who are
-59𓀴born of parents in effect as little able to support them, as those who
+56𓀴But my intention is very far from
+ being confined to provide only for
+57𓀴the children of professed beggars:
+ it is of a much greater extent, and
+58𓀴shall take in the whole number of
+ infants at a certain age, who are
+59𓀴born of parents in effect as little
+ able to support them, as those who
 60𓀴demand our charity in the streets.
 61𓀴
-62𓀴As to my own part, having turned my thoughts for many years upon this
-63𓀴important subject, and maturely weighed the several schemes of our
-64𓀴projectors, I have always found them grossly mistaken in their
-65𓀴computation. It is true, a child just dropt from its dam, may be
-66𓀴supported by her milk, for a solar year, with little other nourishment:
-67𓀴at most not above the value of two shillings, which the mother may
-68𓀴certainly get, or the value in scraps, by her lawful occupation of
-69𓀴begging; and it is exactly at one year old that I propose to provide
-70𓀴for them in such a manner, as, instead of being a charge upon their
-71𓀴parents, or the parish, or wanting food and raiment for the rest of
-72𓀴their lives, they shall, on the contrary, contribute to the feeding,
-73𓀴and partly to the clothing of many thousands.
+62𓀴As to my own part, having turned my
+ thoughts for many years upon this
+63𓀴important subject,
+ and maturely weighed
+ the several schemes of our
+64𓀴projectors, I have always found
+ them grossly mistaken in their
+65𓀴computation. It is true, a child
+ just dropt from its dam, may be
+66𓀴supported by her milk, for a solar
+ year, with little other nourishment:
+67𓀴at most not above the value of two
+ shillings, which the mother may
+68𓀴certainly get, or the
+ value in scraps,
+ by her lawful occupation of
+69𓀴begging; and it is exactly at one
+ year old that I propose to provide
+70𓀴for them in such a
+ manner, as, instead
+ of being a charge upon their
+71𓀴parents, or the parish, or wanting
+ food and raiment for the rest of
+72𓀴their lives, they shall,
+ on the contrary,
+ contribute to the feeding,
+73𓀴and partly to the clothing
+ of many thousands.
 74𓀴
-75𓀴There is likewise another great advantage in my scheme, that it will
-76𓀴prevent those voluntary abortions, and that horrid practice of women
-77𓀴murdering their bastard children, alas! too frequent among us,
-78𓀴sacrificing the poor innocent babes, I doubt, more to avoid the expence
-79𓀴than the shame, which would move tears and pity in the most savage and
+75𓀴There is likewise another
+ great advantage
+ in my scheme, that it will
+76𓀴prevent those voluntary abortions,
+ and that horrid practice of women
+77𓀴murdering their bastard children,
+ alas! too frequent among us,
+78𓀴sacrificing the poor
+ innocent babes,
+ I doubt, more to avoid the expence
+79𓀴than the shame, which
+ would move tears
+ and pity in the most savage and
 80𓀴inhuman breast.
 81𓀴
-82𓀴The number of souls in this kingdom being usually reckoned one million
-83𓀴and a half, of these I calculate there may be about two hundred
-84𓀴thousand couple, whose wives are breeders; from which number I subtract
-85𓀴thirty thousand couple, who are able to maintain their own children,
-86𓀴(although I apprehend there cannot be so many under the present
-87𓀴distresses of the kingdom) but this being granted, there will remain a
-88𓀴hundred and seventy thousand breeders. I again subtract fifty thousand,
-89𓀴for those women who miscarry, or whose children die by accident or
-90𓀴disease within the year. There only remain a hundred and twenty
-91𓀴thousand children of poor parents annually born. The question therefore
-92𓀴is, How this number shall be reared and provided for? which, as I have
-93𓀴already said, under the present situation of affairs, is utterly
-94𓀴impossible by all the methods hitherto proposed. For we can neither
-95𓀴employ them in handicraft or agriculture; they neither build houses, (I
-96𓀴mean in the country) nor cultivate land: they can very seldom pick up a
-97𓀴livelihood by stealing till they arrive at six years old; except where
-98𓀴they are of towardly parts, although I confess they learn the rudiments
-99𓀴much earlier; during which time they can however be properly looked
-100𓀴upon only as probationers; as I have been informed by a principal
-101𓀴gentleman in the county of Cavan, who protested to me, that he never
-102𓀴knew above one or two instances under the age of six, even in a part of
-103𓀴the kingdom so renowned for the quickest proficiency in that art.
+82𓀴The number of souls in this kingdom
+ being usually reckoned one million
+83𓀴and a half, of these I calculate
+ there may be about two hundred
+84𓀴thousand couple, whose
+ wives are breeders;
+ from which number I subtract
+85𓀴thirty thousand couple,
+ who are able
+ to maintain their own children,
+86𓀴(although I apprehend there cannot
+ be so many under the present
+87𓀴distresses of the kingdom) but this
+ being granted, there will remain a
+88𓀴hundred and seventy
+ thousand breeders.
+ I again subtract fifty thousand,
+89𓀴for those women who miscarry, or
+ whose children die by accident or
+90𓀴disease within the year. There
+ only remain a hundred and twenty
+91𓀴thousand children of
+ poor parents annually
+ born. The question therefore
+92𓀴is, How this number shall be reared
+ and provided for? which, as I have
+93𓀴already said, under the present
+ situation of affairs, is utterly
+94𓀴impossible by all the
+ methods hitherto
+ proposed. For we can neither
+95𓀴employ them in handicraft
+ or agriculture;
+ they neither build houses, (I
+96𓀴mean in the country) nor cultivate
+ land: they can very seldom pick up a
+97𓀴livelihood by stealing
+ till they arrive
+ at six years old; except where
+98𓀴they are of towardly
+ parts, although
+ I confess they learn the rudiments
+99𓀴much earlier; during
+ which time they
+ can however be properly looked
+100𓀴upon only as probationers; as I
+ have been informed by a principal
+101𓀴gentleman in the county of Cavan,
+ who protested to me, that he never
+102𓀴knew above one or
+ two instances under
+ the age of six, even in a part of
+103𓀴the kingdom so renowned for the
+ quickest proficiency in that art.
 104𓀴
-105𓀴I am assured by our merchants, that a boy or a girl, before twelve
-106𓀴years old, is no saleable commodity, and even when they come to this
-107𓀴age, they will not yield above three pounds, or three pounds and half a
-108𓀴crown at most, on the exchange; which cannot turn to account either to
-109𓀴the parents or kingdom, the charge of nutriments and rags having been
+105𓀴I am assured by our
+ merchants, that
+ a boy or a girl, before twelve
+106𓀴years old, is no
+ saleable commodity,
+ and even when they come to this
+107𓀴age, they will not
+ yield above three
+ pounds, or three pounds and half a
+108𓀴crown at most, on
+ the exchange; which
+ cannot turn to account either to
+109𓀴the parents or kingdom, the charge
+ of nutriments and rags having been
 110𓀴at least four times that value.
 111𓀴
-112𓀴I shall now therefore humbly propose my own thoughts, which I hope will
-113𓀴not be liable to the least objection.
+112𓀴I shall now therefore
+ humbly propose
+ my own thoughts, which I hope will
+113𓀴not be liable to the
+ least objection.
 114𓀴
-115𓀴I have been assured by a very knowing American of my acquaintance in
-116𓀴London, that a young healthy child well nursed, is, at a year old, a
-117𓀴most delicious nourishing and wholesome food, whether stewed, roasted,
-118𓀴baked, or boiled; and I make no doubt that it will equally serve in a
+115𓀴I have been assured
+ by a very knowing
+ American of my acquaintance in
+116𓀴London, that a young healthy child
+ well nursed, is, at a year old, a
+117𓀴most delicious nourishing
+ and wholesome
+ food, whether stewed, roasted,
+118𓀴baked, or boiled;
+ and I make no doubt
+ that it will equally serve in a
 119𓀴fricasee, or a ragoust.
 120𓀴
-121𓀴I do therefore humbly offer it to publick consideration, that of the
-122𓀴hundred and twenty thousand children, already computed, twenty thousand
-123𓀴may be reserved for breed, whereof only one fourth part to be males;
-124𓀴which is more than we allow to sheep, black cattle, or swine, and my
-125𓀴reason is, that these children are seldom the fruits of marriage, a
-126𓀴circumstance not much regarded by our savages, therefore, one male will
-127𓀴be sufficient to serve four females. That the remaining hundred
-128𓀴thousand may, at a year old, be offered in sale to the persons of
-129𓀴quality and fortune, through the kingdom, always advising the mother to
-130𓀴let them suck plentifully in the last month, so as to render them
-131𓀴plump, and fat for a good table. A child will make two dishes at an
-132𓀴entertainment for friends, and when the family dines alone, the fore or
-133𓀴hind quarter will make a reasonable dish, and seasoned with a little
-134𓀴pepper or salt, will be very good boiled on the fourth day, especially
+121𓀴I do therefore humbly offer it to
+ publick consideration, that of the
+122𓀴hundred and twenty
+ thousand children,
+ already computed, twenty thousand
+123𓀴may be reserved for breed, whereof
+ only one fourth part to be males;
+124𓀴which is more than
+ we allow to sheep,
+ black cattle, or swine, and my
+125𓀴reason is, that these children are
+ seldom the fruits of marriage, a
+126𓀴circumstance not much
+ regarded by our
+ savages, therefore, one male will
+127𓀴be sufficient to
+ serve four females.
+ That the remaining hundred
+128𓀴thousand may, at a year old, be
+ offered in sale to the persons of
+129𓀴quality and fortune,
+ through the kingdom,
+ always advising the mother to
+130𓀴let them suck plentifully in the
+ last month, so as to render them
+131𓀴plump, and fat for a good table.
+ A child will make two dishes at an
+132𓀴entertainment for
+ friends, and when
+ the family dines alone, the fore or
+133𓀴hind quarter will
+ make a reasonable
+ dish, and seasoned with a little
+134𓀴pepper or salt, will be very good
+ boiled on the fourth day, especially
 135𓀴in winter.
 136𓀴
-137𓀴I have reckoned upon a medium, that a child just born will weigh 12
-138𓀴pounds, and in a solar year, if tolerably nursed, encreaseth to 28
+137𓀴I have reckoned upon
+ a medium, that
+ a child just born will weigh 12
+138𓀴pounds, and in a solar year, if
+ tolerably nursed, encreaseth to 28
 139𓀴pounds.
 140𓀴
-141𓀴I grant this food will be somewhat dear, and therefore very proper for
-142𓀴landlords, who, as they have already devoured most of the parents, seem
-143𓀴to have the best title to the children.
+141𓀴I grant this food will be somewhat
+ dear, and therefore very proper for
+142𓀴landlords, who, as
+ they have already
+ devoured most of the parents, seem
+143𓀴to have the best title
+ to the children.
 144𓀴
-145𓀴Infant’s flesh will be in season throughout the year, but more
-146𓀴plentiful in March, and a little before and after; for we are told by a
-147𓀴grave author, an eminent French physician, that fish being a prolifick
-148𓀴dyet, there are more children born in Roman Catholick countries about
-149𓀴nine months after Lent, than at any other season; therefore, reckoning
-150𓀴a year after Lent, the markets will be more glutted than usual, because
-151𓀴the number of Popish infants, is at least three to one in this kingdom,
-152𓀴and therefore it will have one other collateral advantage, by lessening
+145𓀴Infant’s flesh will be in season
+ throughout the year, but more
+146𓀴plentiful in March,
+ and a little before
+ and after; for we are told by a
+147𓀴grave author, an eminent
+ French physician,
+ that fish being a prolifick
+148𓀴dyet, there are more children born
+ in Roman Catholick countries about
+149𓀴nine months after
+ Lent, than at any
+ other season; therefore, reckoning
+150𓀴a year after Lent,
+ the markets will
+ be more glutted than usual, because
+151𓀴the number of Popish
+ infants, is at
+ least three to one in this kingdom,
+152𓀴and therefore it
+ will have one other
+ collateral advantage, by lessening
 153𓀴the number of Papists among us.
 154𓀴
-155𓀴I have already computed the charge of nursing a beggar’s child (in
-156𓀴which list I reckon all cottagers, labourers, and four-fifths of the
-157𓀴farmers) to be about two shillings per annum, rags included; and I
-158𓀴believe no gentleman would repine to give ten shillings for the carcass
-159𓀴of a good fat child, which, as I have said, will make four dishes of
-160𓀴excellent nutritive meat, when he hath only some particular friend, or
-161𓀴his own family to dine with him. Thus the squire will learn to be a
-162𓀴good landlord, and grow popular among his tenants, the mother will have
-163𓀴eight shillings neat profit, and be fit for work till she produces
+155𓀴I have already computed the charge
+ of nursing a beggar’s child (in
+156𓀴which list I reckon all cottagers,
+ labourers, and four-fifths of the
+157𓀴farmers) to be about two shillings
+ per annum, rags included; and I
+158𓀴believe no gentleman
+ would repine to
+ give ten shillings for the carcass
+159𓀴of a good fat child, which, as I
+ have said, will make four dishes of
+160𓀴excellent nutritive meat, when he
+ hath only some particular friend, or
+161𓀴his own family to dine with him.
+ Thus the squire will learn to be a
+162𓀴good landlord, and
+ grow popular among
+ his tenants, the mother will have
+163𓀴eight shillings neat profit, and
+ be fit for work till she produces
 164𓀴another child.
 165𓀴
-166𓀴Those who are more thrifty (as I must confess the times require) may
-167𓀴flay the carcass; the skin of which, artificially dressed, will make
-168𓀴admirable gloves for ladies, and summer boots for fine gentlemen.
+166𓀴Those who are more thrifty (as I
+ must confess the times require) may
+167𓀴flay the carcass;
+ the skin of which,
+ artificially dressed, will make
+168𓀴admirable gloves for ladies, and
+ summer boots for fine gentlemen.
 169𓀴
-170𓀴As to our City of Dublin, shambles may be appointed for this purpose,
-171𓀴in the most convenient parts of it, and butchers we may be assured will
-172𓀴not be wanting; although I rather recommend buying the children alive,
-173𓀴and dressing them hot from the knife, as we do roasting pigs.
+170𓀴As to our City of Dublin, shambles
+ may be appointed for this purpose,
+171𓀴in the most convenient
+ parts of it,
+ and butchers we may be assured will
+172𓀴not be wanting; although I rather
+ recommend buying the children alive,
+173𓀴and dressing them hot from the
+ knife, as we do roasting pigs.
 174𓀴
-175𓀴A very worthy person, a true lover of his country, and whose virtues I
-176𓀴highly esteem, was lately pleased in discoursing on this matter, to
-177𓀴offer a refinement upon my scheme. He said, that many gentlemen of this
-178𓀴kingdom, having of late destroyed their deer, he conceived that the
-179𓀴want of venison might be well supplied by the bodies of young lads and
-180𓀴maidens, not exceeding fourteen years of age, nor under twelve; so
-181𓀴great a number of both sexes in every county being now ready to starve
-182𓀴for want of work and service: and these to be disposed of by their
-183𓀴parents if alive, or otherwise by their nearest relations. But with due
-184𓀴deference to so excellent a friend, and so deserving a patriot, I
-185𓀴cannot be altogether in his sentiments; for as to the males, my
-186𓀴American acquaintance assured me from frequent experience, that their
-187𓀴flesh was generally tough and lean, like that of our schoolboys, by
-188𓀴continual exercise, and their taste disagreeable, and to fatten them
-189𓀴would not answer the charge. Then as to the females, it would, I think,
-190𓀴with humble submission, be a loss to the publick, because they soon
-191𓀴would become breeders themselves: and besides, it is not improbable
-192𓀴that some scrupulous people might be apt to censure such a practice,
-193𓀴(although indeed very unjustly) as a little bordering upon cruelty,
-194𓀴which, I confess, hath always been with me the strongest objection
-195𓀴against any project, how well soever intended.
+175𓀴A very worthy person, a true lover
+ of his country, and whose virtues I
+176𓀴highly esteem, was lately pleased
+ in discoursing on this matter, to
+177𓀴offer a refinement upon my scheme.
+ He said, that many gentlemen of this
+178𓀴kingdom, having of late destroyed
+ their deer, he conceived that the
+179𓀴want of venison might
+ be well supplied
+ by the bodies of young lads and
+180𓀴maidens, not exceeding fourteen
+ years of age, nor under twelve; so
+181𓀴great a number of
+ both sexes in every
+ county being now ready to starve
+182𓀴for want of work and service: and
+ these to be disposed of by their
+183𓀴parents if alive, or
+ otherwise by their
+ nearest relations. But with due
+184𓀴deference to so excellent
+ a friend,
+ and so deserving a patriot, I
+185𓀴cannot be altogether
+ in his sentiments;
+ for as to the males, my
+186𓀴American acquaintance
+ assured me from
+ frequent experience, that their
+187𓀴flesh was generally
+ tough and lean,
+ like that of our schoolboys, by
+188𓀴continual exercise,
+ and their taste
+ disagreeable, and to fatten them
+189𓀴would not answer
+ the charge. Then as
+ to the females, it would, I think,
+190𓀴with humble submission, be a loss
+ to the publick, because they soon
+191𓀴would become breeders themselves:
+ and besides, it is not improbable
+192𓀴that some scrupulous people might
+ be apt to censure such a practice,
+193𓀴(although indeed very unjustly) as
+ a little bordering upon cruelty,
+194𓀴which, I confess, hath always been
+ with me the strongest objection
+195𓀴against any project, how
+ well soever intended.
 196𓀴
-197𓀴But in order to justify my friend, he confessed, that this expedient
-198𓀴was put into his head by the famous Psalmanaazor, a native of the
-199𓀴island Formosa, who came from thence to London, above twenty years ago,
-200𓀴and in conversation told my friend, that in his country, when any young
-201𓀴person happened to be put to death, the executioner sold the carcass to
-202𓀴persons of quality, as a prime dainty; and that, in his time, the body
-203𓀴of a plump girl of fifteen, who was crucified for an attempt to poison
-204𓀴the Emperor, was sold to his imperial majesty’s prime minister of
-205𓀴state, and other great mandarins of the court in joints from the
-206𓀴gibbet, at four hundred crowns. Neither indeed can I deny, that if the
-207𓀴same use were made of several plump young girls in this town, who
-208𓀴without one single groat to their fortunes, cannot stir abroad without
-209𓀴a chair, and appear at a playhouse and assemblies in foreign fineries
-210𓀴which they never will pay for, the kingdom would not be the worse.
+197𓀴But in order to justify my friend,
+ he confessed, that this expedient
+198𓀴was put into his
+ head by the famous
+ Psalmanaazor, a native of the
+199𓀴island Formosa, who
+ came from thence
+ to London, above twenty years ago,
+200𓀴and in conversation
+ told my friend,
+ that in his country, when any young
+201𓀴person happened to
+ be put to death,
+ the executioner sold the carcass to
+202𓀴persons of quality,
+ as a prime dainty;
+ and that, in his time, the body
+203𓀴of a plump girl of
+ fifteen, who was
+ crucified for an attempt to poison
+204𓀴the Emperor, was sold
+ to his imperial
+ majesty’s prime minister of
+205𓀴state, and other great mandarins
+ of the court in joints from the
+206𓀴gibbet, at four hundred
+ crowns. Neither
+ indeed can I deny, that if the
+207𓀴same use were made
+ of several plump
+ young girls in this town, who
+208𓀴without one single groat to their
+ fortunes, cannot stir abroad without
+209𓀴a chair, and appear at a playhouse
+ and assemblies in foreign fineries
+210𓀴which they never will pay for, the
+ kingdom would not be the worse.
 211𓀴
-212𓀴Some persons of a desponding spirit are in great concern about that
-213𓀴vast number of poor people, who are aged, diseased, or maimed; and I
-214𓀴have been desired to employ my thoughts what course may be taken, to
-215𓀴ease the nation of so grievous an incumbrance. But I am not in the
-216𓀴least pain upon that matter, because it is very well known, that they
-217𓀴are every day dying, and rotting, by cold and famine, and filth, and
-218𓀴vermin, as fast as can be reasonably expected. And as to the young
-219𓀴labourers, they are now in almost as hopeful a condition. They cannot
-220𓀴get work, and consequently pine away from want of nourishment, to a
-221𓀴degree, that if at any time they are accidentally hired to common
-222𓀴labour, they have not strength to perform it, and thus the country and
-223𓀴themselves are happily delivered from the evils to come.
+212𓀴Some persons of a
+ desponding spirit
+ are in great concern about that
+213𓀴vast number of poor
+ people, who are
+ aged, diseased, or maimed; and I
+214𓀴have been desired to
+ employ my thoughts
+ what course may be taken, to
+215𓀴ease the nation of so grievous an
+ incumbrance. But I am not in the
+216𓀴least pain upon that
+ matter, because
+ it is very well known, that they
+217𓀴are every day dying, and rotting,
+ by cold and famine, and filth, and
+218𓀴vermin, as fast as
+ can be reasonably
+ expected. And as to the young
+219𓀴labourers, they are now in almost
+ as hopeful a condition. They cannot
+220𓀴get work, and consequently
+ pine away
+ from want of nourishment, to a
+221𓀴degree, that if at any time they
+ are accidentally hired to common
+222𓀴labour, they have not strength to
+ perform it, and thus the country and
+223𓀴themselves are happily delivered
+ from the evils to come.
 224𓀴
-225𓀴I have too long digressed, and therefore shall return to my subject. I
-226𓀴think the advantages by the proposal which I have made are obvious and
-227𓀴many, as well as of the highest importance.
+225𓀴I have too long digressed,
+ and therefore
+ shall return to my subject. I
+226𓀴think the advantages
+ by the proposal
+ which I have made are obvious and
+227𓀴many, as well as of the
+ highest importance.
 228𓀴
-229𓀴For first, as I have already observed, it would greatly lessen the
-230𓀴number of Papists, with whom we are yearly overrun, being the principal
-231𓀴breeders of the nation, as well as our most dangerous enemies, and who
-232𓀴stay at home on purpose with a design to deliver the kingdom to the
-233𓀴Pretender, hoping to take their advantage by the absence of so many
-234𓀴good Protestants, who have chosen rather to leave their country, than
-235𓀴stay at home and pay tithes against their conscience to an episcopal
+229𓀴For first, as I have
+ already observed,
+ it would greatly lessen the
+230𓀴number of Papists,
+ with whom we are
+ yearly overrun, being the principal
+231𓀴breeders of the nation, as well as
+ our most dangerous enemies, and who
+232𓀴stay at home on purpose
+ with a design
+ to deliver the kingdom to the
+233𓀴Pretender, hoping to
+ take their advantage
+ by the absence of so many
+234𓀴good Protestants, who have chosen
+ rather to leave their country, than
+235𓀴stay at home and
+ pay tithes against
+ their conscience to an episcopal
 236𓀴curate.
 237𓀴
-238𓀴Secondly, The poorer tenants will have something valuable of their own,
-239𓀴which by law may be made liable to a distress, and help to pay their
-240𓀴landlord’s rent, their corn and cattle being already seized, and money
+238𓀴Secondly, The poorer
+ tenants will have
+ something valuable of their own,
+239𓀴which by law may be made liable to
+ a distress, and help to pay their
+240𓀴landlord’s rent, their
+ corn and cattle
+ being already seized, and money
 241𓀴a thing unknown.
 242𓀴
-243𓀴Thirdly, Whereas the maintainance of a hundred thousand children, from
-244𓀴two years old, and upwards, cannot be computed at less than ten
-245𓀴shillings a piece per annum, the nation’s stock will be thereby
-246𓀴encreased fifty thousand pounds per annum, besides the profit of a new
-247𓀴dish, introduced to the tables of all gentlemen of fortune in the
-248𓀴kingdom, who have any refinement in taste. And the money will circulate
-249𓀴among our selves, the goods being entirely of our own growth and
+243𓀴Thirdly, Whereas the maintainance
+ of a hundred thousand children, from
+244𓀴two years old, and upwards, cannot
+ be computed at less than ten
+245𓀴shillings a piece per annum, the
+ nation’s stock will be thereby
+246𓀴encreased fifty thousand
+ pounds per
+ annum, besides the profit of a new
+247𓀴dish, introduced to the tables of
+ all gentlemen of fortune in the
+248𓀴kingdom, who have
+ any refinement in
+ taste. And the money will circulate
+249𓀴among our selves, the goods being
+ entirely of our own growth and
 250𓀴manufacture.
 251𓀴
-252𓀴Fourthly, The constant breeders, besides the gain of eight shillings
-253𓀴sterling per annum by the sale of their children, will be rid of the
-254𓀴charge of maintaining them after the first year.
+252𓀴Fourthly, The constant breeders,
+ besides the gain of eight shillings
+253𓀴sterling per annum by the sale of
+ their children, will be rid of the
+254𓀴charge of maintaining them
+ after the first year.
 255𓀴
-256𓀴Fifthly, This food would likewise bring great custom to taverns, where
-257𓀴the vintners will certainly be so prudent as to procure the best
-258𓀴receipts for dressing it to perfection; and consequently have their
-259𓀴houses frequented by all the fine gentlemen, who justly value
-260𓀴themselves upon their knowledge in good eating; and a skilful cook, who
-261𓀴understands how to oblige his guests, will contrive to make it as
+256𓀴Fifthly, This food would likewise
+ bring great custom to taverns, where
+257𓀴the vintners will certainly be
+ so prudent as to procure the best
+258𓀴receipts for dressing
+ it to perfection;
+ and consequently have their
+259𓀴houses frequented by all the fine
+ gentlemen, who justly value
+260𓀴themselves upon their knowledge in
+ good eating; and a skilful cook, who
+261𓀴understands how to
+ oblige his guests,
+ will contrive to make it as
 262𓀴expensive as they please.
 263𓀴
-264𓀴Sixthly, This would be a great inducement to marriage, which all wise
-265𓀴nations have either encouraged by rewards, or enforced by laws and
-266𓀴penalties. It would encrease the care and tenderness of mothers towards
-267𓀴their children, when they were sure of a settlement for life to the
-268𓀴poor babes, provided in some sort by the publick, to their annual
-269𓀴profit instead of expence. We should soon see an honest emulation among
-270𓀴the married women, which of them could bring the fattest child to the
-271𓀴market. Men would become as fond of their wives, during the time of
-272𓀴their pregnancy, as they are now of their mares in foal, their cows in
-273𓀴calf, or sows when they are ready to farrow; nor offer to beat or kick
-274𓀴them (as is too frequent a practice) for fear of a miscarriage.
+264𓀴Sixthly, This would
+ be a great inducement
+ to marriage, which all wise
+265𓀴nations have either encouraged by
+ rewards, or enforced by laws and
+266𓀴penalties. It would
+ encrease the care
+ and tenderness of mothers towards
+267𓀴their children, when
+ they were sure
+ of a settlement for life to the
+268𓀴poor babes, provided in some sort
+ by the publick, to their annual
+269𓀴profit instead of
+ expence. We should
+ soon see an honest emulation among
+270𓀴the married women,
+ which of them could
+ bring the fattest child to the
+271𓀴market. Men would become as fond
+ of their wives, during the time of
+272𓀴their pregnancy,
+ as they are now of
+ their mares in foal, their cows in
+273𓀴calf, or sows when they are ready
+ to farrow; nor offer to beat or kick
+274𓀴them (as is too frequent
+ a practice)
+ for fear of a miscarriage.
 275𓀴
-276𓀴Many other advantages might be enumerated. For instance, the addition
-277𓀴of some thousand carcasses in our exportation of barrel’d beef: the
-278𓀴propagation of swine’s flesh, and improvement in the art of making good
-279𓀴bacon, so much wanted among us by the great destruction of pigs, too
-280𓀴frequent at our tables; which are no way comparable in taste or
-281𓀴magnificence to a well grown, fat yearling child, which roasted whole
-282𓀴will make a considerable figure at a Lord Mayor’s feast, or any other
-283𓀴publick entertainment. But this, and many others, I omit, being
+276𓀴Many other advantages
+ might be enumerated.
+ For instance, the addition
+277𓀴of some thousand carcasses in our
+ exportation of barrel’d beef: the
+278𓀴propagation of swine’s
+ flesh, and improvement
+ in the art of making good
+279𓀴bacon, so much wanted among us by
+ the great destruction of pigs, too
+280𓀴frequent at our tables; which are
+ no way comparable in taste or
+281𓀴magnificence to a well grown, fat
+ yearling child, which roasted whole
+282𓀴will make a considerable figure at
+ a Lord Mayor’s feast, or any other
+283𓀴publick entertainment. But this,
+ and many others, I omit, being
 284𓀴studious of brevity.
 285𓀴
-286𓀴Supposing that one thousand families in this city, would be constant
-287𓀴customers for infants flesh, besides others who might have it at merry
-288𓀴meetings, particularly at weddings and christenings, I compute that
-289𓀴Dublin would take off annually about twenty thousand carcasses; and the
-290𓀴rest of the kingdom (where probably they will be sold somewhat cheaper)
+286𓀴Supposing that one
+ thousand families
+ in this city, would be constant
+287𓀴customers for infants
+ flesh, besides
+ others who might have it at merry
+288𓀴meetings, particularly at weddings
+ and christenings, I compute that
+289𓀴Dublin would take
+ off annually about
+ twenty thousand carcasses; and the
+290𓀴rest of the kingdom
+ (where probably
+ they will be sold somewhat cheaper)
 291𓀴the remaining eighty thousand.
 292𓀴
-293𓀴I can think of no one objection, that will possibly be raised against
-294𓀴this proposal, unless it should be urged, that the number of people
-295𓀴will be thereby much lessened in the kingdom. This I freely own, and
-296𓀴was indeed one principal design in offering it to the world. I desire
-297𓀴the reader will observe, that I calculate my remedy for this one
-298𓀴individual Kingdom of Ireland, and for no other that ever was, is, or,
-299𓀴I think, ever can be upon Earth. Therefore let no man talk to me of
-300𓀴other expedients: Of taxing our absentees at five shillings a pound: Of
-301𓀴using neither clothes, nor houshold furniture, except what is of our
-302𓀴own growth and manufacture: Of utterly rejecting the materials and
-303𓀴instruments that promote foreign luxury: Of curing the expensiveness of
-304𓀴pride, vanity, idleness, and gaming in our women: Of introducing a vein
-305𓀴of parsimony, prudence and temperance: Of learning to love our country,
-306𓀴wherein we differ even from Laplanders, and the inhabitants of
-307𓀴Topinamboo: Of quitting our animosities and factions, nor acting any
-308𓀴longer like the Jews, who were murdering one another at the very moment
-309𓀴their city was taken: Of being a little cautious not to sell our
-310𓀴country and consciences for nothing: Of teaching landlords to have at
-311𓀴least one degree of mercy towards their tenants. Lastly, of putting a
-312𓀴spirit of honesty, industry, and skill into our shopkeepers, who, if a
-313𓀴resolution could now be taken to buy only our native goods, would
-314𓀴immediately unite to cheat and exact upon us in the price, the measure,
-315𓀴and the goodness, nor could ever yet be brought to make one fair
-316𓀴proposal of just dealing, though often and earnestly invited to it.
+293𓀴I can think of no
+ one objection, that
+ will possibly be raised against
+294𓀴this proposal, unless it should be
+ urged, that the number of people
+295𓀴will be thereby much lessened in
+ the kingdom. This I freely own, and
+296𓀴was indeed one principal design in
+ offering it to the world. I desire
+297𓀴the reader will observe, that I
+ calculate my remedy for this one
+298𓀴individual Kingdom of Ireland, and
+ for no other that ever was, is, or,
+299𓀴I think, ever can be upon Earth.
+ Therefore let no man talk to me of
+300𓀴other expedients: Of
+ taxing our absentees
+ at five shillings a pound: Of
+301𓀴using neither clothes,
+ nor houshold
+ furniture, except what is of our
+302𓀴own growth and manufacture:
+ Of utterly
+ rejecting the materials and
+303𓀴instruments that promote
+ foreign luxury:
+ Of curing the expensiveness of
+304𓀴pride, vanity, idleness,
+ and gaming
+ in our women: Of introducing a vein
+305𓀴of parsimony, prudence
+ and temperance:
+ Of learning to love our country,
+306𓀴wherein we differ even
+ from Laplanders,
+ and the inhabitants of
+307𓀴Topinamboo: Of quitting
+ our animosities
+ and factions, nor acting any
+308𓀴longer like the Jews,
+ who were murdering
+ one another at the very moment
+309𓀴their city was taken: Of being
+ a little cautious not to sell our
+310𓀴country and consciences
+ for nothing:
+ Of teaching landlords to have at
+311𓀴least one degree of mercy towards
+ their tenants. Lastly, of putting a
+312𓀴spirit of honesty,
+ industry, and skill
+ into our shopkeepers, who, if a
+313𓀴resolution could now be taken to
+ buy only our native goods, would
+314𓀴immediately unite
+ to cheat and exact
+ upon us in the price, the measure,
+315𓀴and the goodness, nor could ever
+ yet be brought to make one fair
+316𓀴proposal of just dealing, though
+ often and earnestly invited to it.
 317𓀴
-318𓀴Therefore I repeat, let no man talk to me of these and the like
-319𓀴expedients, till he hath at least some glympse of hope, that there will
-320𓀴ever be some hearty and sincere attempt to put them into practice.
+318𓀴Therefore I repeat, let no man
+ talk to me of these and the like
+319𓀴expedients, till he
+ hath at least some
+ glympse of hope, that there will
+320𓀴ever be some hearty and sincere
+ attempt to put them into practice.
 321𓀴
-322𓀴But, as to myself, having been wearied out for many years with offering
-323𓀴vain, idle, visionary thoughts, and at length utterly despairing of
-324𓀴success, I fortunately fell upon this proposal, which, as it is wholly
-325𓀴new, so it hath something solid and real, of no expence and little
-326𓀴trouble, full in our own power, and whereby we can incur no danger in
-327𓀴disobliging England. For this kind of commodity will not bear
-328𓀴exportation, and flesh being of too tender a consistence, to admit a
-329𓀴long continuance in salt, although perhaps I could name a country,
-330𓀴which would be glad to eat up our whole nation without it.
+322𓀴But, as to myself,
+ having been wearied
+ out for many years with offering
+323𓀴vain, idle, visionary
+ thoughts, and
+ at length utterly despairing of
+324𓀴success, I fortunately
+ fell upon this
+ proposal, which, as it is wholly
+325𓀴new, so it hath something solid
+ and real, of no expence and little
+326𓀴trouble, full in
+ our own power, and
+ whereby we can incur no danger in
+327𓀴disobliging England. For this
+ kind of commodity will not bear
+328𓀴exportation, and
+ flesh being of too
+ tender a consistence, to admit a
+329𓀴long continuance in salt, although
+ perhaps I could name a country,
+330𓀴which would be glad to eat up
+ our whole nation without it.
 331𓀴
-332𓀴After all, I am not so violently bent upon my own opinion, as to reject
-333𓀴any offer, proposed by wise men, which shall be found equally innocent,
-334𓀴cheap, easy, and effectual. But before something of that kind shall be
-335𓀴advanced in contradiction to my scheme, and offering a better, I desire
-336𓀴the author or authors will be pleased maturely to consider two points.
-337𓀴First, As things now stand, how they will be able to find food and
-338𓀴raiment for a hundred thousand useless mouths and backs. And secondly,
-339𓀴There being a round million of creatures in humane figure throughout
-340𓀴this kingdom, whose whole subsistence put into a common stock, would
-341𓀴leave them in debt two million of pounds sterling, adding those who are
-342𓀴beggars by profession, to the bulk of farmers, cottagers and labourers,
-343𓀴with their wives and children, who are beggars in effect; I desire
-344𓀴those politicians who dislike my overture, and may perhaps be so bold
-345𓀴to attempt an answer, that they will first ask the parents of these
-346𓀴mortals, whether they would not at this day think it a great happiness
-347𓀴to have been sold for food at a year old, in the manner I prescribe,
-348𓀴and thereby have avoided such a perpetual scene of misfortunes, as they
-349𓀴have since gone through, by the oppression of landlords, the
-350𓀴impossibility of paying rent without money or trade, the want of common
-351𓀴sustenance, with neither house nor clothes to cover them from the
-352𓀴inclemencies of the weather, and the most inevitable prospect of
-353𓀴intailing the like, or greater miseries, upon their breed for ever.
+332𓀴After all, I am not
+ so violently bent
+ upon my own opinion, as to reject
+333𓀴any offer, proposed
+ by wise men, which
+ shall be found equally innocent,
+334𓀴cheap, easy, and effectual.
+ But before
+ something of that kind shall be
+335𓀴advanced in contradiction
+ to my scheme,
+ and offering a better, I desire
+336𓀴the author or authors
+ will be pleased
+ maturely to consider two points.
+337𓀴First, As things now stand, how
+ they will be able to find food and
+338𓀴raiment for a hundred
+ thousand useless
+ mouths and backs. And secondly,
+339𓀴There being a round
+ million of creatures
+ in humane figure throughout
+340𓀴this kingdom, whose
+ whole subsistence
+ put into a common stock, would
+341𓀴leave them in debt
+ two million of pounds
+ sterling, adding those who are
+342𓀴beggars by profession, to the bulk
+ of farmers, cottagers and labourers,
+343𓀴with their wives and children, who
+ are beggars in effect; I desire
+344𓀴those politicians who
+ dislike my overture,
+ and may perhaps be so bold
+345𓀴to attempt an answer,
+ that they will
+ first ask the parents of these
+346𓀴mortals, whether they would not at
+ this day think it a great happiness
+347𓀴to have been sold
+ for food at a year
+ old, in the manner I prescribe,
+348𓀴and thereby have avoided
+ such a perpetual
+ scene of misfortunes, as they
+349𓀴have since gone through, by the
+ oppression of landlords, the
+350𓀴impossibility of
+ paying rent without
+ money or trade, the want of common
+351𓀴sustenance, with neither house nor
+ clothes to cover them from the
+352𓀴inclemencies of the weather, and
+ the most inevitable prospect of
+353𓀴intailing the like,
+ or greater miseries,
+ upon their breed for ever.
 354𓀴
-355𓀴I profess in the sincerity of my heart, that I have not the least
-356𓀴personal interest in endeavouring to promote this necessary work,
-357𓀴having no other motive than the publick good of my country, by
-358𓀴advancing our trade, providing for infants, relieving the poor, and
-359𓀴giving some pleasure to the rich. I have no children, by which I can
-360𓀴propose to get a single penny; the youngest being nine years old, and
+355𓀴I profess in the sincerity of my
+ heart, that I have not the least
+356𓀴personal interest in endeavouring
+ to promote this necessary work,
+357𓀴having no other motive than the
+ publick good of my country, by
+358𓀴advancing our trade, providing for
+ infants, relieving the poor, and
+359𓀴giving some pleasure to the rich.
+ I have no children, by which I can
+360𓀴propose to get a single penny; the
+ youngest being nine years old, and
 361𓀴my wife past child-bearing.
 362𓀴
 363𓀴
 364𓀴
-365𓀴*** END OF THE PROJECT GUTENBERG EBOOK A MODEST PROPOSAL ***
+365𓀴*** END OF THE PROJECT GUTENBERG
+ EBOOK A MODEST PROPOSAL ***
 366𓀴
 367𓀴
 368𓀴
 369𓀴
-370𓀴Updated editions will replace the previous one—the old editions will
+370𓀴Updated editions will replace the
+ previous one—the old editions will
 371𓀴be renamed.
 372𓀴
-373𓀴Creating the works from print editions not protected by U.S. copyright
-374𓀴law means that no one owns a United States copyright in these works,
-375𓀴so the Foundation (and you!) can copy and distribute it in the United
-376𓀴States without permission and without paying copyright
-377𓀴royalties. Special rules, set forth in the General Terms of Use part
-378𓀴of this license, apply to copying and distributing Project
-379𓀴Gutenberg™ electronic works to protect the PROJECT GUTENBERG™
-380𓀴concept and trademark. Project Gutenberg is a registered trademark,
-381𓀴and may not be used if you charge for an eBook, except by following
-382𓀴the terms of the trademark license, including paying royalties for use
-383𓀴of the Project Gutenberg trademark. If you do not charge anything for
-384𓀴copies of this eBook, complying with the trademark license is very
-385𓀴easy. You may use this eBook for nearly any purpose such as creation
-386𓀴of derivative works, reports, performances and research. Project
-387𓀴Gutenberg eBooks may be modified and printed and given away—you may
-388𓀴do practically ANYTHING in the United States with eBooks not protected
-389𓀴by U.S. copyright law. Redistribution is subject to the trademark
-390𓀴license, especially commercial redistribution.
+373𓀴Creating the works
+ from print editions
+ not protected by U.S. copyright
+374𓀴law means that no
+ one owns a United
+ States copyright in these works,
+375𓀴so the Foundation
+ (and you!) can copy
+ and distribute it in the United
+376𓀴States without permission
+ and without paying copyright
+377𓀴royalties. Special
+ rules, set forth
+ in the General Terms of Use part
+378𓀴of this license, apply to copying
+ and distributing Project
+379𓀴Gutenberg™ electronic works to
+ protect the PROJECT GUTENBERG™
+380𓀴concept and trademark.
+ Project Gutenberg
+ is a registered trademark,
+381𓀴and may not be used if you charge
+ for an eBook, except by following
+382𓀴the terms of the
+ trademark license,
+ including paying royalties for use
+383𓀴of the Project Gutenberg
+ trademark.
+ If you do not charge anything for
+384𓀴copies of this eBook, complying
+ with the trademark license is very
+385𓀴easy. You may use this eBook for
+ nearly any purpose such as creation
+386𓀴of derivative works,
+ reports, performances
+ and research. Project
+387𓀴Gutenberg eBooks may be modified
+ and printed and given away—you may
+388𓀴do practically ANYTHING
+ in the United
+ States with eBooks not protected
+389𓀴by U.S. copyright
+ law. Redistribution
+ is subject to the trademark
+390𓀴license, especially commercial
+ redistribution.
 391𓀴
 392𓀴
 393𓀴START: FULL LICENSE
 394𓀴
 395𓀴THE FULL PROJECT GUTENBERG LICENSE
 396𓀴
-397𓀴PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+397𓀴PLEASE READ THIS BEFORE YOU
+ DISTRIBUTE OR USE THIS WORK
 398𓀴
-399𓀴To protect the Project Gutenberg™ mission of promoting the free
-400𓀴distribution of electronic works, by using or distributing this work
-401𓀴(or any other work associated in any way with the phrase “Project
-402𓀴Gutenberg”), you agree to comply with all the terms of the Full
-403𓀴Project Gutenberg™ License available with this file or online at
+399𓀴To protect the Project Gutenberg™
+ mission of promoting the free
+400𓀴distribution of electronic works,
+ by using or distributing this work
+401𓀴(or any other work associated in
+ any way with the phrase “Project
+402𓀴Gutenberg”), you agree to comply
+ with all the terms of the Full
+403𓀴Project Gutenberg™
+ License available
+ with this file or online at
 404𓀴www.gutenberg.org/license.
 405𓀴
-406𓀴Section 1. General Terms of Use and Redistributing Project Gutenberg™
+406𓀴Section 1. General
+ Terms of Use and
+ Redistributing Project Gutenberg™
 407𓀴electronic works
 408𓀴
-409𓀴1.A. By reading or using any part of this Project Gutenberg™
-410𓀴electronic work, you indicate that you have read, understand, agree to
-411𓀴and accept all the terms of this license and intellectual property
-412𓀴(trademark/copyright) agreement. If you do not agree to abide by all
-413𓀴the terms of this agreement, you must cease using and return or
-414𓀴destroy all copies of Project Gutenberg™ electronic works in your
-415𓀴possession. If you paid a fee for obtaining a copy of or access to a
-416𓀴Project Gutenberg™ electronic work and you do not agree to be bound
-417𓀴by the terms of this agreement, you may obtain a refund from the person
-418𓀴or entity to whom you paid the fee as set forth in paragraph 1.E.8.
+409𓀴1.A. By reading or using any
+ part of this Project Gutenberg™
+410𓀴electronic work, you indicate that
+ you have read, understand, agree to
+411𓀴and accept all the terms of this
+ license and intellectual property
+412𓀴(trademark/copyright) agreement.
+ If you do not agree to abide by all
+413𓀴the terms of this agreement, you
+ must cease using and return or
+414𓀴destroy all copies
+ of Project Gutenberg™
+ electronic works in your
+415𓀴possession. If you paid a fee for
+ obtaining a copy of or access to a
+416𓀴Project Gutenberg™ electronic work
+ and you do not agree to be bound
+417𓀴by the terms of this
+ agreement, you
+ may obtain a refund from the person
+418𓀴or entity to whom you paid the fee
+ as set forth in paragraph 1.E.8.
 419𓀴
-420𓀴1.B. “Project Gutenberg” is a registered trademark. It may only be
-421𓀴used on or associated in any way with an electronic work by people who
-422𓀴agree to be bound by the terms of this agreement. There are a few
-423𓀴things that you can do with most Project Gutenberg™ electronic works
-424𓀴even without complying with the full terms of this agreement. See
-425𓀴paragraph 1.C below. There are a lot of things you can do with Project
-426𓀴Gutenberg™ electronic works if you follow the terms of this
-427𓀴agreement and help preserve free future access to Project Gutenberg™
-428𓀴electronic works. See paragraph 1.E below.
+420𓀴1.B. “Project Gutenberg”
+ is a registered
+ trademark. It may only be
+421𓀴used on or associated
+ in any way with
+ an electronic work by people who
+422𓀴agree to be bound by the terms of
+ this agreement. There are a few
+423𓀴things that you can do with most
+ Project Gutenberg™ electronic works
+424𓀴even without complying with the
+ full terms of this agreement. See
+425𓀴paragraph 1.C below.
+ There are a lot
+ of things you can do with Project
+426𓀴Gutenberg™ electronic works if
+ you follow the terms of this
+427𓀴agreement and help preserve free
+ future access to Project Gutenberg™
+428𓀴electronic works. See
+ paragraph 1.E below.
 429𓀴
-430𓀴1.C. The Project Gutenberg Literary Archive Foundation (“the
-431𓀴Foundation” or PGLAF), owns a compilation copyright in the collection
-432𓀴of Project Gutenberg™ electronic works. Nearly all the individual
-433𓀴works in the collection are in the public domain in the United
-434𓀴States. If an individual work is unprotected by copyright law in the
-435𓀴United States and you are located in the United States, we do not
-436𓀴claim a right to prevent you from copying, distributing, performing,
-437𓀴displaying or creating derivative works based on the work as long as
-438𓀴all references to Project Gutenberg are removed. Of course, we hope
-439𓀴that you will support the Project Gutenberg™ mission of promoting
-440𓀴free access to electronic works by freely sharing Project Gutenberg™
-441𓀴works in compliance with the terms of this agreement for keeping the
-442𓀴Project Gutenberg™ name associated with the work. You can easily
-443𓀴comply with the terms of this agreement by keeping this work in the
-444𓀴same format with its attached full Project Gutenberg™ License when
-445𓀴you share it without charge with others.
+430𓀴1.C. The Project
+ Gutenberg Literary
+ Archive Foundation (“the
+431𓀴Foundation” or PGLAF),
+ owns a compilation
+ copyright in the collection
+432𓀴of Project Gutenberg™ electronic
+ works. Nearly all the individual
+433𓀴works in the collection are in
+ the public domain in the United
+434𓀴States. If an individual work is
+ unprotected by copyright law in the
+435𓀴United States and you are located
+ in the United States, we do not
+436𓀴claim a right to prevent you from
+ copying, distributing, performing,
+437𓀴displaying or creating derivative
+ works based on the work as long as
+438𓀴all references to
+ Project Gutenberg
+ are removed. Of course, we hope
+439𓀴that you will support the Project
+ Gutenberg™ mission of promoting
+440𓀴free access to electronic works by
+ freely sharing Project Gutenberg™
+441𓀴works in compliance with the terms
+ of this agreement for keeping the
+442𓀴Project Gutenberg™ name associated
+ with the work. You can easily
+443𓀴comply with the terms
+ of this agreement
+ by keeping this work in the
+444𓀴same format with its attached full
+ Project Gutenberg™ License when
+445𓀴you share it without
+ charge with others.
 446𓀴
-447𓀴1.D. The copyright laws of the place where you are located also govern
-448𓀴what you can do with this work. Copyright laws in most countries are
-449𓀴in a constant state of change. If you are outside the United States,
-450𓀴check the laws of your country in addition to the terms of this
-451𓀴agreement before downloading, copying, displaying, performing,
-452𓀴distributing or creating derivative works based on this work or any
-453𓀴other Project Gutenberg™ work. The Foundation makes no
-454𓀴representations concerning the copyright status of any work in any
-455𓀴country other than the United States.
+447𓀴1.D. The copyright
+ laws of the place
+ where you are located also govern
+448𓀴what you can do with
+ this work. Copyright
+ laws in most countries are
+449𓀴in a constant state of change. If
+ you are outside the United States,
+450𓀴check the laws of your country
+ in addition to the terms of this
+451𓀴agreement before downloading,
+ copying, displaying, performing,
+452𓀴distributing or creating
+ derivative
+ works based on this work or any
+453𓀴other Project Gutenberg™ work.
+ The Foundation makes no
+454𓀴representations concerning
+ the copyright
+ status of any work in any
+455𓀴country other than
+ the United States.
 456𓀴
-457𓀴1.E. Unless you have removed all references to Project Gutenberg:
+457𓀴1.E. Unless you have removed all
+ references to Project Gutenberg:
 458𓀴
-459𓀴1.E.1. The following sentence, with active links to, or other
-460𓀴immediate access to, the full Project Gutenberg™ License must appear
-461𓀴prominently whenever any copy of a Project Gutenberg™ work (any work
-462𓀴on which the phrase “Project Gutenberg” appears, or with which the
-463𓀴phrase “Project Gutenberg” is associated) is accessed, displayed,
-464𓀴performed, viewed, copied or distributed:
+459𓀴1.E.1. The following sentence,
+ with active links to, or other
+460𓀴immediate access to,
+ the full Project
+ Gutenberg™ License must appear
+461𓀴prominently whenever any copy of
+ a Project Gutenberg™ work (any work
+462𓀴on which the phrase
+ “Project Gutenberg”
+ appears, or with which the
+463𓀴phrase “Project Gutenberg”
+ is associated)
+ is accessed, displayed,
+464𓀴performed, viewed, copied
+ or distributed:
 465𓀴
-466𓀴    This eBook is for the use of anyone anywhere in the United States and most
-467𓀴    other parts of the world at no cost and with almost no restrictions
-468𓀴    whatsoever. You may copy it, give it away or re-use it under the terms
-469𓀴    of the Project Gutenberg License included with this eBook or online
+466𓀴    This eBook is for
+ the use of anyone
+ anywhere in the United
+ States and most
+467𓀴    other parts of the world at no
+ cost and with almost no restrictions
+468𓀴    whatsoever. You
+ may copy it, give
+ it away or re-use it under the terms
+469𓀴    of the Project
+ Gutenberg License
+ included with this eBook or online
 470𓀴    at www.gutenberg.org. If you
-471𓀴    are not located in the United States, you will have to check the laws
-472𓀴    of the country where you are located before using this eBook.
+471𓀴    are not located
+ in the United States,
+ you will have to check the laws
+472𓀴    of the country where you are
+ located before using this eBook.
 473𓀴
-474𓀴1.E.2. If an individual Project Gutenberg™ electronic work is
-475𓀴derived from texts not protected by U.S. copyright law (does not
-476𓀴contain a notice indicating that it is posted with permission of the
-477𓀴copyright holder), the work can be copied and distributed to anyone in
-478𓀴the United States without paying any fees or charges. If you are
-479𓀴redistributing or providing access to a work with the phrase “Project
-480𓀴Gutenberg” associated with or appearing on the work, you must comply
-481𓀴either with the requirements of paragraphs 1.E.1 through 1.E.7 or
-482𓀴obtain permission for the use of the work and the Project Gutenberg™
-483𓀴trademark as set forth in paragraphs 1.E.8 or 1.E.9.
+474𓀴1.E.2. If an individual Project
+ Gutenberg™ electronic work is
+475𓀴derived from texts not protected
+ by U.S. copyright law (does not
+476𓀴contain a notice indicating that
+ it is posted with permission of the
+477𓀴copyright holder), the work can be
+ copied and distributed to anyone in
+478𓀴the United States without paying
+ any fees or charges. If you are
+479𓀴redistributing or providing access
+ to a work with the phrase “Project
+480𓀴Gutenberg” associated
+ with or appearing
+ on the work, you must comply
+481𓀴either with the requirements of
+ paragraphs 1.E.1 through 1.E.7 or
+482𓀴obtain permission for the use of
+ the work and the Project Gutenberg™
+483𓀴trademark as set forth in
+ paragraphs 1.E.8 or 1.E.9.
 484𓀴
-485𓀴1.E.3. If an individual Project Gutenberg™ electronic work is posted
-486𓀴with the permission of the copyright holder, your use and distribution
-487𓀴must comply with both paragraphs 1.E.1 through 1.E.7 and any
-488𓀴additional terms imposed by the copyright holder. Additional terms
-489𓀴will be linked to the Project Gutenberg™ License for all works
-490𓀴posted with the permission of the copyright holder found at the
+485𓀴1.E.3. If an individual
+ Project Gutenberg™
+ electronic work is posted
+486𓀴with the permission
+ of the copyright
+ holder, your use and distribution
+487𓀴must comply with both paragraphs
+ 1.E.1 through 1.E.7 and any
+488𓀴additional terms imposed by the
+ copyright holder. Additional terms
+489𓀴will be linked to the Project
+ Gutenberg™ License for all works
+490𓀴posted with the permission of the
+ copyright holder found at the
 491𓀴beginning of this work.
 492𓀴
-493𓀴1.E.4. Do not unlink or detach or remove the full Project Gutenberg™
-494𓀴License terms from this work, or any files containing a part of this
-495𓀴work or any other work associated with Project Gutenberg™.
+493𓀴1.E.4. Do not unlink or detach or
+ remove the full Project Gutenberg™
+494𓀴License terms from this work, or
+ any files containing a part of this
+495𓀴work or any other work associated
+ with Project Gutenberg™.
 496𓀴
-497𓀴1.E.5. Do not copy, display, perform, distribute or redistribute this
-498𓀴electronic work, or any part of this electronic work, without
-499𓀴prominently displaying the sentence set forth in paragraph 1.E.1 with
-500𓀴active links or immediate access to the full terms of the Project
+497𓀴1.E.5. Do not copy,
+ display, perform,
+ distribute or redistribute this
+498𓀴electronic work, or any part of
+ this electronic work, without
+499𓀴prominently displaying
+ the sentence
+ set forth in paragraph 1.E.1 with
+500𓀴active links or immediate access
+ to the full terms of the Project
 501𓀴Gutenberg™ License.
 502𓀴
-503𓀴1.E.6. You may convert to and distribute this work in any binary,
-504𓀴compressed, marked up, nonproprietary or proprietary form, including
-505𓀴any word processing or hypertext form. However, if you provide access
-506𓀴to or distribute copies of a Project Gutenberg™ work in a format
-507𓀴other than “Plain Vanilla ASCII” or other format used in the official
-508𓀴version posted on the official Project Gutenberg™ website
-509𓀴(www.gutenberg.org), you must, at no additional cost, fee or expense
-510𓀴to the user, provide a copy, a means of exporting a copy, or a means
-511𓀴of obtaining a copy upon request, of the work in its original “Plain
-512𓀴Vanilla ASCII” or other form. Any alternate format must include the
-513𓀴full Project Gutenberg™ License as specified in paragraph 1.E.1.
+503𓀴1.E.6. You may convert
+ to and distribute
+ this work in any binary,
+504𓀴compressed, marked
+ up, nonproprietary
+ or proprietary form, including
+505𓀴any word processing
+ or hypertext form.
+ However, if you provide access
+506𓀴to or distribute
+ copies of a Project
+ Gutenberg™ work in a format
+507𓀴other than “Plain
+ Vanilla ASCII” or
+ other format used in the official
+508𓀴version posted on the official
+ Project Gutenberg™ website
+509𓀴(www.gutenberg.org), you must, at
+ no additional cost, fee or expense
+510𓀴to the user, provide
+ a copy, a means
+ of exporting a copy, or a means
+511𓀴of obtaining a copy upon request,
+ of the work in its original “Plain
+512𓀴Vanilla ASCII” or other form. Any
+ alternate format must include the
+513𓀴full Project Gutenberg™ License
+ as specified in paragraph 1.E.1.
 514𓀴
-515𓀴1.E.7. Do not charge a fee for access to, viewing, displaying,
-516𓀴performing, copying or distributing any Project Gutenberg™ works
-517𓀴unless you comply with paragraph 1.E.8 or 1.E.9.
+515𓀴1.E.7. Do not charge a fee for
+ access to, viewing, displaying,
+516𓀴performing, copying
+ or distributing
+ any Project Gutenberg™ works
+517𓀴unless you comply with
+ paragraph 1.E.8 or 1.E.9.
 518𓀴
-519𓀴1.E.8. You may charge a reasonable fee for copies of or providing
-520𓀴access to or distributing Project Gutenberg™ electronic works
+519𓀴1.E.8. You may charge a reasonable
+ fee for copies of or providing
+520𓀴access to or distributing Project
+ Gutenberg™ electronic works
 521𓀴provided that:
 522𓀴
-523𓀴    • You pay a royalty fee of 20% of the gross profits you derive from
-524𓀴        the use of Project Gutenberg™ works calculated using the method
-525𓀴        you already use to calculate your applicable taxes. The fee is owed
-526𓀴        to the owner of the Project Gutenberg™ trademark, but he has
-527𓀴        agreed to donate royalties under this paragraph to the Project
-528𓀴        Gutenberg Literary Archive Foundation. Royalty payments must be paid
-529𓀴        within 60 days following each date on which you prepare (or are
-530𓀴        legally required to prepare) your periodic tax returns. Royalty
-531𓀴        payments should be clearly marked as such and sent to the Project
-532𓀴        Gutenberg Literary Archive Foundation at the address specified in
-533𓀴        Section 4, “Information about donations to the Project Gutenberg
-534𓀴        Literary Archive Foundation.”
+523𓀴    • You pay a royalty fee of 20%
+ of the gross profits you derive from
+524𓀴        the use of
+ Project Gutenberg™
+ works calculated using the method
+525𓀴        you already
+ use to calculate
+ your applicable taxes.
+ The fee is owed
+526𓀴        to the owner
+ of the Project
+ Gutenberg™ trademark, but he has
+527𓀴        agreed to donate royalties
+ under this paragraph to the Project
+528𓀴        Gutenberg Literary
+ Archive Foundation.
+ Royalty payments must be paid
+529𓀴        within 60
+ days following each
+ date on which you prepare (or are
+530𓀴        legally required
+ to prepare)
+ your periodic tax returns. Royalty
+531𓀴        payments should
+ be clearly marked
+ as such and sent to the Project
+532𓀴        Gutenberg Literary
+ Archive Foundation
+ at the address specified in
+533𓀴        Section 4,
+ “Information about
+ donations to the Project Gutenberg
+534𓀴        Literary Archive
+ Foundation.”
 535𓀴
-536𓀴    • You provide a full refund of any money paid by a user who notifies
-537𓀴        you in writing (or by e-mail) within 30 days of receipt that s/he
-538𓀴        does not agree to the terms of the full Project Gutenberg™
-539𓀴        License. You must require such a user to return or destroy all
-540𓀴        copies of the works possessed in a physical medium and discontinue
-541𓀴        all use of and all access to other copies of Project Gutenberg™
+536𓀴    • You provide a full refund of
+ any money paid by a user who notifies
+537𓀴        you in writing
+ (or by e-mail)
+ within 30 days of receipt that s/he
+538𓀴        does not
+ agree to the terms
+ of the full Project Gutenberg™
+539𓀴        License. You must require
+ such a user to return or destroy all
+540𓀴        copies of
+ the works possessed
+ in a physical medium and discontinue
+541𓀴        all use of
+ and all access to
+ other copies of Project Gutenberg™
 542𓀴        works.
 543𓀴
-544𓀴    • You provide, in accordance with paragraph 1.F.3, a full refund of
-545𓀴        any money paid for a work or a replacement copy, if a defect in the
-546𓀴        electronic work is discovered and reported to you within 90 days of
+544𓀴    • You provide,
+ in accordance with
+ paragraph 1.F.3, a full refund of
+545𓀴        any money
+ paid for a work or
+ a replacement copy,
+ if a defect in the
+546𓀴        electronic
+ work is discovered
+ and reported to you within 90 days of
 547𓀴        receipt of the work.
 548𓀴
-549𓀴    • You comply with all other terms of this agreement for free
-550𓀴        distribution of Project Gutenberg™ works.
+549𓀴    • You comply with all other
+ terms of this agreement for free
+550𓀴        distribution of
+ Project Gutenberg™ works.
 551𓀴
 552𓀴
-553𓀴1.E.9. If you wish to charge a fee or distribute a Project
-554𓀴Gutenberg™ electronic work or group of works on different terms than
-555𓀴are set forth in this agreement, you must obtain permission in writing
-556𓀴from the Project Gutenberg Literary Archive Foundation, the manager of
-557𓀴the Project Gutenberg™ trademark. Contact the Foundation as set
+553𓀴1.E.9. If you wish to charge
+ a fee or distribute a Project
+554𓀴Gutenberg™ electronic
+ work or group
+ of works on different terms than
+555𓀴are set forth in
+ this agreement, you
+ must obtain permission in writing
+556𓀴from the Project
+ Gutenberg Literary
+ Archive Foundation, the manager of
+557𓀴the Project Gutenberg™ trademark.
+ Contact the Foundation as set
 558𓀴forth in Section 3 below.
 559𓀴
 560𓀴1.F.
 561𓀴
-562𓀴1.F.1. Project Gutenberg volunteers and employees expend considerable
-563𓀴effort to identify, do copyright research on, transcribe and proofread
-564𓀴works not protected by U.S. copyright law in creating the Project
-565𓀴Gutenberg™ collection. Despite these efforts, Project Gutenberg™
-566𓀴electronic works, and the medium on which they may be stored, may
-567𓀴contain “Defects,” such as, but not limited to, incomplete, inaccurate
-568𓀴or corrupt data, transcription errors, a copyright or other
-569𓀴intellectual property infringement, a defective or damaged disk or
-570𓀴other medium, a computer virus, or computer codes that damage or
+562𓀴1.F.1. Project Gutenberg
+ volunteers
+ and employees expend considerable
+563𓀴effort to identify,
+ do copyright research
+ on, transcribe and proofread
+564𓀴works not protected
+ by U.S. copyright
+ law in creating the Project
+565𓀴Gutenberg™ collection. Despite
+ these efforts, Project Gutenberg™
+566𓀴electronic works, and the medium
+ on which they may be stored, may
+567𓀴contain “Defects,”
+ such as, but not
+ limited to, incomplete, inaccurate
+568𓀴or corrupt data, transcription
+ errors, a copyright or other
+569𓀴intellectual property
+ infringement,
+ a defective or damaged disk or
+570𓀴other medium, a computer virus,
+ or computer codes that damage or
 571𓀴cannot be read by your equipment.
 572𓀴
-573𓀴1.F.2. LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the “Right
-574𓀴of Replacement or Refund” described in paragraph 1.F.3, the Project
-575𓀴Gutenberg Literary Archive Foundation, the owner of the Project
-576𓀴Gutenberg™ trademark, and any other party distributing a Project
-577𓀴Gutenberg™ electronic work under this agreement, disclaim all
-578𓀴liability to you for damages, costs and expenses, including legal
-579𓀴fees. YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
-580𓀴LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
-581𓀴PROVIDED IN PARAGRAPH 1.F.3. YOU AGREE THAT THE FOUNDATION, THE
-582𓀴TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
-583𓀴LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
-584𓀴INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+573𓀴1.F.2. LIMITED WARRANTY,
+ DISCLAIMER
+ OF DAMAGES - Except for the “Right
+574𓀴of Replacement or
+ Refund” described
+ in paragraph 1.F.3, the Project
+575𓀴Gutenberg Literary
+ Archive Foundation,
+ the owner of the Project
+576𓀴Gutenberg™ trademark,
+ and any other
+ party distributing a Project
+577𓀴Gutenberg™ electronic work under
+ this agreement, disclaim all
+578𓀴liability to you
+ for damages, costs
+ and expenses, including legal
+579𓀴fees. YOU AGREE THAT YOU HAVE NO
+ REMEDIES FOR NEGLIGENCE, STRICT
+580𓀴LIABILITY, BREACH OF WARRANTY OR
+ BREACH OF CONTRACT EXCEPT THOSE
+581𓀴PROVIDED IN PARAGRAPH 1.F.3. YOU
+ AGREE THAT THE FOUNDATION, THE
+582𓀴TRADEMARK OWNER,
+ AND ANY DISTRIBUTOR
+ UNDER THIS AGREEMENT WILL NOT BE
+583𓀴LIABLE TO YOU FOR ACTUAL, DIRECT,
+ INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+584𓀴INCIDENTAL DAMAGES
+ EVEN IF YOU GIVE
+ NOTICE OF THE POSSIBILITY OF SUCH
 585𓀴DAMAGE.
 586𓀴
-587𓀴1.F.3. LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
-588𓀴defect in this electronic work within 90 days of receiving it, you can
-589𓀴receive a refund of the money (if any) you paid for it by sending a
-590𓀴written explanation to the person you received the work from. If you
-591𓀴received the work on a physical medium, you must return the medium
-592𓀴with your written explanation. The person or entity that provided you
-593𓀴with the defective work may elect to provide a replacement copy in
-594𓀴lieu of a refund. If you received the work electronically, the person
-595𓀴or entity providing it to you may choose to give you a second
-596𓀴opportunity to receive the work electronically in lieu of a refund. If
-597𓀴the second copy is also defective, you may demand a refund in writing
-598𓀴without further opportunities to fix the problem.
+587𓀴1.F.3. LIMITED RIGHT
+ OF REPLACEMENT
+ OR REFUND - If you discover a
+588𓀴defect in this electronic
+ work within
+ 90 days of receiving it, you can
+589𓀴receive a refund of the money (if
+ any) you paid for it by sending a
+590𓀴written explanation to the person
+ you received the work from. If you
+591𓀴received the work on a physical
+ medium, you must return the medium
+592𓀴with your written explanation. The
+ person or entity that provided you
+593𓀴with the defective work may elect
+ to provide a replacement copy in
+594𓀴lieu of a refund. If you received
+ the work electronically, the person
+595𓀴or entity providing it to you
+ may choose to give you a second
+596𓀴opportunity to receive
+ the work electronically
+ in lieu of a refund. If
+597𓀴the second copy is also defective,
+ you may demand a refund in writing
+598𓀴without further opportunities
+ to fix the problem.
 599𓀴
-600𓀴1.F.4. Except for the limited right of replacement or refund set forth
-601𓀴in paragraph 1.F.3, this work is provided to you ‘AS-IS’, WITH NO
-602𓀴OTHER WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-603𓀴LIMITED TO WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PURPOSE.
+600𓀴1.F.4. Except for
+ the limited right
+ of replacement or refund set forth
+601𓀴in paragraph 1.F.3, this work is
+ provided to you ‘AS-IS’, WITH NO
+602𓀴OTHER WARRANTIES OF
+ ANY KIND, EXPRESS
+ OR IMPLIED, INCLUDING BUT NOT
+603𓀴LIMITED TO WARRANTIES
+ OF MERCHANTABILITY
+ OR FITNESS FOR ANY PURPOSE.
 604𓀴
-605𓀴1.F.5. Some states do not allow disclaimers of certain implied
-606𓀴warranties or the exclusion or limitation of certain types of
-607𓀴damages. If any disclaimer or limitation set forth in this agreement
-608𓀴violates the law of the state applicable to this agreement, the
-609𓀴agreement shall be interpreted to make the maximum disclaimer or
-610𓀴limitation permitted by the applicable state law. The invalidity or
-611𓀴unenforceability of any provision of this agreement shall not void the
+605𓀴1.F.5. Some states do not allow
+ disclaimers of certain implied
+606𓀴warranties or the exclusion or
+ limitation of certain types of
+607𓀴damages. If any disclaimer
+ or limitation
+ set forth in this agreement
+608𓀴violates the law of
+ the state applicable
+ to this agreement, the
+609𓀴agreement shall be interpreted
+ to make the maximum disclaimer or
+610𓀴limitation permitted
+ by the applicable
+ state law. The invalidity or
+611𓀴unenforceability of any provision
+ of this agreement shall not void the
 612𓀴remaining provisions.
 613𓀴
-614𓀴1.F.6. INDEMNITY - You agree to indemnify and hold the Foundation, the
-615𓀴trademark owner, any agent or employee of the Foundation, anyone
-616𓀴providing copies of Project Gutenberg™ electronic works in
-617𓀴accordance with this agreement, and any volunteers associated with the
-618𓀴production, promotion and distribution of Project Gutenberg™
-619𓀴electronic works, harmless from all liability, costs and expenses,
-620𓀴including legal fees, that arise directly or indirectly from any of
-621𓀴the following which you do or cause to occur: (a) distribution of this
-622𓀴or any Project Gutenberg™ work, (b) alteration, modification, or
-623𓀴additions or deletions to any Project Gutenberg™ work, and (c) any
+614𓀴1.F.6. INDEMNITY - You
+ agree to indemnify
+ and hold the Foundation, the
+615𓀴trademark owner, any
+ agent or employee
+ of the Foundation, anyone
+616𓀴providing copies of Project
+ Gutenberg™ electronic works in
+617𓀴accordance with this
+ agreement, and
+ any volunteers associated with the
+618𓀴production, promotion
+ and distribution
+ of Project Gutenberg™
+619𓀴electronic works, harmless from
+ all liability, costs and expenses,
+620𓀴including legal fees, that arise
+ directly or indirectly from any of
+621𓀴the following which
+ you do or cause
+ to occur: (a) distribution of this
+622𓀴or any Project Gutenberg™ work,
+ (b) alteration, modification, or
+623𓀴additions or deletions
+ to any Project
+ Gutenberg™ work, and (c) any
 624𓀴Defect you cause.
 625𓀴
-626𓀴Section 2. Information about the Mission of Project Gutenberg™
+626𓀴Section 2. Information about the
+ Mission of Project Gutenberg™
 627𓀴
-628𓀴Project Gutenberg™ is synonymous with the free distribution of
-629𓀴electronic works in formats readable by the widest variety of
-630𓀴computers including obsolete, old, middle-aged and new computers. It
-631𓀴exists because of the efforts of hundreds of volunteers and donations
+628𓀴Project Gutenberg™ is synonymous
+ with the free distribution of
+629𓀴electronic works
+ in formats readable
+ by the widest variety of
+630𓀴computers including obsolete, old,
+ middle-aged and new computers. It
+631𓀴exists because of the
+ efforts of hundreds
+ of volunteers and donations
 632𓀴from people in all walks of life.
 633𓀴
-634𓀴Volunteers and financial support to provide volunteers with the
-635𓀴assistance they need are critical to reaching Project Gutenberg™’s
-636𓀴goals and ensuring that the Project Gutenberg™ collection will
-637𓀴remain freely available for generations to come. In 2001, the Project
-638𓀴Gutenberg Literary Archive Foundation was created to provide a secure
-639𓀴and permanent future for Project Gutenberg™ and future
-640𓀴generations. To learn more about the Project Gutenberg Literary
-641𓀴Archive Foundation and how your efforts and donations can help, see
-642𓀴Sections 3 and 4 and the Foundation information page at www.gutenberg.org.
+634𓀴Volunteers and financial support
+ to provide volunteers with the
+635𓀴assistance they need are critical
+ to reaching Project Gutenberg™’s
+636𓀴goals and ensuring
+ that the Project
+ Gutenberg™ collection will
+637𓀴remain freely available
+ for generations
+ to come. In 2001, the Project
+638𓀴Gutenberg Literary
+ Archive Foundation
+ was created to provide a secure
+639𓀴and permanent future for Project
+ Gutenberg™ and future
+640𓀴generations. To learn more about
+ the Project Gutenberg Literary
+641𓀴Archive Foundation
+ and how your efforts
+ and donations can help, see
+642𓀴Sections 3 and 4
+ and the Foundation
+ information page at
+ www.gutenberg.org.
 643𓀴
-644𓀴Section 3. Information about the Project Gutenberg Literary Archive Foundation
+644𓀴Section 3. Information
+ about the Project
+ Gutenberg Literary Archive Foundation
 645𓀴
-646𓀴The Project Gutenberg Literary Archive Foundation is a non-profit
-647𓀴501(c)(3) educational corporation organized under the laws of the
-648𓀴state of Mississippi and granted tax exempt status by the Internal
-649𓀴Revenue Service. The Foundation’s EIN or federal tax identification
-650𓀴number is 64-6221541. Contributions to the Project Gutenberg Literary
-651𓀴Archive Foundation are tax deductible to the full extent permitted by
-652𓀴U.S. federal laws and your state’s laws.
+646𓀴The Project Gutenberg
+ Literary Archive
+ Foundation is a non-profit
+647𓀴501(c)(3) educational corporation
+ organized under the laws of the
+648𓀴state of Mississippi and granted
+ tax exempt status by the Internal
+649𓀴Revenue Service. The Foundation’s
+ EIN or federal tax identification
+650𓀴number is 64-6221541.
+ Contributions
+ to the Project Gutenberg Literary
+651𓀴Archive Foundation
+ are tax deductible
+ to the full extent permitted by
+652𓀴U.S. federal laws and
+ your state’s laws.
 653𓀴
-654𓀴The Foundation’s business office is located at 809 North 1500 West,
-655𓀴Salt Lake City, UT 84116, (801) 596-1887. Email contact links and up
-656𓀴to date contact information can be found at the Foundation’s website
-657𓀴and official page at www.gutenberg.org/contact
+654𓀴The Foundation’s business office
+ is located at 809 North 1500 West,
+655𓀴Salt Lake City, UT 84116,
+ (801) 596-1887.
+ Email contact links and up
+656𓀴to date contact information can be
+ found at the Foundation’s website
+657𓀴and official page at 
+www.gutenberg.org/contact
 658𓀴
-659𓀴Section 4. Information about Donations to the Project Gutenberg
+659𓀴Section 4. Information
+ about Donations
+ to the Project Gutenberg
 660𓀴Literary Archive Foundation
 661𓀴
-662𓀴Project Gutenberg™ depends upon and cannot survive without widespread
-663𓀴public support and donations to carry out its mission of
-664𓀴increasing the number of public domain and licensed works that can be
-665𓀴freely distributed in machine-readable form accessible by the widest
-666𓀴array of equipment including outdated equipment. Many small donations
-667𓀴($1 to $5,000) are particularly important to maintaining tax exempt
+662𓀴Project Gutenberg™
+ depends upon and
+ cannot survive without widespread
+663𓀴public support and donations
+ to carry out its mission of
+664𓀴increasing the number
+ of public domain
+ and licensed works that can be
+665𓀴freely distributed
+ in machine-readable
+ form accessible by the widest
+666𓀴array of equipment
+ including outdated
+ equipment. Many small donations
+667𓀴($1 to $5,000) are particularly
+ important
+ to maintaining tax exempt
 668𓀴status with the IRS.
 669𓀴
-670𓀴The Foundation is committed to complying with the laws regulating
-671𓀴charities and charitable donations in all 50 states of the United
-672𓀴States. Compliance requirements are not uniform and it takes a
-673𓀴considerable effort, much paperwork and many fees to meet and keep up
-674𓀴with these requirements. We do not solicit donations in locations
-675𓀴where we have not received written confirmation of compliance. To SEND
-676𓀴DONATIONS or determine the status of compliance for any particular state
+670𓀴The Foundation is committed
+ to complying
+ with the laws regulating
+671𓀴charities and charitable donations
+ in all 50 states of the United
+672𓀴States. Compliance requirements
+ are not uniform and it takes a
+673𓀴considerable effort,
+ much paperwork
+ and many fees to meet and keep up
+674𓀴with these requirements. We do not
+ solicit donations in locations
+675𓀴where we have not received written
+ confirmation of compliance. To SEND
+676𓀴DONATIONS or determine
+ the status of
+ compliance for any particular state
 677𓀴visit www.gutenberg.org/donate.
 678𓀴
-679𓀴While we cannot and do not solicit contributions from states where we
-680𓀴have not met the solicitation requirements, we know of no prohibition
-681𓀴against accepting unsolicited donations from donors in such states who
+679𓀴While we cannot and do not solicit
+ contributions from states where we
+680𓀴have not met the solicitation
+ requirements,
+ we know of no prohibition
+681𓀴against accepting unsolicited
+ donations
+ from donors in such states who
 682𓀴approach us with offers to donate.
 683𓀴
-684𓀴International donations are gratefully accepted, but we cannot make
-685𓀴any statements concerning tax treatment of donations received from
-686𓀴outside the United States. U.S. laws alone swamp our small staff.
+684𓀴International donations
+ are gratefully
+ accepted, but we cannot make
+685𓀴any statements concerning
+ tax treatment
+ of donations received from
+686𓀴outside the United States. U.S.
+ laws alone swamp our small staff.
 687𓀴
-688𓀴Please check the Project Gutenberg web pages for current donation
-689𓀴methods and addresses. Donations are accepted in a number of other
-690𓀴ways including checks, online payments and credit card donations. To
-691𓀴donate, please visit: www.gutenberg.org/donate.
+688𓀴Please check the Project Gutenberg
+ web pages for current donation
+689𓀴methods and addresses. Donations
+ are accepted in a number of other
+690𓀴ways including checks,
+ online payments
+ and credit card donations. To
+691𓀴donate, please visit: 
+www.gutenberg.org/donate.
 692𓀴
-693𓀴Section 5. General Information About Project Gutenberg™ electronic works
+693𓀴Section 5. General
+ Information About
+ Project Gutenberg™ electronic works
 694𓀴
-695𓀴Professor Michael S. Hart was the originator of the Project
-696𓀴Gutenberg™ concept of a library of electronic works that could be
-697𓀴freely shared with anyone. For forty years, he produced and
-698𓀴distributed Project Gutenberg™ eBooks with only a loose network of
+695𓀴Professor Michael S. Hart was
+ the originator of the Project
+696𓀴Gutenberg™ concept of a library
+ of electronic works that could be
+697𓀴freely shared with anyone. For
+ forty years, he produced and
+698𓀴distributed Project
+ Gutenberg™ eBooks
+ with only a loose network of
 699𓀴volunteer support.
 700𓀴
-701𓀴Project Gutenberg™ eBooks are often created from several printed
-702𓀴editions, all of which are confirmed as not protected by copyright in
-703𓀴the U.S. unless a copyright notice is included. Thus, we do not
-704𓀴necessarily keep eBooks in compliance with any particular paper
+701𓀴Project Gutenberg™
+ eBooks are often
+ created from several printed
+702𓀴editions, all of
+ which are confirmed
+ as not protected by copyright in
+703𓀴the U.S. unless a copyright notice
+ is included. Thus, we do not
+704𓀴necessarily keep eBooks
+ in compliance
+ with any particular paper
 705𓀴edition.
 706𓀴
-707𓀴Most people start at our website which has the main PG search
+707𓀴Most people start at our website
+ which has the main PG search
 708𓀴facility: www.gutenberg.org.
 709𓀴
-710𓀴This website includes information about Project Gutenberg™,
-711𓀴including how to make donations to the Project Gutenberg Literary
-712𓀴Archive Foundation, how to help produce our new eBooks, and how to
-713𓀴subscribe to our email newsletter to hear about new eBooks.
+710𓀴This website includes information
+ about Project Gutenberg™,
+711𓀴including how to make donations
+ to the Project Gutenberg Literary
+712𓀴Archive Foundation, how to help
+ produce our new eBooks, and how to
+713𓀴subscribe to our email newsletter
+ to hear about new eBooks.
 714𓀴
 715𓀴
