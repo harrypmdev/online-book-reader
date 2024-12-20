@@ -207,3 +207,41 @@ def logout_view(request):
     )
     logout(request)
     return redirect('home')
+
+def profile(request):
+    if not request.user.is_authenticated:
+        messages.add_message(
+            request, 
+            messages.ERROR,
+            'There was an authentication issue - try clicking "profile" on ' +
+            'your navigation bar when logged in.'
+        )
+        return redirect('home')
+    context = {
+        "user": request.user,
+        "book_number": UserBook.objects.filter(user=request.user.id).count(),
+    }
+    return render(
+        request,
+        'books/profile.html',
+        context,
+    )
+
+def delete_profile(request):
+    try:
+        assert request.user.is_authenticated
+        request.user.delete()
+        messages.add_message(
+            request, 
+            messages.SUCCESS,
+            'Your account was successfully deleted.'
+        )
+        return redirect('home')
+    except:
+        messages.add_message(
+            request, 
+            messages.ERROR,
+            'There was an authentication issue - try clicking "profile" on ' +
+            'your navigation bar when logged in, then clicking "delete profile".'
+        )
+    return redirect('home')

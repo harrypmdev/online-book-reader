@@ -3,20 +3,23 @@ import { calculateCharacterLimit, getLineTotal} from './calculatePage.js';
 import { getLastLineNumber } from './numbering.js';
 import { setPageByTurns, setPageByProgress } from './setPage.js';
 
-window.onresize = function() {
+window.onresize = handleResize;
+
+function handleResize() {
     let pageNumberEl = document.getElementById('page-number');
     let progress = parseInt(pageNumberEl.getAttribute('data-progress'));
     let bookmark = document.querySelector('#bookmark');
     let clicked = true;
     if (bookmark.getAttribute('data-clicked') == 'false') {
-        console.log("Clicked is false.");
         bookmarkReady();
         clicked = false;
     }
     loadPage(Event, progress, clicked);
+    document.getElementById('book-text').innerText = "";
+    document.querySelector('#spin-holder').classList.remove('invisible')
+    document.querySelector('#spin-holder').classList.add('visible')
 }
 
-//window.onresize = function(){ location.reload(); }
 document.addEventListener('DOMContentLoaded', loadPage, false);
 
 async function loadPage(e, progress="default", bookmarkClicked=true) {
@@ -25,8 +28,9 @@ async function loadPage(e, progress="default", bookmarkClicked=true) {
     let chars = calculateCharacterLimit(bookText);
     bookText.setAttribute('data-char-limit', chars);
     let book = await getBookFromServer(chars);
-    bookText.setAttribute('data-last-line-number', getLastLineNumber(book));
     document.querySelector('#spin-holder').classList.add('invisible')
+    document.querySelector('#spin-holder').classList.remove('visible')
+    bookText.setAttribute('data-last-line-number', getLastLineNumber(book));
     if (progress == "default") {
         let pageNumberEl = document.getElementById('page-number');
         progress = parseInt(pageNumberEl.getAttribute('data-progress'));
@@ -34,7 +38,6 @@ async function loadPage(e, progress="default", bookmarkClicked=true) {
     if (Number(progress) > 0 && bookmarkClicked) {
         bookmarkDone();
     }
-    console.log("PROGRESS: at time ot setPageContentByProgress: "+ progress);
     setPageByProgress(progress)
 }
 
