@@ -1,8 +1,15 @@
-addEventListener("DOMContentLoaded", updateRating);
+document.addEventListener("DOMContentLoaded", updateRating);
 
-let stars = [...document.querySelectorAll('.fa-star')];
-stars.forEach((el, i) => {
-	
+[...document.querySelectorAll('.fa-star')].forEach(addStarFunctionality)
+
+function addStarFunctionality (el, i) {
+    let stars = [...document.querySelectorAll('.fa-star')];
+    addStarClickFunctionality(el, i);
+    addStarMouseOverFunctionality(stars, el, i);
+    addStarMouseOutFunctionality(stars, el, i)
+}
+
+function addStarClickFunctionality(el, i) {
     el.onclick = () => {
         let starRating = document.querySelector('#star-rating');
         starRating.setAttribute('data-rating', (i+1)*2);
@@ -11,7 +18,9 @@ stars.forEach((el, i) => {
         console.log((i+1)*2);
         updateRating()
     }
+}
 
+function addStarMouseOverFunctionality(stars, el, i) {
     el.onmouseover = () => {
         let rating = document.querySelector('#star-rating')
         .getAttribute('data-rating');
@@ -22,7 +31,9 @@ stars.forEach((el, i) => {
             }
         });
     };
+}
 
+function addStarMouseOutFunctionality(stars, el, i) {
     el.onmouseout = () => {
         let rating = document.querySelector('#star-rating')
         .getAttribute('data-rating');
@@ -33,13 +44,12 @@ stars.forEach((el, i) => {
             }
         })
     };
-  
-})
+}
 
 function updateRating() {
-    let rating = document.querySelector('#star-rating')
-    .getAttribute('data-rating');
+    let stars = [...document.querySelectorAll('.fa-star')];
     let starRating = document.querySelector('#star-rating');
+    let rating = starRating.getAttribute('data-rating');
     if (starRating.getAttribute('data-rated') == 'true') {
         for (let star of stars) {
             star.classList.add('text-warning')

@@ -134,7 +134,7 @@ def delete_book(request, id):
             messages.SUCCESS,
             'Book successfully deleted from library.'
         )
-    except Book.DoesNotExist:
+    except UserBook.DoesNotExist:
         messages.add_message(
             request, 
             messages.ERROR,

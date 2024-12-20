@@ -7,7 +7,6 @@ import { enableAllButtons, disableAllButtons} from './utility.js';
 window.onresize = handleResize;
 
 function handleResize() {
-    console.log("disable");
     let pageNumberEl = document.getElementById('page-number');
     let progress = parseInt(pageNumberEl.getAttribute('data-progress'));
     let bookmark = document.querySelector('#bookmark');
@@ -49,10 +48,10 @@ document.querySelector('#next-button').addEventListener('click', async function(
     let bookmark = document.querySelector('#bookmark');
     let startPage = Number(bookmark.getAttribute('data-bookmarked-page'));
     let currentPage = (await setPageByTurns(1)) + 1;
-    if (startPage != currentPage) {
-        bookmarkReady();
-    } else {
+    if (startPage == currentPage) {
         bookmarkDone();
+    } else {
+        bookmarkReady();
     }
 })
 
@@ -60,10 +59,10 @@ document.querySelector('#previous-button').addEventListener('click', async funct
     let bookmark = document.querySelector('#bookmark');
     let startPage = Number(bookmark.getAttribute('data-bookmarked-page'));
     let currentPage = (await setPageByTurns(-1)) + 1;
-    if (startPage != currentPage) {
-        bookmarkReady();
-    } else {
+    if (startPage == currentPage && currentPage != 1) {
         bookmarkDone();
+    } else {
+        bookmarkReady();
     }
 })
 
@@ -87,7 +86,6 @@ async function handleBookMarkClick() {
         await updateProgress();
     } catch(error) {
         alert('Sorry, there was an issue bookmarking this page.');
-        console.log("Error: " + error.message);
     }
 }
 
@@ -105,7 +103,5 @@ async function updateProgress() {
     let pageNumber = document.querySelector('#page-number');
     let progress = pageNumber.getAttribute('data-progress');
     let length = bookText.getAttribute('data-last-line-number');
-    console.log("Length: " + length);
-    console.log("Progress: " + progress);
     postProgressToServer(progress, length);
 }
