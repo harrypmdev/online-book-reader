@@ -2,10 +2,12 @@ import { postProgressToServer, getBookFromServer } from './ajaxFunctions.js';
 import { calculateCharacterLimit, getLineTotal} from './calculatePage.js';
 import { getLastLineNumber } from './numbering.js';
 import { setPageByTurns, setPageByProgress } from './setPage.js';
+import { enableAllButtons, disableAllButtons} from './utility.js';
 
 window.onresize = handleResize;
 
 function handleResize() {
+    console.log("disable");
     let pageNumberEl = document.getElementById('page-number');
     let progress = parseInt(pageNumberEl.getAttribute('data-progress'));
     let bookmark = document.querySelector('#bookmark');
@@ -18,6 +20,7 @@ function handleResize() {
     document.getElementById('book-text').innerText = "";
     document.querySelector('#spin-holder').classList.remove('invisible')
     document.querySelector('#spin-holder').classList.add('visible')
+    disableAllButtons();
 }
 
 document.addEventListener('DOMContentLoaded', loadPage, false);
@@ -28,6 +31,7 @@ async function loadPage(e, progress="default", bookmarkClicked=true) {
     let chars = calculateCharacterLimit(bookText);
     bookText.setAttribute('data-char-limit', chars);
     let book = await getBookFromServer(chars);
+    enableAllButtons();
     document.querySelector('#spin-holder').classList.add('invisible')
     document.querySelector('#spin-holder').classList.remove('visible')
     bookText.setAttribute('data-last-line-number', getLastLineNumber(book));

@@ -12,3 +12,15 @@ export function calculateProgress(progress) {
         return progress;
     }
 }
+
+export function enableAllButtons() {
+    document.querySelector('#bookmark').removeAttribute('disabled');
+    document.querySelector('#previous-button').removeAttribute('disabled');
+    document.querySelector('#next-button').removeAttribute('disabled');
+}
+
+export function disableAllButtons() {
+    document.querySelector('#bookmark').setAttribute('disabled', '');
+    document.querySelector('#previous-button').setAttribute('disabled', '');
+    document.querySelector('#next-button').setAttribute('disabled', '');  
+}

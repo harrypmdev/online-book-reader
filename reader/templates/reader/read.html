@@ -16,14 +16,14 @@
 <div class="page-info mb-1">
     <div class="d-flex flex-row justify-content-center align-items-center">
         <h1 id="book-title" class="h4 text-center font-italic mx-2">{{ title }}</h1>
-        <button id="bookmark" data-clicked="false" class="btn btn-warning mx-3 mb-2">Bookmark Page
+        <button id="bookmark" data-clicked="false" class="btn btn-warning mx-3 mb-2" disabled>Bookmark Page
             <i class="fa-regular fa-bookmark fa-lg ml-2"></i>
         </button>
     </div>
     <div class="page-counter">
-        <button id="previous-button" class="btn"><i class="fa-solid fa-arrow-left fa-2xl"></i></button>
-        <h1 class="h2" id="page-number" data-page-number='none' data-progress="{{ progress }}">Page 1 of ...</h2>
-        <button id="next-button" class="btn"><i class="fa-solid fa-arrow-right fa-2xl"></i></button>
+        <button disabled id="previous-button" class="btn"><i class="fa-solid fa-arrow-left fa-2xl"></i></button>
+        <h1 class="h4" id="page-number" data-page-number='none' data-progress="{{ progress }}">Page 1 of ?</h2>
+        <button disabled id="next-button" class="btn"><i class="fa-solid fa-arrow-right fa-2xl"></i></button>
     </div>
 </div>
 </div>
