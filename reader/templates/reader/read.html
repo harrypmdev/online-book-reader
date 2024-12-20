@@ -3,14 +3,20 @@
 {% block content %}
 <div class="reader">
 <div id="book-holder">
+    <div id="spin-holder">
+        <div class="spinner-border text-dark" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
     <p data-book-id="{{ book_id }}" data-csrf-token="{{ csrf_token }}" data-ajax-url="{% url 'ajax' %}" 
-    data-ajax-update-url="{% url 'ajax_update' %}" id="book-text"></p>
+    data-ajax-update-url="{% url 'ajax_update' %}" id="book-text">
+    </p>
 </div>
 <hr class="w-50">
 <div class="page-info mb-1">
     <div class="d-flex flex-row justify-content-center align-items-center">
         <h1 id="book-title" class="h4 text-center font-italic mx-2">{{ title }}</h1>
-        <button id="bookmark" class="btn btn-warning mx-3 mb-2">Bookmark Page
+        <button id="bookmark" data-clicked="false" class="btn btn-warning mx-3 mb-2">Bookmark Page
             <i class="fa-regular fa-bookmark fa-lg ml-2"></i>
         </button>
     </div>

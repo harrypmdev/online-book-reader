@@ -24,16 +24,9 @@ export async function postProgressToServer(progress, length) {
     }
 }
 
-export async function getBook(line_width="default", caching=true) {
+export async function getBookFromServer(line_width) {
     let bookText = document.getElementById('book-text')
-    if (line_width == "default") {   
-        line_width = parseInt(bookText.getAttribute('data-char-limit'));
-    }
     let bookID = bookText.getAttribute('data-book-id');
-    if (sessionStorage.getItem("id") == bookID && 
-    sessionStorage.getItem("line-width") == line_width && caching) {
-        return JSON.parse(sessionStorage.getItem('text_list'));
-    }
     let url = bookText.getAttribute('data-ajax-url');
     let csrfToken = bookText.getAttribute('data-csrf-token');
     const response = await fetch(url, {
@@ -51,9 +44,6 @@ export async function getBook(line_width="default", caching=true) {
         throw new Error(`Response status: ${response.status}`);
       }
     let data = await response.json()
-    sessionStorage.setItem("id", bookID);
-    sessionStorage.setItem("line-width", line_width);
     sessionStorage.setItem("text_list", JSON.stringify(data));
     return data
-
 }
