@@ -1,32 +1,12 @@
-/**
- * Return a boolean to indicate whether a paragraph element's text is larger
- * than its viewport.
- * @param {Element} el The element for which the text should be evaluated.
- * @returns {boolean} Whether or not the text is larger. 'true' if it is
- * larger, 'false' if it is not.
- */
-export function isOver(el) {
-    return el.scrollHeight > el.offsetHeight;
-}
+/* A module for functions that aid in calculating the amount of text that
+can fit in a paragraph element.
 
-/**
- * Return the total number of lines that can fit vertically
- * in a paragraph element.
- * @param  {Element} el the element for which the number of lines should
- * be counted.
- * @return {integer} The number of lines counted.
- */
-export function getLineTotal(el) {
-    let originalContent = el.innerText;
-    el.innerText = "";
-    let i = 0;
-    while (!isOver(el)) {
-      i++;
-      el.innerText += `\n`;
-    }
-    el.innerText = originalContent;
-    return i - 1;
-}
+Public Functions:
+calculateCharacterLimit -- calculate and return the number of characters 
+                           that can fit horizontally in a paragraph element.
+calculateLineTotal -- calculate and return the number of lines that 
+                      can fit vertically in a paragraph element.
+*/
 
 /**
  * Return the total number of characters that can fit horizontally
@@ -50,4 +30,30 @@ export function calculateCharacterLimit(el) {
         prevSpan = parseInt(span.offsetTop);
     }
     return 0;
+}
+
+/**
+ * Return the total number of lines that can fit vertically
+ * in a paragraph element.
+ * @param  {Element} el the element for which the number of lines should
+ * be counted.
+ * @return {integer} The number of lines counted.
+ */
+export function calculateLineTotal(el) {
+    let originalContent = el.innerText;
+    el.innerText = "";
+    let i = 0;
+    while (!_isOver(el)) {
+      i++;
+      el.innerText += `\n`;
+    }
+    el.innerText = originalContent;
+    return i - 1;
+}
+
+function _isOver(el) {
+    /* Return a boolean that indicates whether a paragraph element's 
+    text is larger than the paragraph viewport.
+    */
+    return el.scrollHeight > el.offsetHeight;
 }

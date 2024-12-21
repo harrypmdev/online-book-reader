@@ -1,6 +1,6 @@
 /* A module for simple utility functions utilised in the reader app. 
 
-Functions:
+Public Functions:
 getBookFromSession -- retrieve the book stored in the current session.
 calculateProgress -- return progress accounting for whether the user
                      is on the last page of the book.
@@ -14,10 +14,11 @@ makeSpinnerVisible -- make loading spinner visible.
  * Return the book stored in the current session.
  * If not book stored in session, returns null.
  * @returns {String[]} The book stored as an array of every line 
- * of the book.
+ * of the book. Maximum line width is whatever was established
+ * when book was saved to session.
  */
 export function getBookFromSession() {
-    return JSON.parse(sessionStorage.getItem('text_list'));
+    return JSON.parse(sessionStorage.getItem('textList'));
 }
 
 /**

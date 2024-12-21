@@ -1,6 +1,6 @@
 /* A module for render functions utilised in the reader app. 
 
-Functions:
+Public Functions:
 renderPage -- render a page of text.
 setPageNumbers -- update the page numbers to reflect the passed arguments.
 */

@@ -1,13 +1,12 @@
 /* A script to add functionality to the rating stars feature 
 on the OnlineBookReader manage book page. */
 
-/*
-On DOMContentLoaded, update rating stars to reflect their value
+/* On DOMContentLoaded, update rating stars to reflect their value
 as provided by the server.
 */
 document.addEventListener("DOMContentLoaded", displayRating);
 
-// Add functionality for each star on screen
+// Add hover and click functionality for each star on screen
 [...document.querySelectorAll('.fa-star')].forEach(addStarFunctionality)
 
 /**
