@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'books',
     'reader',
+    'account',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
