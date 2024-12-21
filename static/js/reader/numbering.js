@@ -77,8 +77,8 @@ function _splitIntoPages(book, pageSize) {
 function _removeNumbers(textList) {
     // Remove any line numbers from a list of strings such as a page.
     return textList.map((line) => {
-        if (hasNumLabel(line)) {
-            return getNumAndText(line)[1];
+        if (_hasNumLabel(line)) {
+            return _getNumAndText(line)[1];
         }
         return line;
     })

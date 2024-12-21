@@ -1,24 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
+
 {% block content %}
+<!-- Register -->
+<section id="register">
     <h1 class="text-center mt-3">Register</h1>
     <hr class="w-25">
     <div class="row">
         <form class="w-50 col-10 offset-1 col-lg-6 offset-lg-3" method="POST">
             {% csrf_token %}
             {{ register_form | crispy }}
-            <input class="col-4 offset-4 my-2 btn btn-info" type="submit" value="Register"></input>
+            <input class="col-4 offset-4 mt-3 mb-3 btn btn-info" type="submit" value="Register"></input>
         </form>
     </div>
-    <div class="d-flex justify-content-center">
-        <hr class="col-2 mr-4">
-        <p>OR</p>
-        <hr class="col-2 ml-4">
-    </div>
-    <section class="text-center ">
-        <h2 class="h5">Register with:</h2>
-        <p>[Social Media]</p>
-        <p>Already have an account? <a href=""><br>Login</a></p>
-    </section>
+</section>
 {% endblock content %}

@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
 <div class="container h-100">
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+    <!-- Modal -->
+    <section class="modal fade" id="deleteModal" tabindex="-1" role="dialog" 
+    aria-labelledby="deleteModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -12,7 +15,8 @@
               </button>
             </div>
             <div class="modal-body">
-              The book '{{ book.title }}' will be removed from your library permanently. Your saved title, author and progress will be deleted.
+              The book '{{ book.title }}' will be removed from your library permanently. 
+              Your saved title, author and progress will be deleted.
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -20,12 +24,14 @@
             </div>
           </div>
         </div>
-    </div>
+    </section>
     <div class="row h-100">
         <div class="d-none d-lg-flex justify-content-center align-items-center col-lg-5 text-center">
-            <img class="img-fluid rounded vh-75 text-center object-fit-contain my-3" src="{% static 'images/open_book.webp' %}" alt="A single book on a shelf.">
+            <img class="img-fluid rounded vh-75 text-center object-fit-contain my-3" 
+            src="{% static 'images/open_book.webp' %}" alt="A single book on a shelf.">
         </div>
-        <div class="justify-content-center d-flex flex-column col-lg-6 mt-3 mb-2 mb-lg-0">
+        <!-- Manage book -->
+        <section id="manage" class="justify-content-center d-flex flex-column col-lg-6 mt-3 mb-2 mb-lg-0">
             <h1 class="text-center h2 mb-0">Manage your book: {{ book.title }}</h1>
             <hr class="w-75">
             <form class="row" method="POST">
@@ -52,23 +58,25 @@
                         </small>
                     </div>
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" aria-describedby="title" value="{{ book.title }}">
+                    <input type="text" class="form-control" id="title" name="title" aria-describedby="title" 
+                    value="{{ book.title }}">
                 </div>
                 <div class="form-group w-90 mx-3 mx-lg-auto ml-3">
                     <label for="author">Author</label>
-                    <input type="text" class="form-control" id="author" name="author" aria-describedby="author" value="{{ book.author }}">
+                    <input type="text" class="form-control" id="author" name="author" 
+                    aria-describedby="author" value="{{ book.author }}">
                 </div>
                 <input class="col-4 offset-4 my-1 btn btn-info" type="submit" value="Save"></input>
             </form>
             <hr class="w-75">
-            <div class="row my-1">
+            <section id="done-with-book" class="row my-1">
                 <p class="col-12 text-center">Done with this book?</p>
                 <button type="button" class="col-6 btn btn-danger offset-3" data-toggle="modal" data-target="#deleteModal">Delete book from library</button>
-            </div>
+            </section>
             <small class="form-text text-muted mx-auto mb-4 mt-1">
                 This cannot be undone.
             </small>
-        </div>
+        </section>
     </div>
 </div>
 <script src="{% static 'js/ratingStars.js' %}"></script>

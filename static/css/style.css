@@ -1,3 +1,5 @@
+/* ------- General styles ------- */
+
 body {
     font-family: "Merriweather", serif;
 }
@@ -55,7 +57,7 @@ body {
 
 /* ------- Styles for reader ------- */
 
-.reader {
+#page {
     display: flex;
     flex-direction: column;
 }
@@ -90,7 +92,7 @@ body {
     height: 10vh;
 }
 
-.page-counter {
+#page-counter {
     flex-basis: 3;
     font-size: x-large;
     display: flex;
@@ -99,7 +101,7 @@ body {
     flex-direction: row;
 }
 
-.page-counter * {
+#page-counter * {
     margin: 0 10px 0 10px;
 }
 
