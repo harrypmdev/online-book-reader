@@ -1,3 +1,4 @@
+import urllib.request
 from django.contrib import messages
 from .models import Book, UserBook, Rating
 
@@ -11,11 +12,15 @@ def add_not_a_text_file_message(request):
 
 
 def add_book_in_library_message(request):
+    msg = ('You already had this book in your library.' 
+    + 'You can update its title and author any time, '
+    + 'by clicking&emsp;<i class="fa-solid fa-pen-to-square">' 
+    + '</i>&emsp;below the book you want to edit on the home screen.'
+    )
     messages.add_message(
         request,
         messages.INFO,
-        "You already had this book in your library. You can update its title and author any time, "
-        + 'by clicking&emsp;<i class="fa-solid fa-pen-to-square"></i>&emsp;below the book you want to edit on the home screen.',
+        msg
     )
 
 
@@ -103,3 +108,18 @@ def user_book_exists(id, request):
 
 def is_text_file(book_url):
     return book_url[len(book_url) - 4 : len(book_url)] == ".txt"
+
+
+def is_valid_url(url):
+    try:
+        urllib.request.urlopen(url)
+        return True
+    except urllib.error.URLError:
+        return False
+
+
+def add_invalid_url_message(request):
+    msg = "This URL is invalid. Check if you typed it correctly or try another version."
+    messages.add_message(
+        request, messages.ERROR, msg
+    )

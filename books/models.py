@@ -34,7 +34,7 @@ class Book(models.Model):
                               book no longer than the character width provided.
     """
 
-    url = models.URLField(unique=True)
+    url = models.URLField()
     auto_title = models.CharField(max_length=400, default="No Title Found")
     auto_author = models.CharField(max_length=200, default="No Author Found")
 
