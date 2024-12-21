@@ -1,3 +1,16 @@
+"""Django models file that defines models related to the storing and rating
+of books.
+
+Models:
+Book - a book with a unique URL. Has a many-to-many relationship with User
+       via the UserBook junction table.
+UserBook - a junction table for the relationship between Book and User.
+           Specific to each user and stores information such as their reading
+           progress and last date/time the book was read.
+Rating - a table for ratings given by users to books.
+"""
+
+
 import urllib.request
 import string
 import random
@@ -7,7 +20,7 @@ from django.contrib.auth.models import User
 
 
 class Book(models.Model):
-    """Stores a single book with a unique URL. Has a many-to-many relationship
+    """Stores a single Book with a unique URL. Has a many-to-many relationship
     with User via the UserBook junction table.
 
     Fields:
@@ -152,6 +165,34 @@ class Book(models.Model):
 
 
 class UserBook(models.Model):
+    """Stores a single UserBook, a version of a book unique to a user.
+    A junction table for the many-to-many relationship between User and
+    Book. 
+
+    Related to:
+    :model:`auth.User`
+    :model:`Book`
+
+    Fields:
+    user: models.ForeignKey(User) -- one-to-many relationship with User.
+    book: models.ForeignKey(Book) -- one-to-many relationship with Book.
+    title: models.CharField -- the UserBook's title.
+    author: models.CharField -- the UserBook's author.
+    last_viewed: models.DateTimeField -- the last time this UserBook 
+                                         was viewed.
+    progress: models.IntegerField -- the user's progress through this book,
+                                     denoted by line number.
+    percent_progress: models.IntegerField -- the user's progress as a
+                                             percentage.
+    color: models.CharField -- the color this book should appear as on
+                                the dashboard.
+
+    Public Methods:
+    update_percent_progress -- update the instance's percent_progress
+                               field to reflect current progress.
+    pick_color -- pick random color and assign instance's 
+                  color attribute to it.
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     title = models.CharField(max_length=400)
@@ -162,17 +203,38 @@ class UserBook(models.Model):
     color = models.CharField(max_length=20, default="primary")
 
     def __str__(self):
+        """ __str__ magic method, display related user and book title. """
         return f"{self.user}'s {self.title}"
 
     def update_percent_progress(self, length):
+        """Update the instance's percent_progress field to reflect current
+        progress.
+
+        Arguments:
+        length: int -- the length of the book, the line number of the last line.
+        """
         self.percent_progress = round((int(self.progress) / int(length) * 100))
 
     def pick_color(self):
+        """ Pick random color and assign instance's color attribute to it. """
         colors = ("primary", "success", "danger", "info")
         self.color = random.choice(colors)
 
 
 class Rating(models.Model):
+    """Stores a single Rating, a star score given to a Book by a User.
+    
+    Related to:
+    :model:`auth.User`
+    :model:`Book`
+
+    Fields:
+    user: models.ForeignKey(User) -- one-to-many relationship with User.
+    book: models.ForeignKey(Book) -- one-to-many relationship with Book.
+    rating: models.IntegerField -- a number, 10 a maximum, which represents
+                                   the score given by the user for this rating.
+    created_at: models.DateField -- the date on which this rating was created.
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     rating = models.IntegerField()
