@@ -1,3 +1,6 @@
+/* A script to add progress bar animations for each progress bar 
+on the OnlineBookReader dashboard page. */
+
 // Add progress bar animation to all dashboard books.
 [...document.querySelectorAll('.book')].forEach(addProgressBarAnimation);
 

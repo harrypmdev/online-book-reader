@@ -2,9 +2,31 @@ import { postProgressToServer, getBookFromServer } from './ajaxFunctions.js';
 import { calculateCharacterLimit, getLineTotal} from './calculatePage.js';
 import { getLastLineNumber } from './numbering.js';
 import { setPageByTurns, setPageByProgress } from './setPage.js';
-import { enableAllButtons, disableAllButtons} from './utility.js';
+import { enableAllButtons, disableAllButtons, 
+    makeSpinnerInvisible, makeSpinnerVisible } from './utility.js';
 
+document.addEventListener('DOMContentLoaded', loadPage, false);
 window.onresize = handleResize;
+
+async function loadPage(e, progress="default", bookmarkClicked=true) {
+    addReaderEventListeners();
+    let bookText = document.getElementById('book-text');
+    let chars = calculateCharacterLimit(bookText);
+    bookText.setAttribute('data-char-limit', chars);
+    bookText.setAttribute('data-lines', getLineTotal(bookText));
+    let book = await getBookFromServer(chars);
+    enableAllButtons();
+    makeSpinnerInvisible();
+    bookText.setAttribute('data-last-line-number', getLastLineNumber(book));
+    if (progress == "default") {
+        let pageNumberEl = document.getElementById('page-number');
+        progress = parseInt(pageNumberEl.getAttribute('data-progress'));
+    }
+    if (Number(progress) > 0 && bookmarkClicked) {
+        bookmarkDone();
+    }
+    setPageByProgress(progress)
+}
 
 function handleResize() {
     let pageNumberEl = document.getElementById('page-number');
@@ -17,34 +39,16 @@ function handleResize() {
     }
     loadPage(Event, progress, clicked);
     document.getElementById('book-text').innerText = "";
-    document.querySelector('#spin-holder').classList.remove('invisible')
-    document.querySelector('#spin-holder').classList.add('visible')
     disableAllButtons();
 }
 
-document.addEventListener('DOMContentLoaded', loadPage, false);
-
-async function loadPage(e, progress="default", bookmarkClicked=true) {
-    let bookText = document.getElementById('book-text');
-    bookText.setAttribute('data-lines', getLineTotal(bookText));
-    let chars = calculateCharacterLimit(bookText);
-    bookText.setAttribute('data-char-limit', chars);
-    let book = await getBookFromServer(chars);
-    enableAllButtons();
-    document.querySelector('#spin-holder').classList.add('invisible')
-    document.querySelector('#spin-holder').classList.remove('visible')
-    bookText.setAttribute('data-last-line-number', getLastLineNumber(book));
-    if (progress == "default") {
-        let pageNumberEl = document.getElementById('page-number');
-        progress = parseInt(pageNumberEl.getAttribute('data-progress'));
-    }
-    if (Number(progress) > 0 && bookmarkClicked) {
-        bookmarkDone();
-    }
-    setPageByProgress(progress)
+function addReaderEventListeners() {
+    document.querySelector('#next-button').addEventListener('click', handleNextClick);
+    document.querySelector('#previous-button').addEventListener('click', handlePreviousClick);
+    document.querySelector('#bookmark').addEventListener('click', handleBookMarkClick);
 }
 
-document.querySelector('#next-button').addEventListener('click', async function() {
+async function handleNextClick() {
     let bookmark = document.querySelector('#bookmark');
     let startPage = Number(bookmark.getAttribute('data-bookmarked-page'));
     let currentPage = (await setPageByTurns(1)) + 1;
@@ -53,9 +57,9 @@ document.querySelector('#next-button').addEventListener('click', async function(
     } else {
         bookmarkReady();
     }
-})
+}
 
-document.querySelector('#previous-button').addEventListener('click', async function() {
+async function handlePreviousClick() {
     let bookmark = document.querySelector('#bookmark');
     let startPage = Number(bookmark.getAttribute('data-bookmarked-page'));
     let currentPage = (await setPageByTurns(-1)) + 1;
@@ -64,17 +68,6 @@ document.querySelector('#previous-button').addEventListener('click', async funct
     } else {
         bookmarkReady();
     }
-})
-
-document.querySelector('#bookmark').addEventListener('click', handleBookMarkClick)
-
-function bookmarkDone() {
-    let bookmark = document.querySelector('#bookmark')
-    bookmark.innerHTML = 'Bookmarked<i class="fa-solid fa-bookmark fa-lg ml-2"></i>';
-    bookmark.classList.remove('btn-warning');
-    bookmark.classList.add('btn-success');
-    bookmark.setAttribute('disabled', '');
-    bookmark.setAttribute('data-clicked', 'true');
 }
 
 async function handleBookMarkClick() {
@@ -88,6 +81,17 @@ async function handleBookMarkClick() {
         alert('Sorry, there was an issue bookmarking this page.');
     }
 }
+
+function bookmarkDone() {
+    let bookmark = document.querySelector('#bookmark')
+    bookmark.innerHTML = 'Bookmarked<i class="fa-solid fa-bookmark fa-lg ml-2"></i>';
+    bookmark.classList.remove('btn-warning');
+    bookmark.classList.add('btn-success');
+    bookmark.setAttribute('disabled', '');
+    bookmark.setAttribute('data-clicked', 'true');
+}
+
+
 
 function bookmarkReady() {
     let bookmark = document.querySelector('#bookmark')

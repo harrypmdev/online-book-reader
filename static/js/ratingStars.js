@@ -1,3 +1,6 @@
+/* A script to add functionality to the rating stars feature 
+on the OnlineBookReader manage book page. */
+
 /*
 On DOMContentLoaded, update rating stars to reflect their value
 as provided by the server.
