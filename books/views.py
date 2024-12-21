@@ -47,21 +47,20 @@ def add_book(request):
     )
 
 def manage_book(request, id):
-    user_book = utility.user_book_exists(id, request)
+    user_book = utility.user_book_exists(request, id)
     if not user_book:
         return redirect('home')
     book = Book.objects.get(id=user_book.book.id)
     if request.POST:
-        utility.update_rating_if_appropriate(request, book)
+        utility.update_rating_if_appropriate(request.POST['rating'], book)
         manage_form = ManageForm(data=request.POST)
         if manage_form.is_valid():
             utility.action_manage_form(request, user_book, manage_form)
             return redirect('home')
     context = {}
     context['rating_count'] = Rating.objects.filter(book=book.id).count()
-    context['rated'] = 'false'
     context['average_rating'] = book.average_rating()
-    context['rated'] = utility.rating_exists(book, request)
+    context['rated'] = utility.rating_exists(request, book)
     context['book'] = user_book
     return render(
         request,

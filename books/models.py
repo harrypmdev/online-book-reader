@@ -10,7 +10,6 @@ UserBook - a junction table for the relationship between Book and User.
 Rating - a table for ratings given by users to books.
 """
 
-
 import urllib.request
 import string
 import random
@@ -52,7 +51,7 @@ class Book(models.Model):
     auto_author = models.CharField(max_length=200, default="No Author Found")
 
     def __str__(self):
-        """ __str__ magic method, display auto_title and url. """
+        """__str__ magic method, display auto_title and url."""
         return f"{self.auto_title}: {self.url}"
 
     def scan(self):
@@ -79,13 +78,13 @@ class Book(models.Model):
                 break
 
     def total_readers(self):
-        """Return the number of readers who have this 
+        """Return the number of readers who have this
         book on their dashboard.
         """
         return UserBook.objects.filter(book=self).count()
 
     def average_rating(self):
-        """Return the average rating for this book rounded 
+        """Return the average rating for this book rounded
         to the nearest whole number.
         """
         ratings = Rating.objects.filter(book=self)
@@ -95,7 +94,7 @@ class Book(models.Model):
         return 0 if not ratings.count() else round(rating_total / ratings.count())
 
     def return_split_text_list(self, width_limit):
-        """Return the book contents split up into a list of strings, 
+        """Return the book contents split up into a list of strings,
         with each string being a line of the book no longer than the character
         width provided. Where applicable, lines start with a tag denoting
         their line number, with the number at the start of the line separated
@@ -167,7 +166,7 @@ class Book(models.Model):
 class UserBook(models.Model):
     """Stores a single UserBook, a version of a book unique to a user.
     A junction table for the many-to-many relationship between User and
-    Book. 
+    Book.
 
     Related to:
     :model:`auth.User`
@@ -178,7 +177,7 @@ class UserBook(models.Model):
     book: models.ForeignKey(Book) -- one-to-many relationship with Book.
     title: models.CharField -- the UserBook's title.
     author: models.CharField -- the UserBook's author.
-    last_viewed: models.DateTimeField -- the last time this UserBook 
+    last_viewed: models.DateTimeField -- the last time this UserBook
                                          was viewed.
     progress: models.IntegerField -- the user's progress through this book,
                                      denoted by line number.
@@ -190,9 +189,10 @@ class UserBook(models.Model):
     Public Methods:
     update_percent_progress -- update the instance's percent_progress
                                field to reflect current progress.
-    pick_color -- pick random color and assign instance's 
+    pick_color -- pick random color and assign instance's
                   color attribute to it.
     """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     title = models.CharField(max_length=400)
@@ -203,7 +203,7 @@ class UserBook(models.Model):
     color = models.CharField(max_length=20, default="primary")
 
     def __str__(self):
-        """ __str__ magic method, display related user and book title. """
+        """__str__ magic method, display related user and book title."""
         return f"{self.user}'s {self.title}"
 
     def update_percent_progress(self, length):
@@ -216,14 +216,14 @@ class UserBook(models.Model):
         self.percent_progress = round((int(self.progress) / int(length) * 100))
 
     def pick_color(self):
-        """ Pick random color and assign instance's color attribute to it. """
+        """Pick random color and assign instance's color attribute to it."""
         colors = ("primary", "success", "danger", "info")
         self.color = random.choice(colors)
 
 
 class Rating(models.Model):
     """Stores a single Rating, a star score given to a Book by a User.
-    
+
     Related to:
     :model:`auth.User`
     :model:`Book`
@@ -235,6 +235,7 @@ class Rating(models.Model):
                                    the score given by the user for this rating.
     created_at: models.DateField -- the date on which this rating was created.
     """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     rating = models.IntegerField()
