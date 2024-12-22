@@ -13,9 +13,10 @@ getBookFromServer -- get book from server and save it to session.
  * of the book, i.e, the books total length.
  */
 export async function postProgressToServer(progress, length) {
+    let tokenMeta = document.querySelector('meta[name="csrf-token"]');
+    let csrfToken = tokenMeta.getAttribute('content');
     let bookText = document.getElementById('book-text');
     let url = bookText.getAttribute('data-ajax-update-url');
-    let csrfToken = bookText.getAttribute('data-csrf-token');
     let bookID = bookText.getAttribute('data-book-id');
     const response = await _progressAjaxFetch(
         url, csrfToken, progress, 
@@ -41,10 +42,11 @@ export async function postProgressToServer(progress, length) {
  * separated from the text content of the line with the character '𓀴'.
  */
 export async function getBookFromServer(lineWidth) {
+    let tokenMeta = document.querySelector('meta[name="csrf-token"]');
+    let csrfToken = tokenMeta.getAttribute('content');
     let bookText = document.getElementById('book-text');
     let bookID = bookText.getAttribute('data-book-id');
     let url = bookText.getAttribute('data-ajax-url');
-    let csrfToken = bookText.getAttribute('data-csrf-token');
     const response = await _bookAjaxFetch(url, csrfToken, lineWidth, bookID);
     if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);

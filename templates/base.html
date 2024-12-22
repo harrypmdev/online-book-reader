@@ -21,6 +21,10 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Additional head content block -->
+     {% block head %}
+     <!-- Additional varying head content goes here -->
+     {% endblock head %}
 </head>
 <body class="d-flex flex-column h-100 bg-light">
     <!-- Navbar -->
