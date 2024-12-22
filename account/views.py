@@ -21,7 +21,7 @@ from . import utility
 
 def register(request):
     """Display the register page.
-    Registers user, logs them in and redirects to home page if user 
+    Registers user, logs them in and redirects to home page if user
     inputs valid registration data.
 
     **Context**
@@ -32,7 +32,7 @@ def register(request):
     """
     if request.method == "POST":
         poss_redirect = _register_post(request)
-        if (isinstance(poss_redirect, HttpResponseRedirect)):
+        if isinstance(poss_redirect, HttpResponseRedirect):
             return poss_redirect
     register_form = RegisterForm()
     context = {"register_form": register_form}
@@ -56,7 +56,7 @@ def login_view(request):
     """
     if request.method == "POST":
         poss_redirect = _login_view_post(request)
-        if (isinstance(poss_redirect, HttpResponseRedirect)):
+        if isinstance(poss_redirect, HttpResponseRedirect):
             return poss_redirect
     authentication_form = AuthenticationForm()
     context = {"authentication_form": authentication_form}

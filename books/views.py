@@ -58,14 +58,8 @@ def dashboard(request):
     **Template**
     `books/dashboard.html`
     """
-    user_books = UserBook.objects.filter(user=request.user.id).order_by(
-        "-last_viewed"
-    )
-    return render(
-        request,
-        "books/dashboard.html",
-        {"user_books": user_books}
-    )
+    user_books = UserBook.objects.filter(user=request.user.id).order_by("-last_viewed")
+    return render(request, "books/dashboard.html", {"user_books": user_books})
 
 
 def add_book(request):
@@ -126,12 +120,12 @@ def manage_book(request, id):
 
 def delete_book(request, id):
     """Delete the UserBook matching the given id.
-    Redirects to home page.
-    Adds message to user informing they are not authorised to delete book
-    if applicable.
+     Redirects to home page.
+     Adds message to user informing they are not authorised to delete book
+     if applicable.
 
-   **Arguments**
-    id -- the id for the UserBook in question.
+    **Arguments**
+     id -- the id for the UserBook in question.
     """
     try:
         user_book = UserBook.objects.get(user=request.user, id=id)
@@ -149,7 +143,11 @@ def _manage_book_post(request, book, user_book):
     # Handle post functionality for the manage_book view.
     # Update the user's rating if appropriate.
     # Update the book title and author.
-    utility.update_rating_if_appropriate(request.POST["rating"], book)
+    utility.update_rating_if_appropriate(
+        request.user, 
+        request.POST["rating"], 
+        book
+    )
     manage_form = ManageForm(data=request.POST)
     if manage_form.is_valid():
         utility.action_manage_form(request, user_book, manage_form)
@@ -165,7 +163,7 @@ def _add_book_post(request):
         utility.add_invalid_url_message(request)
         return
     book_url = url_form.cleaned_data["url"]
-    if not utility.is_valid_and_txt_url(book_url):
+    if not utility.is_valid_and_txt_url(request, book_url):
         return
     book = utility.get_book_or_create(book_url)
     user_book = utility.get_user_book_or_create(request, book)

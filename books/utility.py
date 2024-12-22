@@ -6,10 +6,10 @@ add_book_deleted_message -- add message to inform user their book was
 add_not_authorised_to_delete_message -- add message to inform user they are
                                         not authorised to delete the book they
                                         attempted to delete.
-add_invalid_url_message -- add message to inform user the URL they entered 
+add_invalid_url_message -- add message to inform user the URL they entered
                            is invalid.
 get_book_or_create -- return the relevant Book for a url if the book with that
-                      url already exists. Otherwise, create a new book with 
+                      url already exists. Otherwise, create a new book with
                       that url and return that.
 get_user_book_or_create -- return the relevant UserBook for a User and Book if
                            that UserBook already exists. Otherwise, create a
@@ -21,8 +21,8 @@ rating_exists -- return 'true' if the given user has already rated a book,
                  'false' if not.
 user_book_exists -- return the UserBook instance related to the given id
                     if it exists. If it does not exist, return None.
-is_valid_and_txt_url -- return True if a given URL links to both a valid 
-                        destination a text file specifically, False if 
+is_valid_and_txt_url -- return True if a given URL links to both a valid
+                        destination a text file specifically, False if
                         it does not.
 """
 
@@ -35,7 +35,7 @@ def add_book_deleted_message(request):
     """Add message to inform user their book was successfully deleted.
 
     Arguments:
-    request: HttpRequest -- the request from the view which is directly or 
+    request: HttpRequest -- the request from the view which is directly or
                             indirectly calling this function.
     """
     messages.add_message(
@@ -48,7 +48,7 @@ def add_not_authorised_to_delete_message(request):
     book they attempted to delete.
 
     Arguments:
-    request: HttpRequest -- the request from the view which is directly or 
+    request: HttpRequest -- the request from the view which is directly or
                             indirectly calling this function.
     """
     messages.add_message(
@@ -60,13 +60,11 @@ def add_invalid_url_message(request):
     """Add message to inform user the URL they entered is invalid.
 
     Arguments:
-    request: HttpRequest -- the request from the view which is directly or 
+    request: HttpRequest -- the request from the view which is directly or
                             indirectly calling this function.
     """
     msg = "This URL is invalid. Check if you typed it correctly or try another version."
-    messages.add_message(
-        request, messages.ERROR, msg
-    )
+    messages.add_message(request, messages.ERROR, msg)
 
 
 def get_book_or_create(book_url):
@@ -76,7 +74,7 @@ def get_book_or_create(book_url):
     Arguments:
     book_url: str -- the url for the book which should be either retrieved
                         or created.
-    
+
     Returns a Book object.
     """
     try:
@@ -93,11 +91,11 @@ def get_user_book_or_create(request, book):
     already exists. Otherwise, create a new UserBook and return that.
 
     Arguments:
-    request: HttpRequest -- the request from the view which is directly or 
+    request: HttpRequest -- the request from the view which is directly or
                             indirectly calling this function.
     book: Book -- the Book object which, along with the User, is one of two
                   foreign keys that identifies a UserBook.
-    
+
     Returns a UserBook object.
     """
     try:
@@ -112,7 +110,7 @@ def get_user_book_or_create(request, book):
     return user_book
 
 
-def update_rating_if_appropriate(ratingNum, book):
+def update_rating_if_appropriate(user, ratingNum, book):
     """If a given rating is more than 0, apply the rating to the given book.
     Updates a rating if it already exists and creates a new rating if one
     it does not exist already.
@@ -123,23 +121,23 @@ def update_rating_if_appropriate(ratingNum, book):
     """
     if int(ratingNum) != 0:
         try:
-            rating = Rating.objects.get(book=book, user=request.user)
+            rating = Rating.objects.get(book=book, user=user)
             rating.rating = ratingNum
             rating.save()
         except Rating.DoesNotExist:
             Rating.objects.create(
                 book=book,
-                user=request.user,
-                rating=request.POST["rating"],
+                user=user,
+                rating=ratingNum,
             )
 
 
 def action_manage_form(request, user_book, manage_form):
-    """Action a manage_form if it is valid. Update the given user_book with 
+    """Action a manage_form if it is valid. Update the given user_book with
     the information from the manage_form and add a message to inform the user.
 
     Arguments:
-    request: HttpRequest -- the request from the view which is directly or 
+    request: HttpRequest -- the request from the view which is directly or
                             indirectly calling this function.
     user_book: UserBook -- the UserBook for which details should be updated.
     manage_form: ManageForm -- the form from which information should be taken
@@ -154,7 +152,7 @@ def rating_exists(request, book):
     'false' if not.
 
     Arguments:
-    request: HttpRequest -- the request from the view which is directly or 
+    request: HttpRequest -- the request from the view which is directly or
                             indirectly calling this function.
     book: Book -- the Book for which a rating should be searched.
 
@@ -171,7 +169,7 @@ def user_book_exists(request, id):
     If it does not exist, return None.
 
     Arguments:
-    request: HttpRequest -- the request from the view which is directly or 
+    request: HttpRequest -- the request from the view which is directly or
                             indirectly calling this function.
     id: int -- the id for which a UserBook should be retrieved if it exists.
 
@@ -185,7 +183,7 @@ def user_book_exists(request, id):
         _add_simple_authorisation_error_message(request)
 
 
-def is_valid_and_txt_url(book_url):
+def is_valid_and_txt_url(request, book_url):
     """Check whether a given URL links to both a valid destination and
     a text file specifically. Adds message to user to indicate issue
     with URL if is not both valid and a text file.
@@ -225,16 +223,13 @@ def _update_user_book_with_form(user_book, manage_form):
 
 
 def _add_book_in_library_message(request):
-    msg = ('You already had this book in your library. ' 
-    + 'You can update its title and author any time, '
-    + 'by clicking&emsp;<i class="fa-solid fa-pen-to-square">' 
-    + '</i>&emsp;below the book you want to edit on the home screen.'
+    msg = (
+        "You already had this book in your library. "
+        + "You can update its title and author any time, "
+        + 'by clicking&emsp;<i class="fa-solid fa-pen-to-square">'
+        + "</i>&emsp;below the book you want to edit on the home screen."
     )
-    messages.add_message(
-        request,
-        messages.INFO,
-        msg
-    )
+    messages.add_message(request, messages.INFO, msg)
 
 
 def _add_simple_authorisation_error_message(request):
@@ -252,4 +247,3 @@ def _add_not_a_text_file_message(request):
 
 def _add_book_saved_message(request):
     messages.add_message(request, messages.SUCCESS, "Book saved!")
-
