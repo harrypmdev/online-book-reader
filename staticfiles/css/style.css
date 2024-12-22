@@ -1,3 +1,5 @@
+/* ------- General styles ------- */
+
 body {
     font-family: "Merriweather", serif;
 }
@@ -55,13 +57,14 @@ body {
 
 /* ------- Styles for reader ------- */
 
-.reader {
+#page {
     display: flex;
     flex-direction: column;
 }
 
 #book-holder {
     text-align: center;
+
 }
 
 #book-text {
@@ -75,14 +78,21 @@ body {
     margin: auto;
     margin-top: 2vh;
     max-width: 100%;
-  }
+}
+
+#spin-holder {
+    width: 50%;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 #page-info {
     height: 10vh;
 }
 
-.page-counter {
-    flex-basis: 3;
+#page-counter {
     font-size: x-large;
     display: flex;
     justify-content: center;
@@ -90,7 +100,7 @@ body {
     flex-direction: row;
 }
 
-.page-counter * {
+#page-counter * {
     margin: 0 10px 0 10px;
 }
 

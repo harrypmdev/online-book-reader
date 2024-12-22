@@ -93,7 +93,6 @@ body {
 }
 
 #page-counter {
-    flex-basis: 3;
     font-size: x-large;
     display: flex;
     justify-content: center;
