@@ -13,7 +13,7 @@
       "**/CVS": true
    },
    "files.autoSave": "off",
-   "workbench.colorTheme": "Solarized Light",
+   "workbench.colorTheme": "Default Light+",
    "terminal.integrated.gpuAcceleration": "canvas",
    "python.REPL.enableREPLSmartSend": false,
 }

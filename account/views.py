@@ -69,8 +69,9 @@ def login_view(request):
 
 def logout_view(request):
     """Log out the user and redirect them to home page."""
-    utility.add_logged_out_message(request)
-    logout(request)
+    if request.user.is_authenticated:
+        utility.add_logged_out_message(request)
+        logout(request)
     return redirect("home")
 
 
