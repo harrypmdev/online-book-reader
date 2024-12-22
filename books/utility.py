@@ -1,8 +1,6 @@
-"""A module for simple utility functions utilised in books/view.py.
+"""A module for simple utility functions utilised in books/views.py.
 
 Public Functions:
-add_not_a_text_file_message -- add message to inform user the URL they entered
-                               is not a text file.
 add_book_deleted_message -- add message to inform user their book was
                             successfully deleted.
 add_not_authorised_to_delete_message -- add message to inform user they are
@@ -23,27 +21,14 @@ rating_exists -- return 'true' if the given user has already rated a book,
                  'false' if not.
 user_book_exists -- return the UserBook instance related to the given id
                     if it exists. If it does not exist, return None.
-is_text_file -- return True if a string ends with '.txt', False if not.
-is_valid_url -- return True if a url can be accessed, False if not.
+is_valid_and_txt_url -- return True if a given URL links to both a valid 
+                        destination a text file specifically, False if 
+                        it does not.
 """
 
 import urllib.request
 from django.contrib import messages
 from .models import Book, UserBook, Rating
-
-
-def add_not_a_text_file_message(request):
-    """Add message to inform user the URL they entered is not a text file.
-
-    Arguments:
-    request: HttpRequest -- the request from the view which is directly or 
-                            indirectly calling this function.
-    """
-    messages.add_message(
-        request,
-        messages.ERROR,
-        'Your URL is not a text file. Please ensure your URL ends with ".txt".',
-    )
 
 
 def add_book_deleted_message(request):
@@ -200,25 +185,32 @@ def user_book_exists(request, id):
         _add_simple_authorisation_error_message(request)
 
 
-def is_text_file(book_url):
-    """Return True if a string ends with '.txt', False if not.
+def is_valid_and_txt_url(book_url):
+    """Check whether a given URL links to both a valid destination and
+    a text file specifically. Adds message to user to indicate issue
+    with URL if is not both valid and a text file.
 
     Arguments:
     book_url: str -- the url which should be checked.
 
-    Returns a Boolean - True if it does end with '.txt', False if not.
+    Returns a Boolean, true if the URL is valid, false if not.
     """
+    if not _is_text_file(book_url):
+        _add_not_a_text_file_message(request)
+        return False
+    if not _is_valid_url(book_url):
+        add_invalid_url_message(request)
+        return False
+    return True
+
+
+def _is_text_file(book_url):
+    # Return True if a string ends with '.txt', False if not.
     return book_url[len(book_url) - 4 : len(book_url)] == ".txt"
 
 
-def is_valid_url(url):
-    """Return True if a url can be accessed, False if not.
-
-    Arguments:
-    url: str -- the url which should be checked.
-
-    Returns a Boolean - True if it can be accessed, False if not.
-    """
+def _is_valid_url(url):
+    # Return True if a url can be accessed, False if not.
     try:
         urllib.request.urlopen(url)
         return True
@@ -233,7 +225,7 @@ def _update_user_book_with_form(user_book, manage_form):
 
 
 def _add_book_in_library_message(request):
-    msg = ('You already had this book in your library.' 
+    msg = ('You already had this book in your library. ' 
     + 'You can update its title and author any time, '
     + 'by clicking&emsp;<i class="fa-solid fa-pen-to-square">' 
     + '</i>&emsp;below the book you want to edit on the home screen.'
@@ -247,6 +239,15 @@ def _add_book_in_library_message(request):
 
 def _add_simple_authorisation_error_message(request):
     messages.add_message(request, messages.ERROR, "Authorisation error.")
+
+
+def _add_not_a_text_file_message(request):
+    # Add message to inform user the URL they entered is not a text file.
+    messages.add_message(
+        request,
+        messages.ERROR,
+        'Your URL is not a text file. Please ensure your URL ends with ".txt".',
+    )
 
 
 def _add_book_saved_message(request):
