@@ -9,6 +9,21 @@
         <section id="add-book-screen" class="justify-content-center d-flex flex-column col-lg-6 mt-3 mb-3 mb-lg-0">
             <h1 class="text-center">Add a new book</h1>
             <hr class="w-75">
+            <p>
+                Enter a URL to a text file hosted online to add it as a book.
+                We recommend <a href="https://www.gutenberg.org/" target="_blank">Project Gutenberg</a> as a
+                good place to find free, public domain books. Here are their current top 100 books in English: 
+                <a href="https://www.gutenberg.org/browse/scores/top-en.php" target="_blank">Gutenberg Top 100</a>.
+                Simply:
+                <ol>
+                    <li>Click a book.</li>
+                    <li>Under 'choose how to read this book', click 'Plain Text UTF-8'</li>
+                    <li>Copy the URL in your browser's address bar and paste it here.</li>
+                </ol>
+                Books can be accessed elsewhere but formatting may vary and OnlineBookReader may be less successful at
+                tasks like automatic title and author generation.
+            </p>
+            <hr class="w-75">
             <form id="add-book_form" class="row" method="POST">
                 {% csrf_token %}
                 <div class="form-group form-inline w-100 justify-content-center">
