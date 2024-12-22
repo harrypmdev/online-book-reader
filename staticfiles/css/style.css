@@ -4,6 +4,10 @@ body {
     font-family: "Merriweather", serif;
 }
 
+a {
+    color: #0250C5;
+}
+
 .btn-primary {
     background-color: #0250C5;
     border-color: #0250C5;
