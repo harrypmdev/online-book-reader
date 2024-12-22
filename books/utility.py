@@ -226,7 +226,7 @@ def _add_book_in_library_message(request):
     msg = (
         "You already had this book in your library. "
         + "You can update its title and author any time, "
-        + 'by clicking&emsp;<i class="fa-solid fa-pen-to-square">'
+        + 'by clicking edit &emsp;<i class="fa-solid fa-pen-to-square">'
         + "</i>&emsp;below the book you want to edit on the home screen."
     )
     messages.add_message(request, messages.INFO, msg)

@@ -1,7 +1,7 @@
 """A module for simple utility functions utilised in account/views.py.
 
 Public Functions:
-add_registered_messaged -- add message to inform user they have
+add_registered_message -- add message to inform user they have
                            registered successfully.
 add_registration_failed_message -- add message to inform user their
                                    registration was unsuccessful.
@@ -22,7 +22,7 @@ add_delete_profile_error_message -- add message to inform user there was
 from django.contrib import messages
 
 
-def add_registered_messaged(request):
+def add_registered_message(request):
     """Add message to inform user they have registered successfully.
 
     Arguments:
