@@ -88,6 +88,30 @@ These entities are implemented through django ORM in `books/models.py`.
 
 ## Lighthouse Testing
 
+### Home Page
+
+### About Us Page
+
+### Dashboard Page
+
+### Add Book Page
+
+### Manage Book Page
+
+### Login Page
+
+### Profile Page
+
+### Register Page
+
+### Read Page
+
+### 404 Error Page
+
+### 500 Error Page
+
+### 403 CSRF Error Page
+
 ## Manual Testing
 
 ## Automated Testing

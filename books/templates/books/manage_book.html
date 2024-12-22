@@ -36,7 +36,7 @@
             <hr class="w-75">
             <form class="row" method="POST">
                 <div class="col-7 text-right mb-3">
-                  <input type="number" class="d-none" id="rating" name="rating" value="0">
+                  <input type="number" class="d-none" id="rating" name="rating" value="0" aria-describedby="rating">
                   <section data-rating="{{ average_rating }}" data-rated="{{ rated }}" id="star-rating">
                     <i class="fa-regular fa-star fa-xl pointer"></i>
                     <i class="fa-regular fa-star fa-xl pointer"></i>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-5 text-left">
                   <small class="form-text">
-                    {{ rating_count }} rating(s)
+                    {{ rating_count }} <label for="rating">rating(s)</label>
                   </small>      
                 </div>
                 {% csrf_token %}
