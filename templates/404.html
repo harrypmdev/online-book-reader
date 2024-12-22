@@ -4,7 +4,7 @@
 {% block content %}
 <!-- Display page for 404 errors-->
 <div class="h-100 container-fluid justify-content-center d-flex flex-column pb-5">
-    <p class="text-center text-muted">404: Page not found.</p>
+    <p class="text-center text-helper">404: Page not found.</p>
     <h1 class="text-center">
         We couldn't find this page.
         <i class="fa-solid fa-heart-crack mx-3"></i>
@@ -12,7 +12,7 @@
     <p class="text-center">
         Maybe you're looking for a book that has been deleted.
         <br>
-        Take me back <a href="{% url 'home' %}">home</a>.
+        Take me back <a class="text-decoration-underline" href="{% url 'home' %}">home</a>.
     </p>
 
 </div>

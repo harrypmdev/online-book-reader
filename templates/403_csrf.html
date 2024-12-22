@@ -4,7 +4,7 @@
 {% block content %}
 <!-- Display page for 403 CSRF errors-->
 <div class="h-100 container-fluid justify-content-center d-flex flex-column pb-5">
-    <p class="text-center text-muted">403: CSRF verification failed.</p>
+    <p class="text-center text-helper">403: CSRF verification failed.</p>
     <h1 class="text-center">
         We couldn't submit your information.
         <i class="fa-solid fa-heart-crack mx-3"></i>
@@ -14,7 +14,7 @@
         This problem may occur if you log into a different
         account on another tab.
         <br>
-        Take me back <a href="{% url -'home' %}">home</a>.
+        Take me back <a class="text-decoration-underline" href="{% url -'home' %}">home</a>.
     </p>
 
 </div>
