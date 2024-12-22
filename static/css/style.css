@@ -4,6 +4,11 @@ body {
     font-family: "Merriweather", serif;
 }
 
+.btn-primary {
+    background-color: #0250C5;
+    border-color: #0250C5;
+}
+
 .vh-75 {
     height: 75vh;
   }
@@ -72,6 +77,10 @@ body {
     width: 90vw;
     overflow: hidden;
     word-break: break-all;
+    /* Double monospace to account for known
+    monospace on oddities on some browsers 
+    https://github.com/necolas/normalize.css/issues/519#issuecomment-197131966
+    */
     font-family: monospace, monospace;
     font-size: 16px;
     text-align: center;
