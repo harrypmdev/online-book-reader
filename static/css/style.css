@@ -8,6 +8,10 @@ a {
     color: #0250C5;
 }
 
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
 .btn-primary {
     background-color: #0250C5;
     border-color: #0250C5;
