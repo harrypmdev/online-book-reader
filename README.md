@@ -493,8 +493,11 @@ with the only errors identified being unused imports which are simply parts of D
 - All JavaScript files checked with <a href="https://jshint.com/" target="_blank">JSHint</a>, no issues.
 - Project's single custom CSS file (static/css/style.css) checked with 
 <a href="https://jigsaw.w3.org/css-validator/validator" target="_blank">W3C CSS validator</a>, no issues.
-- 
-
+- All of project's HTML files checked with
+<a href="https://validator.w3.org/nu/#textarea" target="_blank">W3C HTML validator</a>, by taking final HTML
+code produced by server and inputting to validator as Django Templating code itself cannot be validated.
+No issues except minor issues produced by crispy forms on registration page.
+<br>
 
 # Testing
 

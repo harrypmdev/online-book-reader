@@ -7,7 +7,7 @@
     <div class="row">
         <!-- Display add book card -->
         <section id="add-book-card" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 my-4">
-            <a href="{% url 'add_book' %}" type="button" class="add-book-card h-100 border border-secondary 
+            <a href="{% url 'add_book' %}" class="add-book-card h-100 border border-secondary 
             py-4 btn btn-light border w-100 d-flex align-items-center justify-content-center">
                 <div>
                     <h1 class="h4">Add a book</h1>
@@ -19,7 +19,7 @@
         <!-- Display book card for all of user's books-->
         {% for book in user_books %}
             <section class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 my-4 book">
-                <a href="read/{{ book.id }}/" type="button" class="book-card h-100 border border-{{ book.color }} 
+                <a href="read/{{ book.id }}/" class="book-card h-100 border border-{{ book.color }} 
                 py-4 btn btn-light border w-100 ">
                     <h1 class="h4">{{ book.title }}</h1>
                     <hr>
