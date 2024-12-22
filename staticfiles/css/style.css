@@ -8,6 +8,10 @@ a {
     color: #0250C5;
 }
 
+.text-muted {
+    color: black !important;
+}
+
 .text-helper {
     color: #8F0000;
 }
