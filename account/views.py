@@ -19,7 +19,7 @@ def register(request):
             login(request, user)
             return redirect("home")
         else:
-            utility.addRegistration_failed_message(request)
+            utility.add_registration_failed_message(request)
     register_form = RegisterForm()
     context = {"register_form": register_form}
     return render(
