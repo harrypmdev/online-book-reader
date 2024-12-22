@@ -7,7 +7,7 @@ as provided by the server.
 document.addEventListener("DOMContentLoaded", displayRating);
 
 // Add hover and click functionality for each star on screen
-[...document.querySelectorAll('.fa-star')].forEach(addStarFunctionality)
+[...document.querySelectorAll('.fa-star')].forEach(addStarFunctionality);
 
 /**
  * Add functionality to a rating star. Applies hover and click functionality.
@@ -19,7 +19,7 @@ function addStarFunctionality (el, i) {
     let stars = [...document.querySelectorAll('.fa-star')];
     addStarClickFunctionality(el, i);
     addStarMouseOverFunctionality(stars, i);
-    addStarMouseOutFunctionality(stars, i)
+    addStarMouseOutFunctionality(stars, i);
 }
 
 /**
@@ -33,10 +33,10 @@ function addStarClickFunctionality(el, i) {
         let starRating = document.querySelector('#star-rating');
         starRating.setAttribute('data-rating', (i+1)*2);
         starRating.setAttribute('data-rated', 'true');
-        document.querySelector('#rating').setAttribute('value', (i+1)*2)
+        document.querySelector('#rating').setAttribute('value', (i+1)*2);
         console.log((i+1)*2);
-        displayRating()
-    }
+        displayRating();
+    };
 }
 
 /**
@@ -77,7 +77,7 @@ function addStarMouseOutFunctionality(stars, i) {
             el.classList.add('fa-regular'); 
             el.classList.remove('fa-solid');     
             }
-        })
+        });
     };
 }
 
@@ -103,8 +103,8 @@ function displayRating() {
  */
 function applyRatingGivenStyles(stars) {
     for (let star of stars) {
-        star.classList.add('text-warning')
-        star.classList.remove('pointer')
+        star.classList.add('text-warning');
+        star.classList.remove('pointer');
     }
 }
 

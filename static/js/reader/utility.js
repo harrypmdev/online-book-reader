@@ -66,8 +66,8 @@ export function disableAllButtons() {
  * been set to visible in JS (such as upon screen resizing).
  */
 export function makeSpinnerInvisible() {
-    document.querySelector('#spin-holder').classList.add('invisible')
-    document.querySelector('#spin-holder').classList.remove('visible')
+    document.querySelector('#spin-holder').classList.add('invisible');
+    document.querySelector('#spin-holder').classList.remove('visible');
 }
 
 /**
@@ -75,6 +75,6 @@ export function makeSpinnerInvisible() {
  * been set to invisible in JS (such as upon page loading).
  */
 export function makeSpinnerVisible() {
-    document.querySelector('#spin-holder').classList.remove('invisible')
-    document.querySelector('#spin-holder').classList.add('visible')
+    document.querySelector('#spin-holder').classList.remove('invisible');
+    document.querySelector('#spin-holder').classList.add('visible');
 }

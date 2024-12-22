@@ -23,7 +23,7 @@ export async function setPageByProgress(progress) {
     for (const [i, page] of bookInPages.entries()) {
         if ((Number(progress) < page.num)) {
             pageNumber = i-1;
-            break
+            break;
         }
     }
     document.querySelector('#bookmark').setAttribute('data-bookmarked-page', pageNumber+1);

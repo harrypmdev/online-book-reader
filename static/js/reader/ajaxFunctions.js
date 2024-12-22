@@ -13,7 +13,7 @@ getBookFromServer -- get book from server and save it to session.
  * of the book, i.e, the books total length.
  */
 export async function postProgressToServer(progress, length) {
-    let bookText = document.getElementById('book-text')
+    let bookText = document.getElementById('book-text');
     let url = bookText.getAttribute('data-ajax-update-url');
     let csrfToken = bookText.getAttribute('data-csrf-token');
     let bookID = bookText.getAttribute('data-book-id');
@@ -24,9 +24,9 @@ export async function postProgressToServer(progress, length) {
     if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-    let data = await response.json()
-    if (!data['completion'].includes('Progress updated.')) {
-        throw new Error(`Error updating progress: ${data['completion']}`);
+    let data = await response.json();
+    if (!data.completion.includes('Progress updated.')) {
+        throw new Error(`Error updating progress: ${data.completion}`);
     }
 }
 
@@ -41,7 +41,7 @@ export async function postProgressToServer(progress, length) {
  * separated from the text content of the line with the character '𓀴'.
  */
 export async function getBookFromServer(lineWidth) {
-    let bookText = document.getElementById('book-text')
+    let bookText = document.getElementById('book-text');
     let bookID = bookText.getAttribute('data-book-id');
     let url = bookText.getAttribute('data-ajax-url');
     let csrfToken = bookText.getAttribute('data-csrf-token');
@@ -49,9 +49,9 @@ export async function getBookFromServer(lineWidth) {
     if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-    let data = await response.json()
+    let data = await response.json();
     sessionStorage.setItem("textList", JSON.stringify(data));
-    return data
+    return data;
 }
 
 async function _progressAjaxFetch(url, csrfToken, progress, bookID, length) {
@@ -82,5 +82,5 @@ async function _bookAjaxFetch(url, csrfToken, lineWidth, bookID) {
          'num': lineWidth,
          'book_id': bookID,
          })
-     })
+     });
 }

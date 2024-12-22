@@ -51,7 +51,7 @@ function _splitIntoNumberedPages(book, pageSize) {
     _splitIntoPages(book, pageSize).forEach((page) => {
         for (let line of page) {
             if (_hasNumLabel(line)) {
-                let [num, text] = _getNumAndText(line);
+                let num = _getNumAndText(line)[0];
                 numberedPages.push({
                     "num": num,
                     "content": _removeNumbers(page)
@@ -59,7 +59,7 @@ function _splitIntoNumberedPages(book, pageSize) {
                 break;
             }
         }
-    })
+    });
     return numberedPages;
 }
 
@@ -81,7 +81,7 @@ function _removeNumbers(textList) {
             return _getNumAndText(line)[1];
         }
         return line;
-    })
+    });
 }
 
 function _hasNumLabel(line) {

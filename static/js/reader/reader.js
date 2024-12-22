@@ -40,7 +40,7 @@ async function handleLoadPage(event, progress=-1, bookmarkClicked=true) {
     if (Number(progress) > 0 && bookmarkClicked) {
         bookmarkDone();
     }
-    setPageByProgress(progress)
+    setPageByProgress(progress);
 }
 
 /**
@@ -124,7 +124,7 @@ async function handleBookMarkClick() {
  * Disable bookmark functionality and change appearance to reflect this.
  */
 function bookmarkDone() {
-    let bookmark = document.querySelector('#bookmark')
+    let bookmark = document.querySelector('#bookmark');
     bookmark.innerHTML = 'Bookmarked<i class="fa-solid fa-bookmark fa-lg ml-2"></i>';
     bookmark.classList.remove('btn-warning');
     bookmark.classList.add('btn-success');
@@ -136,7 +136,7 @@ function bookmarkDone() {
  * Enable bookmark functionality and change appearance to reflect this.
  */
 function bookmarkReady() {
-    let bookmark = document.querySelector('#bookmark')
+    let bookmark = document.querySelector('#bookmark');
     bookmark.innerHTML = 'Bookmark Page<i class="fa-regular fa-bookmark fa-lg ml-2"></i>';
     bookmark.classList.add('btn-warning');
     bookmark.classList.remove('btn-success');
