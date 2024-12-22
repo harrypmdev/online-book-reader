@@ -1,3 +1,24 @@
+"""A module for simple utility functions utilised in account/views.py.
+
+Public Functions:
+add_registered_messaged -- add message to inform user they have 
+                           registered successfully.
+add_registration_failed_message -- add message to inform user their
+                                   registration was unsuccessful.
+add_logged_in_message -- add message to inform user they logged in 
+                         successfully.
+add_invalid_credentials_message -- add message to inform user their
+                                   credentials are invalid.
+add_logged_out_message -- add message to inform user they have logged out.
+add_authentication_issue_message -- add message to inform user there was
+                                    an authentication issue.
+add_account_deleted_message -- add message to inform user their account
+                               has been successfully deleted.
+add_delete_profile_error_message -- add message to inform user there was
+                                    an authentication issue when attempting
+                                    to delete their profile.
+"""
+
 from django.contrib import messages
 
 
@@ -83,6 +104,13 @@ def add_account_deleted_message(request):
 
 
 def add_delete_profile_error_message(request):
+    """Add message to inform user there was an authentication issue when
+    attempting to delete their profile.
+
+    Arguments:
+    request: HttpRequest -- the request from the view which is directly or 
+                            indirectly calling this function.
+    """
     messages.add_message(
         request,
         messages.ERROR,
