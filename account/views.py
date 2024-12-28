@@ -120,7 +120,7 @@ def _login_view_post(request):
     username = request.POST["username"]
     password = request.POST["password"]
     user = authenticate(username=username, password=password)
-    if user is not None:
+    if user:
         login(request, user)
         utility.add_logged_in_message(request)
         return redirect("home")
