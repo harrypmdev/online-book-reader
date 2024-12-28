@@ -14,7 +14,7 @@ import { getBookFromSession } from "./utility.js";
 /**
  * Return the book currently stored in the session split into numbered pages
  * as per the line height of the book-text element.
- * @returns {Object[]} An array of objects (pages). Each object has two
+ * @return {Object[]} An array of objects (pages). Each object has two
  * values: 'num' (the line number of the first line of the page), and
  * 'content' (the content of the page as an array of strings). The array is
  * ordered from first page to last page.
@@ -23,7 +23,7 @@ export function getNumberedBook() {
     let book = getBookFromSession();
     let bookText = document.querySelector('#book-text');
     let lines = parseInt(bookText.getAttribute('data-lines'));
-    return _splitIntoNumberedPages(book, lines);
+    return splitIntoNumberedPages(book, lines);
 }
 
 /**
@@ -31,30 +31,36 @@ export function getNumberedBook() {
  * as a whole book or a page).
  * @param {String[]} textList A text such as book or page stored as an array
  * of every line of the text, including line numbers on relevant lines.
- * @returns {Number} The line number of the last line.
+ * @return {Number} The line number of the last line.
  */
 export function getLastLineNumber(textList) {
     for (let line of textList.reverse()) {
-        if (_hasNumLabel(line)) {
-            return Number(_getNumAndText(line)[0]);
+        if (hasNumLabel(line)) {
+            return Number(getNumAndText(line)[0]);
         }
     }
 }
 
-function _splitIntoNumberedPages(book, pageSize) {
-    /* Take a whole book and split it into numbered pages according to
-    the pageSize value passed to the function, the number of lines on one 
-    page. Return a list of objects, each with the line number of the first
-    line of their page and the page content ('num' and 'content' respectively).
-    */
+/**
+ * Take a whole book and split it into numbered pages according to
+ * the pageSize value passed to the function, the number of lines on one 
+ * page.
+ * @param {String[]} book The book, as an array of strings, which should
+ * be split into numbered pages. 
+ * @param {Number} pageSize The amount of lines that should be on one page. 
+ * @return {Object[]} An array of objects, each with the line number of the 
+ * first line of their page and the page content ('num' and 'content'
+ * respectively).
+ */
+function splitIntoNumberedPages(book, pageSize) {
     let numberedPages = [];
-    _splitIntoPages(book, pageSize).forEach((page) => {
+    splitIntoPages(book, pageSize).forEach((page) => {
         for (let line of page) {
-            if (_hasNumLabel(line)) {
-                let num = _getNumAndText(line)[0];
+            if (hasNumLabel(line)) {
+                let num = getNumAndText(line)[0];
                 numberedPages.push({
                     "num": num,
-                    "content": _removeNumbers(page)
+                    "content": removeNumbers(page)
                 });
                 break;
             }
@@ -63,10 +69,16 @@ function _splitIntoNumberedPages(book, pageSize) {
     return numberedPages;
 }
 
-function _splitIntoPages(book, pageSize) {
-    /* Take a whole book and split it into pages according to the pageSize
-    value passed to the function, the number of lines on one page. 
-    */
+/**
+ * Take a whole book and split it into pages according to the pageSize
+ * value passed to the function, the number of lines on one page.
+ * @param {String[]} book The book, as an array of strings, which should
+ * be split into pages. 
+ * @param {Number} pageSize The amount of lines that should be on one page. 
+ * @return {String[][]} A two dimensional array. Returns an array of pages,
+ * with a page being an array of strings, ordered from first page to last page.
+ */
+function splitIntoPages(book, pageSize) {
     let pages = [];
     for (let i = 0; i < book.length; i += pageSize) {
         pages.push(book.slice(i, i + pageSize));
@@ -74,27 +86,38 @@ function _splitIntoPages(book, pageSize) {
     return pages;
 }
 
-function _removeNumbers(textList) {
-    // Remove any line numbers from a list of strings such as a page.
+/**
+ * Remove any line numbers from a list of strings such as a page.
+ * @param {String[]} textList The list of strings such as a page
+ * or book which should have the line numbers removed. 
+ * @return {String[]} The list of strings without any line numbers.
+ */
+function removeNumbers(textList) {
     return textList.map((line) => {
-        if (_hasNumLabel(line)) {
-            return _getNumAndText(line)[1];
+        if (hasNumLabel(line)) {
+            return getNumAndText(line)[1];
         }
         return line;
     });
 }
 
-function _hasNumLabel(line) {
-    /* Return bool indicating whether a given line has a line number label -
-    true if does, false if does not.
-    */
+/**
+ * Check if a given line has a line number label.
+ * @param {String} line The line which should be checked.
+ * @return {Boolean} true if has a label, false if not.
+ */
+function hasNumLabel(line) {
     return line.includes("𓀴");
 }
 
-function _getNumAndText(line) {
-    /* Take a line with a line number and split it into two values:
-    the line number, and the text content of the line, in that order.
-    */
-    let lines = line.split("𓀴");
-    return [lines[0], lines[1]];
+/**
+ * Take a line with a line number and split it into two values:
+ * the line number, and the text content of the line, in that order.
+ * @param {String} line The line which should be split into a line
+ * number and text content. 
+ * @return {String[]} An array containing two values - firstly,
+ * the line number, and secondly, the text content of the line.
+ */
+function getNumAndText(line) {
+    return line.split("𓀴");
 }

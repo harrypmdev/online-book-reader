@@ -1,6 +1,7 @@
 /* A module for simple utility functions utilised in the reader app. 
 
 Public Functions:
+sanitise -- sanitise a line of text so that injected code is not executed.
 getBookFromSession -- retrieve the book stored in the current session.
 calculateProgress -- return progress accounting for whether the user
                      is on the last page of the book.
@@ -11,9 +12,22 @@ makeSpinnerVisible -- make loading spinner visible.
 */
 
 /**
+ * Sanitise a line of text so that injected code is presented but not
+ * executed.
+ * @param {String} line The line of code that should be sanitised.
+ * @return {String} The sanitised line of code.
+ */
+export function sanitise(line) {
+    line = line.replace('&', '&amp');
+    line = line.replace('<', '&lt');
+    line = line.replace('>', '&gt');
+    return line
+}
+
+/**
  * Return the book stored in the current session.
  * If not book stored in session, returns null.
- * @returns {String[]} The book stored as an array of every line 
+ * @return {String[]} The book stored as an array of every line 
  * of the book. Maximum line width is whatever was established
  * when book was saved to session.
  */
@@ -27,7 +41,7 @@ export function getBookFromSession() {
  * progress number unchanged.
  * @param {Number} progress The progress number for the current page,
  * not accounting for whether the user is on the last page.
- * @returns {Number} The progress number accounting for whether the
+ * @return {Number} The progress number accounting for whether the
  * user is on the last page of the book.
  */
 export function calculateProgress(progress) {

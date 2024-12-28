@@ -13,7 +13,7 @@ makeSpinnerVisible -- make loading spinner visible.
 /**
  * Return the book stored in the current session.
  * If not book stored in session, returns null.
- * @returns {String[]} The book stored as an array of every line 
+ * @return {String[]} The book stored as an array of every line 
  * of the book. Maximum line width is whatever was established
  * when book was saved to session.
  */
@@ -27,7 +27,7 @@ export function getBookFromSession() {
  * progress number unchanged.
  * @param {Number} progress The progress number for the current page,
  * not accounting for whether the user is on the last page.
- * @returns {Number} The progress number accounting for whether the
+ * @return {Number} The progress number accounting for whether the
  * user is on the last page of the book.
  */
 export function calculateProgress(progress) {

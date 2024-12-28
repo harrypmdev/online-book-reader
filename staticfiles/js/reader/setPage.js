@@ -15,7 +15,7 @@ import { getNumberedBook } from './numbering.js';
  * Set and display the current page by means of a progress value.
  * @param {Number} progress The progress value in question, a number for a 
  * specific line in the book.
- * @returns {Number} The page number for the newly set page.
+ * @return {Number} The page number for the newly set page.
  */
 export async function setPageByProgress(progress) {
     let bookInPages = await getNumberedBook();
@@ -28,7 +28,7 @@ export async function setPageByProgress(progress) {
     }
     document.querySelector('#bookmark').setAttribute('data-bookmarked-page', pageNumber+1);
     setPageNumbers(pageNumber, bookInPages.length);
-    let currentPage = _setPageContent(bookInPages, 0);
+    let currentPage = setPageContent(bookInPages, 0);
     /* Set progress back to progress value given by function user, so switching
     screen size does not gradually move page back or forward in book.
     */
@@ -41,16 +41,24 @@ export async function setPageByProgress(progress) {
  * @param {Number} turns The number of pages that should be turned forward or
  * backward. 1 goes forward by one page, -3 goes backwards 3 pages, 5 goes forward
  * 5 pages, etc.
- * @returns {Number} The page number for the newly set page.
+ * @return {Number} The page number for the newly set page.
  */
 export async function setPageByTurns(turns){
     let bookInPages = getNumberedBook();
-    return _setPageContent(bookInPages, turns);
+    return setPageContent(bookInPages, turns);
 }
 
-function _setPageContent(bookInPages, turns) {
-    /* Display page content to the user. Set bookmark element's data-progress
-    attribute to the now current progress.
+/**
+ * Display page content to the user. Set bookmark element's data-progress
+ * attribute to the now current progress.
+ * @param {Object[]} bookInPages The book split into numbered pages, as 
+ * returned by the getNumberedBook function.
+ * @param {Number} turns The number of page turns forward or backward
+ * (negative numbers) the book should turn before displaying content. 
+ * @return {Number} The page number for the newly set page.
+ */
+function setPageContent(bookInPages, turns) {
+    /* 
     */
     let pageNumberElement = document.querySelector('#page-number');
     let pageNumber = pageNumberElement.getAttribute('data-page-number');

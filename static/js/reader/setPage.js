@@ -15,7 +15,7 @@ import { getNumberedBook } from './numbering.js';
  * Set and display the current page by means of a progress value.
  * @param {Number} progress The progress value in question, a number for a 
  * specific line in the book.
- * @returns {Number} The page number for the newly set page.
+ * @return {Number} The page number for the newly set page.
  */
 export async function setPageByProgress(progress) {
     let bookInPages = await getNumberedBook();
@@ -41,7 +41,7 @@ export async function setPageByProgress(progress) {
  * @param {Number} turns The number of pages that should be turned forward or
  * backward. 1 goes forward by one page, -3 goes backwards 3 pages, 5 goes forward
  * 5 pages, etc.
- * @returns {Number} The page number for the newly set page.
+ * @return {Number} The page number for the newly set page.
  */
 export async function setPageByTurns(turns){
     let bookInPages = getNumberedBook();
@@ -55,7 +55,7 @@ export async function setPageByTurns(turns){
  * returned by the getNumberedBook function.
  * @param {Number} turns The number of page turns forward or backward
  * (negative numbers) the book should turn before displaying content. 
- * @returns {Number} The page number for the newly set page.
+ * @return {Number} The page number for the newly set page.
  */
 function setPageContent(bookInPages, turns) {
     /* 

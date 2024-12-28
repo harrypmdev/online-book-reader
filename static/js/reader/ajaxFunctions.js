@@ -37,7 +37,7 @@ export async function postProgressToServer(progress, length) {
  * retrieved from server once per reader app load.
  * @param {Number} lineWidth The maximum amount of characters that should
  * be in each line of the book.
- * @returns {String[]} The book as an array of every line of the
+ * @return {String[]} The book as an array of every line of the
  * book. Most lines start with the line's original line number, 
  * separated from the text content of the line with the character '𓀴'.
  */
@@ -65,7 +65,7 @@ export async function getBookFromServer(lineWidth) {
  * @param {Number} bookID The UserBook id for the book that should be fetched.
  * @param {Number} length The line number of the last line of the book, so a
  * percentage can be calculated.
- * @returns The fetched JSON from the API endpoint, if fetch is successful returns
+ * @return {JSON} The fetched JSON from the API endpoint, if fetch is successful returns
  * a JSON with value 'completion' which indicates status of progress update.
  */
 async function progressAjaxFetch(url, csrfToken, progress, bookID, length) {
@@ -90,7 +90,7 @@ async function progressAjaxFetch(url, csrfToken, progress, bookID, length) {
  * @param {Number} lineWidth The max amount of characters that should be
  * able to fit on one line of the book.
  * @param {Number} bookID The UserBook id for the book that should be fetched.
- * @returns The fetched JSON from the API endpoint, if successful is an array
+ * @return {JSON} The fetched JSON from the API endpoint, if successful is an array
  * of strings, each string being a line in the book.
  */
 async function bookAjaxFetch(url, csrfToken, lineWidth, bookID) {

@@ -12,7 +12,8 @@ setPageNumbers -- update the page numbers to reflect the passed arguments.
 export function renderPage(page) {
     let content = "";
     for (let line of page) {
-        content += line += "<br>";
+        // content += ("<pre>" + line + "</pre><br>");
+        content += line + "<br>";
     }
     document.getElementById('book-text').innerHTML = content;
 }
@@ -25,13 +26,14 @@ export function renderPage(page) {
  */
 export function setPageNumbers(pageNumber, totalPages) {
     let pageNumberElement = document.querySelector('#page-number');
+    let nextButtonElement = document.querySelector('#next-button');
     pageNumberElement.innerHTML = `${pageNumber+1} of ${totalPages}`;
     pageNumberElement.setAttribute('data-page-number', pageNumber);
     if (pageNumber >= totalPages-1) {
-        document.querySelector('#next-button').style.visibility = 'hidden';
+        nextButtonElement.style.visibility = 'hidden';
         document.querySelector('#bookmark').setAttribute('data-final-page', 'true');
     } else {
-        document.querySelector('#next-button').style.visibility = 'visible';
+        nextButtonElement.style.visibility = 'visible';
         document.querySelector('#bookmark').setAttribute('data-final-page', 'false');
     }
     document.querySelector('#previous-button').style.visibility = pageNumber <= 0 ?

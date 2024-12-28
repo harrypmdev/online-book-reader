@@ -43,7 +43,7 @@ export function calculateLineTotal(el) {
     let originalContent = el.innerText;
     el.innerText = "";
     let i = 0;
-    while (paragraphTextFits(el)) {
+    while (!isOverTextLimit(el)) {
       i++;
       el.innerText += `\n`;
     }
@@ -53,13 +53,11 @@ export function calculateLineTotal(el) {
 
 /**
  * Return a boolean that indicates whether a paragraph element's 
- * text is fits inside the paragraph viewport.
+ * text fits inside the paragraph viewport.
  * @param {Element} el The paragraph element for which this should be
  * checked.
- * @returns A boolean, true if the text fits and false if it does not.
+ * @return {Boolean} false if the text fits and true if it does not.
  */
-function paragraphTextFits(el) {
-    /* 
-    */
+function isOverTextLimit(el) {
     return el.scrollHeight > el.offsetHeight;
 }

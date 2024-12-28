@@ -113,8 +113,6 @@ class Book(models.Model):
         return new_text_list
 
     def _smart_split(self, line, width_limit):
-        # Splits a line into smaller lines if over the width limit.
-        # Avoids splitting words where possible.
         if len(line) > width_limit:
             rounded_halfway = self._find_halfway(line)
             return_list = []
@@ -134,7 +132,6 @@ class Book(models.Model):
         return [line]
 
     def _find_halfway(self, line):
-        # Finds the halfway point of a given line.
         rounded_halfway = math.ceil(len(line) / 2)
         new_halfway = rounded_halfway
         try:
@@ -145,8 +142,6 @@ class Book(models.Model):
         return new_halfway
 
     def _return_text_list(self, numbered=True):
-        # Fetches the text list from the URL and splits it into lines,
-        # numbered where appropriate.
         data = urllib.request.urlopen(self.url)
         if numbered:
             return [f"{i}𓀴" + line.decode("utf-8") for i, line in enumerate(data)]
@@ -155,8 +150,6 @@ class Book(models.Model):
 
     @staticmethod
     def _scan_for_auto(field, line):
-        # Scan a specific line for the given field.
-        # Returns None is nothing found.
         if field in line.lower():
             line = line.lower().replace(field, "")
             line = string.capwords(line.strip())
