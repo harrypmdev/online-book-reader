@@ -2,12 +2,14 @@
 on the OnlineBookReader manage book page. */
 
 /* On DOMContentLoaded, update rating stars to reflect their value
-as provided by the server.
+as provided by the server and add star functionality.
 */
-document.addEventListener("DOMContentLoaded", displayRating);
+document.addEventListener("DOMContentLoaded", () => {
+    displayRating();
+    // Add hover and click functionality for each star on screen
+    [...document.querySelectorAll('.fa-star')].forEach(addStarFunctionality);
+});
 
-// Add hover and click functionality for each star on screen
-[...document.querySelectorAll('.fa-star')].forEach(addStarFunctionality);
 
 /**
  * Add functionality to a rating star. Applies hover and click functionality.

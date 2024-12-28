@@ -114,9 +114,6 @@ def delete_profile(request):
 
 
 def _login_view_post(request):
-    # Handle post functionality for the login view.
-    # If form is valid, register user with it, log them in and redirect
-    # them to home page. Otherwise, inform user registration failed.
     username = request.POST["username"]
     password = request.POST["password"]
     user = authenticate(username=username, password=password)
@@ -128,9 +125,6 @@ def _login_view_post(request):
 
 
 def _register_post(request):
-    # Handle post functionality for the register view.
-    # If form is valid, register user with it, log them in and redirect
-    # them to home page. Otherwise, inform user registration failed.
     register_form = RegisterForm(data=request.POST)
     if register_form.is_valid():
         register_form.save()

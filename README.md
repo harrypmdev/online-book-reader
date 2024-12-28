@@ -694,3 +694,5 @@ Very similar pages exist for 500 errors and 403_csrf errors also.
 
  + <a href="https://balsamiq.com/wireframes/desktop/">Balsamic</a> software used for wireframing
  <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAim.org</a>.
+ https://stackoverflow.com/questions/52639834/how-to-make-django-form-field-unique
+ https://djangosnippets.org/snippets/1259/

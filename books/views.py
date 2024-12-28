@@ -140,9 +140,6 @@ def delete_book(request, id):
 
 
 def _manage_book_post(request, book, user_book):
-    # Handle post functionality for the manage_book view.
-    # Update the user's rating if appropriate.
-    # Update the book title and author.
     utility.update_rating_if_appropriate(
         request.user, 
         request.POST["rating"], 
@@ -155,9 +152,6 @@ def _manage_book_post(request, book, user_book):
 
 
 def _add_book_post(request):
-    # Handle post functionality for the add_book view.
-    # If given URL is valid, redirects to the manage book page
-    # for the given book. If is invalid, displays relevant message.
     url_form = URLForm(request.POST)
     if not url_form.is_valid():
         utility.add_invalid_url_message(request)

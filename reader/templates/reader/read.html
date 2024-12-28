@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load truncate_smart %}
 
 {% block head %}
 <meta name="csrf-token" content="{{ csrf_token }}">
@@ -23,7 +24,7 @@
     <!-- Page info and buttons -->
     <div class="page-info mb-1">
         <div id="title-and-bookmark" class="d-flex flex-row justify-content-center align-items-center">
-            <h1 id="book-title" class="h4 text-center font-italic mx-2">{{ title }}</h1>
+            <h1 id="book-title" class="h4 text-center font-italic mx-2">{{ title|truncatesmart:50 }}</h1>
             <button id="bookmark" data-clicked="false" class="btn btn-warning mx-3 mb-2" disabled>
                 Bookmark Page
                 <i class="fa-regular fa-bookmark fa-lg ml-2"></i>

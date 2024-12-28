@@ -1,0 +1,2 @@
+<h1>My malicious code</h2>
+<script>console.log("I have accessed your code in a malicious manner.");</script>

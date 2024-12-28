@@ -203,12 +203,10 @@ def is_valid_and_txt_url(request, book_url):
 
 
 def _is_text_file(book_url):
-    # Return True if a string ends with '.txt', False if not.
     return book_url[len(book_url) - 4 : len(book_url)] == ".txt"
 
 
 def _is_valid_url(url):
-    # Return True if a url can be accessed, False if not.
     try:
         urllib.request.urlopen(url)
         return True
@@ -237,7 +235,6 @@ def _add_simple_authorisation_error_message(request):
 
 
 def _add_not_a_text_file_message(request):
-    # Add message to inform user the URL they entered is not a text file.
     messages.add_message(
         request,
         messages.ERROR,

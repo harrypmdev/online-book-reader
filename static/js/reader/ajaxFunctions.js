@@ -18,7 +18,7 @@ export async function postProgressToServer(progress, length) {
     let bookText = document.getElementById('book-text');
     let url = bookText.getAttribute('data-ajax-update-url');
     let bookID = bookText.getAttribute('data-book-id');
-    const response = await _progressAjaxFetch(
+    const response = await progressAjaxFetch(
         url, csrfToken, progress, 
         bookID, length
     );
@@ -47,7 +47,7 @@ export async function getBookFromServer(lineWidth) {
     let bookText = document.getElementById('book-text');
     let bookID = bookText.getAttribute('data-book-id');
     let url = bookText.getAttribute('data-ajax-url');
-    const response = await _bookAjaxFetch(url, csrfToken, lineWidth, bookID);
+    const response = await bookAjaxFetch(url, csrfToken, lineWidth, bookID);
     if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
@@ -56,8 +56,19 @@ export async function getBookFromServer(lineWidth) {
     return data;
 }
 
-async function _progressAjaxFetch(url, csrfToken, progress, bookID, length) {
-    // Ajax call to post progress to server.
+/**
+ * Post progress to server for a specific UserBook.
+ * @param {String} url The url for the API endpoint.
+ * @param {String} csrfToken The CSRF token.
+ * @param {Number} progress The progress that should be posted - a book line
+ * number. 
+ * @param {Number} bookID The UserBook id for the book that should be fetched.
+ * @param {Number} length The line number of the last line of the book, so a
+ * percentage can be calculated.
+ * @returns The fetched JSON from the API endpoint, if fetch is successful returns
+ * a JSON with value 'completion' which indicates status of progress update.
+ */
+async function progressAjaxFetch(url, csrfToken, progress, bookID, length) {
     return await fetch(url, {
         method:'POST',
         headers:{
@@ -72,8 +83,17 @@ async function _progressAjaxFetch(url, csrfToken, progress, bookID, length) {
     });
 }
 
-async function _bookAjaxFetch(url, csrfToken, lineWidth, bookID) {
-    // Ajax call to fetch book from server.
+/**
+ * Asynchronously fetch a book from the server.
+ * @param {String} url The url for the API endpoint.
+ * @param {String} csrfToken The CSRF token.
+ * @param {Number} lineWidth The max amount of characters that should be
+ * able to fit on one line of the book.
+ * @param {Number} bookID The UserBook id for the book that should be fetched.
+ * @returns The fetched JSON from the API endpoint, if successful is an array
+ * of strings, each string being a line in the book.
+ */
+async function bookAjaxFetch(url, csrfToken, lineWidth, bookID) {
     return await fetch(url, {
         method:'POST',
         headers:{

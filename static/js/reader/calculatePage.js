@@ -43,7 +43,7 @@ export function calculateLineTotal(el) {
     let originalContent = el.innerText;
     el.innerText = "";
     let i = 0;
-    while (!_isOver(el)) {
+    while (paragraphTextFits(el)) {
       i++;
       el.innerText += `\n`;
     }
@@ -51,9 +51,15 @@ export function calculateLineTotal(el) {
     return i - 1;
 }
 
-function _isOver(el) {
-    /* Return a boolean that indicates whether a paragraph element's 
-    text is larger than the paragraph viewport.
+/**
+ * Return a boolean that indicates whether a paragraph element's 
+ * text is fits inside the paragraph viewport.
+ * @param {Element} el The paragraph element for which this should be
+ * checked.
+ * @returns A boolean, true if the text fits and false if it does not.
+ */
+function paragraphTextFits(el) {
+    /* 
     */
     return el.scrollHeight > el.offsetHeight;
 }
