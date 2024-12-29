@@ -5,6 +5,8 @@ renderPage -- render a page of text.
 setPageNumbers -- update the page numbers to reflect the passed arguments.
 */
 
+import { sanitise } from './utility.js';
+
 /**
  * Render a page of text in the reader app.
  * @param {String[]} page The page that should be rendered.
@@ -12,8 +14,7 @@ setPageNumbers -- update the page numbers to reflect the passed arguments.
 export function renderPage(page) {
     let content = "";
     for (let line of page) {
-        // content += ("<pre>" + line + "</pre><br>");
-        content += line + "<br>";
+        content += sanitise(line) + "<br>";
     }
     document.getElementById('book-text').innerHTML = content;
 }

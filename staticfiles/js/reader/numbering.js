@@ -79,6 +79,12 @@ function splitIntoNumberedPages(book, pageSize) {
  * with a page being an array of strings, ordered from first page to last page.
  */
 function splitIntoPages(book, pageSize) {
+    if (pageSize < 1) {
+        alert("We're sorry - there was an issue loading this page. Redirecting to dashboard.");
+        location.replace('/');
+        throw new Error(`Page size cannot be less than 1. Submitted page size: ${pageSize}, 
+                        submitted book length: ${book.length}`);
+    }
     let pages = [];
     for (let i = 0; i < book.length; i += pageSize) {
         pages.push(book.slice(i, i + pageSize));
