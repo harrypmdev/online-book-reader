@@ -69,6 +69,8 @@ def add_book(request):
     **Template**
     `books/add_book.html`
     """
+    if not request.user.is_authenticated:
+        return redirect('login')
     if request.method == "POST":
         possible_redirect = _add_book_post(request)
         if isinstance(possible_redirect, HttpResponseRedirect):
@@ -128,13 +130,14 @@ def delete_book(request, id):
      id -- the id for the UserBook in question.
     """
     try:
+        assert(request.user.is_authenticated)
         user_book = UserBook.objects.get(user=request.user, id=id)
         book = Book.objects.get(id=user_book.book.id)
         if book.total_readers() == 1:
             book.delete()
         user_book.delete()
         utility.add_book_deleted_message(request)
-    except UserBook.DoesNotExist:
+    except (UserBook.DoesNotExist, AssertionError):
         utility.add_not_authorised_to_delete_message(request)
     return redirect("home")
 
