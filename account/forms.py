@@ -17,6 +17,8 @@ class RegisterForm(UserCreationForm):
 
     def clean_email(self):
         # Ensure multiple users cannot register with the same email.
+        # Method written by Trey Hunner - 
+        # https://stackoverflow.com/questions/52639834/how-to-make-django-form-field-unique.
         email = self.cleaned_data['email']
         if User.objects.filter(email=email).exists():
             raise ValidationError("Email already exists.")

@@ -41,7 +41,7 @@ completed. These are viewable by clicking on the completed user stories.
 
 - The **Django framework** and its **relevant libraries** were chosen for their familiarity to myself as a developer and its
 functionality for rapidly developing dynamic websites with user authorisation and intuitive data modelling through the
-django ORM.
+Django ORM.
 - **Gunicorn** was chosen for booting the site in production for its stability and efficiency.
 - Python **Ruff linter** was chosen for its easy installation via pip, its speed, automatic formatting and
 comprehensive functionality.
@@ -99,20 +99,14 @@ the header and footer and the header and footing using the same bootstrap styles
 - The site's developer is credited on the footer. This avoids the footer looking empty or confusing to a user,
 and allows them to recognise it as a footer. It also allows the developer to be credited without a separate
 page to do so.
+- Freepik is credited on the footer. This is as per their 
+<a href="https://support.freepik.com/s/article/Attribution-How-when-and-where?language=en_US&_gl=1*ufl9o0*_gcl_au*MTg1NDE3NTA1NS4xNzM1NDkxODI3*_ga*NTMxMzQ4NTgyLjE3MzU0OTE4Mjc.*_ga_QWX66025LC*MTczNTQ5MTgyNy4xLjEuMTczNTQ5MTg1MC4zNy4wLjA.">attribution requirements.</a>
 
 <br>
-
 <details>
-<summary> Footer (Desktop) Screenshot </summary>
+<summary> Footer Screenshot </summary>
 
-![Footer Desktop](/readme_assets/footer_desktop.png)
-
-</details> 
-
-<details>
-<summary> Footer (Mobile) Screenshot </summary>
-
-![Footer Mobile ](/readme_assets/footer_mobile.png)
+![Footer](/readme_assets/footer.png)
 
 </details> 
 <br>
@@ -457,6 +451,7 @@ than the rating system, and foster a sense of community on the website.
 chapters were also put on a new page, books would be displayed on screen even more similarly to real life books.
 - **Jump to Page** -- a feature allowing users to jump to any page in a book could be helpful if the user is reading
 the book on paper alongside the website, or wishes to jump to a specific section of the book.
+<br><br>
 
 # Data Modelling & Schema
 
@@ -484,7 +479,7 @@ was implemnted however. A UML table describing the resulting schema is below. <b
 </details>
 <br>
 These entities are implemented through django ORM in `books/models.py`.
-<br>
+<br><br>
 
 # Validators
 
@@ -497,7 +492,7 @@ with the only errors identified being unused imports which are simply parts of D
 <a href="https://validator.w3.org/nu/#textarea" target="_blank">W3C HTML validator</a>, by taking final HTML
 code produced by server and inputting to validator as Django Templating code itself cannot be validated.
 No issues except minor issues produced by crispy forms on registration page.
-<br>
+<br><br>
 
 # Testing
 
@@ -690,9 +685,70 @@ Very similar pages exist for 500 errors and 403_csrf errors also.
 
 # Deployment
 
+The production version of this site was deployed to Heroku at https://online-book-reader-80387a283ed2.herokuapp.com/ where it is live.
+The development of the project was version controlled using Git and GitHub, and the project was uploaded to Heroku from GitHub directly.
+<br><br>
+Deployment of this site can be achieved via the following steps:
+<br>
+<ol>
+    <li>Fork the Online Book Reader repository on GitHub.</li>
+    <li>Sign up or log in to  <a target="_blank" href="https://www.heroku.com">Heroku</a>.</li>
+    <li>Create a new app.</li>
+    <li>Add two environment variables to 'config vars' in settings - <code>SECRET_KEY</code>, a unique string of characters
+    for Django security, and <code>DATABASE_URL</code>, the url for your database.</li>
+    <li>Add the Python buildpack - <code>runtime.txt</code> instructs usage of python 3.12 for this site.</li>
+    <li>Connect the Heroku app to your forked GitHub repo in the deploy section.</li>
+</ol>
+Running the site locally can be achieved via the following steps:
+<br><br>
+<ol>
+    <li>Clone the Online Book Reader repository to a local repository. This can be done by executing the line 
+    <code>git clone https://github.com/harrypmdev/online-book-reader.git</code> in a bash terminal.</li>
+    <li>Create an <code>env.py</code> file for environment variables in the project root directory.</li>
+    <li>In this file, set environment variables for <code>SECRET_KEY</code>, a unique string of characters for Django security,
+    and <code>DATABASE_URL</code>, the url for your database.</li>
+    <li>Update <code>CSRF_TRUSTED_ORIGINS</code> and <code>ALLOWED_HOSTS</code> in <code>online_book_reader/settings.py</code> to 
+    include your local host.</li>
+    <li>Install project dependencies listed in <code>requirements.txt</code>. This can be done with the bash line
+    <code>pip3 install -r requirements.txt</code> with your bash working directory being the project root directory.</li>
+    <li>Run the server with <code>python3 manage.py runserver</code> with your bash working directory being the project root
+    directory.</li>
+</ol>
+<br>
+
 # Credits & References
 
- + <a href="https://balsamiq.com/wireframes/desktop/">Balsamic</a> software used for wireframing
- <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAim.org</a>.
- https://stackoverflow.com/questions/52639834/how-to-make-django-form-field-unique
- https://djangosnippets.org/snippets/1259/
+### Code, Dependencies and Tools
+
++ Site built on the <a href="https://www.djangoproject.com/">Django framework</a> supported by the 
+<a href="https://www.djangoproject.com/foundation/">Django Software Foundation</a>.
++ <a href="https://balsamiq.com/wireframes/desktop/">Balsamic</a> software used for wireframing.
++ <a href="https://www.lucidchart.com/pages/">Lucidchart</a> used for creation of entity relationship diagram.
++ Google fonts from Google are imported in <code>templates/base.html</code>.<br>
+Lighthouse web page quality checker also provided by Google.<br>
+Google sheets used for Agile breakdown spreadsheet showing evolution from themes to tasks.
++ Web accessibility evaluation provided by <a target="_blank" href="https://wave.webaim.org/">WAVE</a> for help in improving accessibility.
++ Colour contrast accessibility checker provided by <a href="https://webaim.org/resources/contrastchecker/">WebAIM</a>.
++ HTML and CSS validation provided by <a target="_blank" href="https://validator.w3.org/">W3</a>.
++ JavaScript validation provided by <a target="_blank" href="https://jshint.com/">JS Hint</a>.
++ <a href="https://docs.astral.sh/ruff/">Ruff linter</a> used for python linting.
++ Gunicorn WSGI HTTP server created by Benoit Chesneau and supported by 
+<a href="https://github.com/benoitc/gunicorn/blob/master/MAINTAINERS">Gunicorn maintainers.</a>
++ <a href="https://whitenoise.readthedocs.io/en/stable/django.html">Whitenoise</a> used for serving of static files.
++ <a href="https://getbootstrap.com/">Bootstrap</a> front-end framework used for template styling, including use of 
+<a href="https://django-crispy-forms.readthedocs.io/en/latest/">Bootstrap Crispy Forms</a> for fast form rendering and styling.
++ Restriction on creating multiple user profiles with the same email enforced by means of the <code>clean_email</code>
+method of <code>RegisterForm</code> in <code>account/forms.py</code>. Method originally written by 
+<a href="https://stackoverflow.com/users/98187/trey-hunner">Trey Hunner</a> on a <a href="https://stackoverflow.com/questions/52639834/how-to-make-django-form-field-unique">stackoverflow answer</a>.
++ Django template filter <code>truncatesmart</code> registered in <code>books/templatetags/truncate_smart.py</code> originally
+written by <a href="https://djangosnippets.org/users/rix/">'rix'</a> on djangosnippets.org - https://djangosnippets.org/snippets/1259/.
+
+### Media
+
++ Favicon (<code>static/images/favicon.ico</code>)and site icons from <a href="https://fontawesome.com/v4/license/">Font Awesome by Dave Gandy</a>.
++ All site images provided by Freepik under free license. This includes all images (except the favicon) in <code>static/images/</code>:
+    + <a href="https://www.freepik.com/free-photo/book-shelf-with-bookmark_34241132.htm#fromView=keyword&page=1&position=2&uuid=f98b8262-080a-4c19-b4f5-2baf32bfdcfe&new_detail=true"><code>static/images/chosen_book.webp</code></a>.
+    + <a href="https://www.freepik.com/free-photo/creative-assortment-world-book-day_12892710.htm"><code>static/images/home_books.webp</code></a>.
+    + <a href="https://www.freepik.com/free-photo/front-view-education-day-concept_11380044.htm#fromView=keyword&page=1&position=1&uuid=b15fe853-0359-4f68-83e1-6c7ca4245a10&new_detail=true"><code>static/images/open_book.webp</code></a>.
+    + <a href="https://www.freepik.com/free-photo/front-view-stacked-books-ladders-with-copy-space-education-day_21745444.htm"><code>static/images/stacked_book.webp</code></a>.
+    + <a href="https://www.freepik.com/free-photo/creative-composition-with-different-books_12407522.htm"><code>static/images/wide_books.webp</code></a>.
