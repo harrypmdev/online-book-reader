@@ -37,8 +37,9 @@ def read(request, id):
      `reader/read.html`
     """
     try:
+        assert(request.user.is_authenticated)
         user_book = UserBook.objects.get(id=id, user=request.user.id)
-    except UserBook.DoesNotExist:
+    except (UserBook.DoesNotExist, AssertionError):
         utility.add_invalid_read_message(request)
         return redirect("home")
     user_book.last_viewed = timezone.now()
@@ -64,6 +65,8 @@ def ajax_book_info(request):
     """
     if request.method == "POST":
         data = json.loads(request.body)
+        if not UserBook.objects.filter(id=data["book_id"]).exists():
+            return JsonResponse({"text_list": "Invalid: valid information was not posted."})
         book = Book.objects.get(id=UserBook.objects.get(id=data["book_id"]).book.id)
         return_data = book.return_split_text_list(data["num"])
         return JsonResponse(return_data, safe=False)

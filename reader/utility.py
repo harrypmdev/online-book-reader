@@ -18,6 +18,6 @@ def add_invalid_read_message(request):
     """
     msg = (
         "You are not reading this book. "
-        + "Click a book on your dashboard to access it."
+        + "Click a book on your dashboard when logged in to access it."
     )
     messages.add_message(request, messages.ERROR, msg)
