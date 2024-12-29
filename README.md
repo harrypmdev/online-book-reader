@@ -681,6 +681,36 @@ Very similar pages exist for 500 errors and 403_csrf errors also.
 
 ## Automated Testing
 
+### Account App
+
+#### Data Management
+
+#### Login Page
+
+#### Profile Page
+
+#### Register Page
+
+### Books App
+
+#### Data Management
+
+#### About Us Page
+
+#### Add Book Page
+
+#### Dashboard Page
+
+#### Home Page
+
+#### Manage Book Page
+
+### Reader App
+
+#### Data Management
+
+#### Reader Page
+
 # Bugs
 
 # Deployment
@@ -750,5 +780,5 @@ written by <a href="https://djangosnippets.org/users/rix/">'rix'</a> on djangosn
     + <a href="https://www.freepik.com/free-photo/book-shelf-with-bookmark_34241132.htm#fromView=keyword&page=1&position=2&uuid=f98b8262-080a-4c19-b4f5-2baf32bfdcfe&new_detail=true"><code>static/images/chosen_book.webp</code></a>.
     + <a href="https://www.freepik.com/free-photo/creative-assortment-world-book-day_12892710.htm"><code>static/images/home_books.webp</code></a>.
     + <a href="https://www.freepik.com/free-photo/front-view-education-day-concept_11380044.htm#fromView=keyword&page=1&position=1&uuid=b15fe853-0359-4f68-83e1-6c7ca4245a10&new_detail=true"><code>static/images/open_book.webp</code></a>.
-    + <a href="https://www.freepik.com/free-photo/front-view-stacked-books-ladders-with-copy-space-education-day_21745444.htm"><code>static/images/stacked_book.webp</code></a>.
+    + <a href="https://www.freepik.com/free-photo/front-view-stacked-books-ladders-with-copy-space-education-day_21745444.htm"><code>static/images/stacked_books.webp</code></a>.
     + <a href="https://www.freepik.com/free-photo/creative-composition-with-different-books_12407522.htm"><code>static/images/wide_books.webp</code></a>.
