@@ -2,8 +2,13 @@
 
 Online Book Reader is a website that allows users to save books, read them and record their progress through 
 them without downloading any files. It uses only web-hosted plain text files so no epub files need to be downloaded.
+Users can add books, update their details and delete them.
 
 ![Responsive Mockup](/readme_assets/responsive.webp)
+
+Users can fully administrate their own books when logged in, and no community features exist except the 'ratings' feature,
+meaning no 'admin' page is necessary as every user is their own 'admin'. A user must be authenticated to manage the books
+associated with their account.
 
 # Agile Methodology
 
@@ -35,8 +40,6 @@ completed. These are viewable by clicking on the completed user stories.
 </details> 
 <br>
 
-# Flowchart
-
 # Rationale for Chosen Libraries
 
 - The **Django framework** and its **relevant libraries** were chosen for their familiarity to myself as a developer and its
@@ -49,6 +52,86 @@ comprehensive functionality.
 - **Bootstrap** (CSS and JS) was chosen for its general-purpose CSS classes and modals which allows ultra-fast styling
 of HTML in a manner that is intuitive and familiar for users.
 - **Boostrap Crispy** was chosen for its ability to present simple forms without unnecessary custom HTML and CSS.
+
+<br>
+
+# UX Planning
+
+The site was designed with a positive UX in mind, including minimalist design and good information hierarchy.
+Wireframing was done ahead of page creation to guide development, ensure good responsivity and focus on best UX
+practices ahead of site creation.
+
+## Account App Wireframes
+<br>
+<details>
+<summary> Register Page Wireframe </summary>
+
+![Register Page Wireframe](/readme_assets/register_wireframe.png)
+
+</details> 
+<br>
+<details>
+<summary> Login Page Wireframe </summary>
+
+![Login Page Wireframe](/readme_assets/login_wireframe.png)
+
+</details>
+<br>
+<details>
+<summary> Profile Page Wireframe </summary>
+
+![Profile Page Wireframe](/readme_assets/profile_wireframe.png)
+
+</details> 
+<br>
+
+## Books App Wireframes
+<details>
+<summary> Home Page Wireframe </summary>
+
+![Home Page Wireframe](/readme_assets/home_wireframe.png)
+
+</details>
+<br>
+<details>
+<summary> Dashboard Page Wireframe </summary>
+
+![Dashboard Page Wireframe](/readme_assets/dashboard_wireframe.png)
+
+</details> 
+<br>
+<details>
+<summary> Add Book Page Wireframe </summary>
+
+![Add Book Page Wireframe](/readme_assets/add_book_wireframe.png)
+
+</details> 
+<br>
+<details>
+<summary> Manage Book Page Wireframe </summary>
+
+![Manage Book Page Wireframe](/readme_assets/manage_book_wireframe.png)
+
+</details> 
+<br>
+<details>
+<summary> About Us Page Wireframe </summary>
+
+![About Us Page Wireframe](/readme_assets/about_us_wireframe.png)
+
+</details>
+<br>
+
+## Read App Wireframe
+
+<br>
+<details>
+<summary> Read Page Wireframe </summary>
+
+![Read Page Wireframe](/readme_assets/reader_wireframe.png)
+
+</details>
+<br>
 
 # Features
 
@@ -679,39 +762,179 @@ Very similar pages exist for 500 errors and 403_csrf errors also.
 
 ## Manual Testing
 
-## Automated Testing
+### Navbar
+
+|  Feature | Testing Area |Testing action | Outcome |
+|---|---|---|---|
+Navbar|Usability|Login in to account| Login and register options are replaced with profile and log out options|
+Navbar|Responsiveness|View on mobile or small viewport|Navbar options are hidden to save space and replaced with dropdown menu|
 
 ### Account App
 
-#### Data Management
-
-#### Login Page
-
-#### Profile Page
-
-#### Register Page
+|  Feature | Testing Area |Testing action | Outcome |
+|---|---|---|---|
+Log In|Usability|Navigating to login page through URL when already logged in|Redirected to profile page|
+Log In|Responsiveness|View on mobile or small viewport|Image present for positive UX disappears to save space|
+Register|Usability|Input password that does not match password safety features|User given message to inform of error|
+Register|Responsiveness|Hover over 'register' button|Button higlights in different colour to indicate is clickable|
+Profile|Usability|Navigate to profile page when not logged in|Redirected to home page with explainer message|
+Profile|Responsiveness|Navigate to profile page when logged in|Information present reflects current user information|
 
 ### Books App
 
-#### Data Management
+|  Feature | Testing Area |Testing action | Outcome |
+|---|---|---|---|
+Add Book|Usability|Enter URL that does not lead to a valid text file|Informed of issue via message|
+Add Book|Responsiveness|View on mobile or small viewport|Image present for positive UX disappears to save space|
+Dashboard|Usability|Click on book near bottom of page to read|Book is at top of dashboard when returning to dashboard|
+Dashboard|Responsiveness|View on mobile or small viewport|Books are listed at full width of phone for better UX|
+Manage Book|Usability|Click delete book button|Modal appears to confirm decision|
+Manage Book|Responsiveness|View page directly after adding book|Book and author are auto-filled with title and author scanned from book|
+Rating|Usability|Add rating and click save|Rating has been added to average when returning to page and stars appear yellow|
+Rating|Responsiveness|Hover over stars|All stars below or to left or mouse appear filled in to indicate rating to be given|
 
-#### About Us Page
-
-#### Add Book Page
-
-#### Dashboard Page
-
-#### Home Page
-
-#### Manage Book Page
 
 ### Reader App
 
-#### Data Management
+|  Feature | Testing Area |Testing action | Outcome |
+|---|---|---|---|
+Read Page|Usability|Click bookmark page|Current page is saved when I close page and return to book|
+Read Page|Responsiveness|Resize window while reading|Page reloads to accommodate change with progress retained|
 
-#### Reader Page
+## Automated Testing
+
+### Account App Data Management
+
+Django automated testing of relevant forms and views
+is written in <code>account/tests.py</code>. All tests passed.
+
+### Books App Data Management
+
+Django automated testing of relevant views
+is written in <code>books/tests.py</code>. All tests passed.
+
+### Reader App Data Management
+
+Django automated testing of relevant views
+is written in <code>reader/tests.py</code>. All tests passed.
+
+### Javascript Automated Testing
+
+Difficulty was encountered in the development of some JavaScript functions in
+the reader app. Jest testing is written in <code>static/js/tests/</code> directory
+for the relevant functions.
 
 # Bugs
+
+|  Bug Number |  Problem | Outcome |
+|---|---|---|
+|1 |Page content appearing as 'undefined' before book text loads| Fixed
+|2 |Book never appearing as 100% completed when bookmarking last page of book| Fixed
+|3 |Resizing window when reading book makes page render incorrectly and bookmarking cause errors| Fixed
+|4 |Entering any URL ending with 'txt', even an erroneous one, is accepted by add book| Fixed
+
+<br>
+
+**1.**
+- Before the page content loaded on the 'read' page in the reader app, the word 'undefined' was appearing
+in the book-text element.
+- Debuggers were placed throughout the relevant JS scripts to track the cause of the issue.
+- The functions in <code>static/js/reader/calculatePage.js</code> calculate the width of the lines of the
+<code>book-text</code> element and the amount of lines that can fit vertically on the page.
+- When deleting an unneeded block of code from these functions, a line was cut off half way through, resulting
+in the <code>book-text</code> element's <code>innerHTML</code> attribute being set to an undefined variable.
+- The variable was correct to be assigned to the correct value, and a spinner was added for loading periods
+for better UX.
+    <details>
+    <summary>Bug One</summary>
+
+    ![Bug One](/readme_assets/bug_one_before.png)
+
+    </details>
+
+    <br>
+
+    <details>
+    <summary>Bug One Solved</summary>
+
+    ![Bug One Solved](/readme_assets/bug_one_after.png)
+
+    </details>
+
+**2.**
+- When bookmarking the last page of a book, the 'percentage completed' bar and number that
+appear on the dashboard were never appearing as 100%. This is poor UX, as it contradicts the user's
+expectations and denies them the satisfaction of finishing a book and seeing it 100% completed on their
+dashboard.
+- This is a result of how book progress is saved. Since page sizes are different on different
+devices, book progress is tracked by the first line of whatever page the user bookmarks, as it
+cannot be reasonably assumed they have read any further than this.
+- The first line of the last page is not the last line of the book, so the progress percentage was
+correctly calculating the percentage as short of 100%.
+- Special functionality was added for the last page of a book, such that if a user bookmarks
+the very last page, their progress is saved as the last line rather than the first.
+- This was primarly implemented by means of the <code>static/js/reader/utility/calculateProgress</code> function.
+
+    <details>
+    <summary>Bug Two</summary>
+
+    ![Bug Two](/readme_assets/bug_two_before.png)
+
+    </details>
+
+    <br>
+
+    <details>
+    <summary>Bug Two Solved</summary>
+
+    ![Bug Two Solved](/readme_assets/bug_two_after.png)
+
+    </details>
+
+**3.**
+- If the user resized their window on the 'read' page, the content was displaying incorrectly
+and bookmarking the page could result in site-breaking errors when reloading the page content.
+- This was a result of how page content is displayed. The height and width of the text to display
+is calculated when the page is first loaded, and if the site was resized this was not reloaded.
+- When clicking the 'previous' and 'next' buttons, the site was loading the wrong pages due to the
+page size now being wrong, and so the wrong progress was being saved.
+- An automatic reload on resize was added to ensure the page size is recalculated if the window size
+changes. The reload was passed the book's current progress, so the user does not lose their place in
+the book even if they have not bookmarked the page before resizing the window.
+    <details>
+    <summary>Bug Three (Switching mobile-like viewport to desktop-like)</summary>
+
+    ![Bug Three](/readme_assets/bug_three_before.png)
+
+    </details>
+
+    <br>
+
+    <details>
+    <summary>Bug Three (Switching mobile-like viewport to desktop-like)</summary>
+
+    ![Bug Three Solved](/readme_assets/bug_three_after.png)
+
+    </details>
+
+**4.**
+- The add book page require a URL from which to load the text of a book. While the page was
+validating the URL to ensure it ended with the string '.txt', it was not ensuring this URL
+actually linked to valid text.
+- As a result, any technically valid URL ending with '.txt' was accepted, such as 'https://www.error.txt'.
+- This caused internal server errors when attempting to click on the book from the dashboard to read it,
+as the <code>return_split_text_list</code> method of the <code>Book</code> class found in <code>books/models.py/</code>
+inevitably failed to access the text with its implicit use of the standard library <code>urllib.request.urlopen</code>
+function.
+- The urllib library was used to test the URL was accessible before allowing its submission, and an error message was
+shown to the user if the URL was invalid, resolving the error.
+    <details>
+    <summary>Bug Four Solved</summary>
+
+    ![Bug Four Solved](/readme_assets/bug_four_after.png)
+
+    </details>
+<br>
 
 # Deployment
 
@@ -761,6 +984,7 @@ Google sheets used for Agile breakdown spreadsheet showing evolution from themes
 + Colour contrast accessibility checker provided by <a href="https://webaim.org/resources/contrastchecker/">WebAIM</a>.
 + HTML and CSS validation provided by <a target="_blank" href="https://validator.w3.org/">W3</a>.
 + JavaScript validation provided by <a target="_blank" href="https://jshint.com/">JS Hint</a>.
++ <a href="https://jestjs.io/">Jest</a> (and <a href="https://babeljs.io/">Babel</a> configuration) used for JS testing.
 + <a href="https://docs.astral.sh/ruff/">Ruff linter</a> used for python linting.
 + Gunicorn WSGI HTTP server created by Benoit Chesneau and supported by 
 <a href="https://github.com/benoitc/gunicorn/blob/master/MAINTAINERS">Gunicorn maintainers.</a>

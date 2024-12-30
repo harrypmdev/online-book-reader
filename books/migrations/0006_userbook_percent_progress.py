@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('books', '0005_alter_userbook_progress'),
+        ("books", "0005_alter_userbook_progress"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='userbook',
-            name='percent_progress',
+            model_name="userbook",
+            name="percent_progress",
             field=models.IntegerField(default=0),
         ),
     ]

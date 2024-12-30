@@ -11,5 +11,5 @@ describe('test getLastLineNumber function', () => {
             '2𓀴Second Line'
         ];
         expect(getLastLineNumber(text)).toEqual(2);
-    })
-})
+    });
+});

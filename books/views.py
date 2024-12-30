@@ -70,7 +70,7 @@ def add_book(request):
     `books/add_book.html`
     """
     if not request.user.is_authenticated:
-        return redirect('login')
+        return redirect("login")
     if request.method == "POST":
         possible_redirect = _add_book_post(request)
         if isinstance(possible_redirect, HttpResponseRedirect):
@@ -130,7 +130,7 @@ def delete_book(request, id):
      id -- the id for the UserBook in question.
     """
     try:
-        assert(request.user.is_authenticated)
+        assert request.user.is_authenticated
         user_book = UserBook.objects.get(user=request.user, id=id)
         book = Book.objects.get(id=user_book.book.id)
         if book.total_readers() == 1:
@@ -143,11 +143,7 @@ def delete_book(request, id):
 
 
 def _manage_book_post(request, book, user_book):
-    utility.update_rating_if_appropriate(
-        request.user, 
-        request.POST["rating"], 
-        book
-    )
+    utility.update_rating_if_appropriate(request.user, request.POST["rating"], book)
     manage_form = ManageForm(data=request.POST)
     if manage_form.is_valid():
         utility.action_manage_form(request, user_book, manage_form)

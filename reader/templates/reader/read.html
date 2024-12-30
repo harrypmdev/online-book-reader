@@ -7,8 +7,8 @@
 {% endblock head %}
 
 {% block content %}
-<section id="page">
-    <div id="book-holder">
+<section class="d-flex flex-column">
+    <div class="text-center">
         <!-- Loading spinner for ajax waiting times -->
         <div id="spin-holder">
             <div class="spinner-border text-dark" role="status">
@@ -16,7 +16,7 @@
             </div>
         </div>
         <!-- Main page text -->
-        <p data-book-id="{{ book_id }}" data-ajax-url="{% url 'ajax' %}"
+        <p data-book-id="{{ book_id }}" data-ajax-url="{% url 'ajax' %}" class="text-align: center;"
         id="book-text" data-ajax-update-url="{% url 'ajax_update' %}">
         </p>
     </div>

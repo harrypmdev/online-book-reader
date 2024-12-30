@@ -177,7 +177,7 @@ def user_book_exists(request, id):
     returns None.
     """
     try:
-        assert(request.user.is_authenticated)
+        assert request.user.is_authenticated
         user_book = UserBook.objects.get(id=id, user=request.user)
         return user_book
     except (UserBook.DoesNotExist, AssertionError):

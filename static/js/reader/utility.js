@@ -21,7 +21,7 @@ export function sanitise(line) {
     line = line.replace('&', '&amp');
     line = line.replace('<', '&lt');
     line = line.replace('>', '&gt');
-    return line
+    return line;
 }
 
 /**

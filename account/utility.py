@@ -39,13 +39,11 @@ def add_registration_failed_message(request):
     request: HttpRequest -- the request from the view which is directly or
                             indirectly calling this function.
     """
-    msg = ("Registration unsuccessful! Try another username or password. "
-            + "You can only register with an email once.")
-    messages.add_message(
-        request,
-        messages.ERROR,
-        msg
+    msg = (
+        "Registration unsuccessful! Try another username or password. "
+        + "You can only register with an email once."
     )
+    messages.add_message(request, messages.ERROR, msg)
 
 
 def add_logged_in_message(request):

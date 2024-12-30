@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('books', '0002_userbook_progress'),
+        ("books", "0002_userbook_progress"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='userbook',
-            name='color',
-            field=models.CharField(default='primary', max_length=20),
+            model_name="userbook",
+            name="color",
+            field=models.CharField(default="primary", max_length=20),
         ),
     ]

@@ -8,6 +8,7 @@ from django import template
 
 register = template.Library()
 
+
 @register.filter
 def truncatesmart(value, limit=80):
     """
@@ -36,7 +37,7 @@ def truncatesmart(value, limit=80):
     value = value[:limit]
 
     # Break into words and remove the last
-    words = value.split(' ')[:-1]
+    words = value.split(" ")[:-1]
 
     # Join the words and return
-    return ' '.join(words) + '...'
+    return " ".join(words) + "..."

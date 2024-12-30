@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('books', '0008_alter_userbook_last_viewed'),
+        ("books", "0008_alter_userbook_last_viewed"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='book',
-            name='url',
+            model_name="book",
+            name="url",
             field=models.URLField(unique=True),
         ),
     ]

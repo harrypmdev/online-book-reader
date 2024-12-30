@@ -158,4 +158,6 @@ async function updateProgress() {
     postProgressToServer(progress, length);
 }
 
-module.exports = bookmarkDone
+if (typeof module === 'object') {
+    module.exports = bookmarkDone;
+}

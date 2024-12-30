@@ -16,5 +16,5 @@ describe('test bookmarkDone function', () => {
         expect(bookmark.getAttribute('disabled')).toEqual('');
         expect(bookmark.classList.contains('btn-success')).toEqual(true);
         expect(bookmark.classList.contains('btn-warning')).toEqual(false);
-    })
-})
+    });
+});

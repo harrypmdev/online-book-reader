@@ -55,7 +55,7 @@ def login_view(request):
     `account/login.html`
     """
     if request.user.is_authenticated:
-        return redirect('profile')
+        return redirect("profile")
     if request.method == "POST":
         poss_redirect = _login_view_post(request)
         if isinstance(poss_redirect, HttpResponseRedirect):

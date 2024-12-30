@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('books', '0004_alter_book_auto_author_alter_book_auto_title_rating'),
+        ("books", "0004_alter_book_auto_author_alter_book_auto_title_rating"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='userbook',
-            name='progress',
+            model_name="userbook",
+            name="progress",
             field=models.IntegerField(default=0),
         ),
     ]
