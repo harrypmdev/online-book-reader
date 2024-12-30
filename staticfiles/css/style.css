@@ -4,8 +4,15 @@ body {
     font-family: "Merriweather", serif;
 }
 
+/* Adjustment of boostrap primary blue colour 
+to dark colour for better accessibility */
 a {
     color: #0250C5;
+}
+
+.btn-primary {
+    background-color: #0250C5;
+    border-color: #0250C5;
 }
 
 .text-muted {
@@ -16,14 +23,8 @@ a {
     color: #8F0000;
 }
 
-
 .text-decoration-underline {
     text-decoration: underline;
-}
-
-.btn-primary {
-    background-color: #0250C5;
-    border-color: #0250C5;
 }
 
 .vh-75 {
@@ -79,15 +80,6 @@ a {
 
 /* ------- Styles for reader ------- */
 
-#page {
-    display: flex;
-    flex-direction: column;
-}
-
-#book-holder {
-    text-align: center;
-
-}
 
 #book-text {
     height: 65vh;
@@ -100,7 +92,6 @@ a {
     */
     font-family: monospace, monospace;
     font-size: 16px;
-    text-align: center;
     margin: auto;
     margin-top: 2vh;
     max-width: 100%;

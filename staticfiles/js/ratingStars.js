@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     [...document.querySelectorAll('.fa-star')].forEach(addStarFunctionality);
 });
 
-
 /**
  * Add functionality to a rating star. Applies hover and click functionality.
  * @param {Element} el The star to which functionality should be applied.

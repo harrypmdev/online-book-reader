@@ -58,8 +58,6 @@ export async function setPageByTurns(turns){
  * @return {Number} The page number for the newly set page.
  */
 function setPageContent(bookInPages, turns) {
-    /* 
-    */
     let pageNumberElement = document.querySelector('#page-number');
     let pageNumber = pageNumberElement.getAttribute('data-page-number');
     pageNumber = Number(pageNumber)+Number(turns);
