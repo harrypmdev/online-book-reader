@@ -201,7 +201,7 @@ page to do so.
 
 - The home page provides a simple and welcoming landing page for new users. Returning authenticated users are
 redirected to the dashboard, where they can immediately access their books.
-- Two 'call to action' buttons are presented - 'Get Started' and 'About Us'. These invites users who already know
+- Two 'call to action' buttons are presented - 'Get Started' and 'About Us'. This invites users who already know
 about the site and want to register to do so right away, and users who need more information to easily access it.
 - Only a title, single image and two buttons are shown as to not overwhelm the user with information and keep a
 modern, minimalist design that reflects good UX practices.
@@ -233,7 +233,7 @@ to add visual variance and character. These colours do not change once a book ha
 so viewers do not get confused and the 'character' of the book remains consistent.
 - All books on the dashboard have both a progress bar and percentage, so the user can easily view how
 far through the book they are. The progress bar animates upon hovering over the book, aiding UX by
-indicated the book is clickable and providing fun interactivity and feedback.
+indicating the book is clickable and providing fun interactivity and feedback.
 
 <br>
 
@@ -254,7 +254,7 @@ indicated the book is clickable and providing fun interactivity and feedback.
 
 ### About Us
 
-- The about us page provides the user with basic information about the site, and gives legal and ethical
+- The 'about us' page provides the user with basic information about the site, and gives legal and ethical
 disclaimers relating to issues like book copyrights and adult content in books.
 - The site is always accessible on the navbar, allowing new or returning users to immediately understand
 the site's purpose and basic functionality.
@@ -361,7 +361,7 @@ accidental clicks/taps and warn users about the repercussions of deleting an acc
 ### Add Book
 
 - The add book feature allows users to easily add books to their dashboard.
-- If a book is already on a user's dashboard, the same book will be retrieved as not
+- If a book is already on a user's dashboard, the same book will be retrieved as to not
 duplicate information, and to allow users to accurately view ratings for books.
 - The 'add book' button is always the first option on the dashboard, so that a user
 is always invited to easily add another book.
@@ -422,9 +422,9 @@ all books.
 
 - The ratings feature allows users to rate books out of 5 stars and view an average of other users'
 ratings.
-- The choice of a 5 star rating system allows users to untuitively understand ratings on the site and 
+- The choice of a 5 star rating system allows users to intuitively understand ratings on the site and 
 make ratings themselves without having the rating system explained to them.
-- Ratings are viewable and editable on the manage book page. Since this page is redirected to immediately
+- Ratings are viewable and editable on the manage book page. Since this page is redirected to
 after a book is added, this allows users to immediately see the average rating a book has if it has already
 been added.
 - The total number of ratings is shown so the user can see how reliable the rating is likely to be.
@@ -555,7 +555,7 @@ table was designed and implemented.
 'Rating' and 'Comment' entities were also planned for the rating and comment features. The comment feature
 was relegated to "won't have" prioritisation for this project time frame, meaning it was not implemented and
 an entity for comments was never created. An entity for ratings was created when the ratings feature
-was implemnted however. A UML table describing the resulting schema is below. <br>
+was implemented however. A UML table describing the resulting schema is below. <br>
 
 <details>
 <summary> UML Table Database Schema </summary>
@@ -564,7 +564,7 @@ was implemnted however. A UML table describing the resulting schema is below. <b
 
 </details>
 <br>
-These entities are implemented through django ORM in `books/models.py`.
+These entities are implemented through Django ORM in <code>books/models.py`</code>.
 <br><br>
 
 # Validators
@@ -576,7 +576,7 @@ with the only errors identified being unused imports which are simply parts of D
 <a href="https://jigsaw.w3.org/css-validator/validator" target="_blank">W3C CSS validator</a>, no issues.
 - All of project's HTML files checked with
 <a href="https://validator.w3.org/nu/#textarea" target="_blank">W3C HTML validator</a>, by taking final HTML
-code produced by server and inputting to validator as Django Templating code itself cannot be validated.
+code produced by the server and inputting to validator as Django Templating code itself cannot be validated.
 No issues except minor issues produced by crispy forms on registration page.
 <br><br>
 
@@ -755,7 +755,7 @@ Attempts to access a page that does not exist redirect to a custom 404 error pag
 </details> 
 <br>
 <details>
-<summary> 404 Page (Desktop) </summary>
+<summary> 404 Page (Mobile) </summary>
 
 ![404 Page Mobile](/readme_assets/404_mobile.png)
 
@@ -769,7 +769,7 @@ Very similar pages exist for 500 errors and 403_csrf errors also.
 
 |  Feature | Testing Area |Testing action | Outcome |
 |---|---|---|---|
-Navbar|Usability|Login in to account| Login and register options are replaced with profile and log out options|
+Navbar|Usability|Log in to account| Login and register options are replaced with profile and log out options|
 Navbar|Responsiveness|View on mobile or small viewport|Navbar options are hidden to save space and replaced with dropdown menu|
 
 ### Account App
@@ -779,7 +779,7 @@ Navbar|Responsiveness|View on mobile or small viewport|Navbar options are hidden
 Log In|Usability|Navigating to login page through URL when already logged in|Redirected to profile page|
 Log In|Responsiveness|View on mobile or small viewport|Image present for positive UX disappears to save space|
 Register|Usability|Input password that does not match password safety features|User given message to inform of error|
-Register|Responsiveness|Hover over 'register' button|Button higlights in different colour to indicate is clickable|
+Register|Responsiveness|Hover over 'register' button|Button higlights in different colour to indicate it is clickable|
 Profile|Usability|Navigate to profile page when not logged in|Redirected to home page with explainer message|
 Profile|Responsiveness|Navigate to profile page when logged in|Information present reflects current user information|
 
@@ -794,14 +794,14 @@ Dashboard|Responsiveness|View on mobile or small viewport|Books are listed at fu
 Manage Book|Usability|Click delete book button|Modal appears to confirm decision|
 Manage Book|Responsiveness|View page directly after adding book|Book and author are auto-filled with title and author scanned from book|
 Rating|Usability|Add rating and click save|Rating has been added to average when returning to page and stars appear yellow|
-Rating|Responsiveness|Hover over stars|All stars below or to left or mouse appear filled in to indicate rating to be given|
+Rating|Responsiveness|Hover over stars|All stars below or to left of mouse appear filled in to indicate rating to be given|
 
 
 ### Reader App
 
 |  Feature | Testing Area |Testing action | Outcome |
 |---|---|---|---|
-Read Page|Usability|Click bookmark page|Current page is saved when I close page and return to book|
+Read Page|Usability|Click bookmark page|Current page is saved when closing page and later returning to book|
 Read Page|Responsiveness|Resize window while reading|Page reloads to accommodate change with progress retained|
 
 ## Automated Testing
@@ -833,7 +833,7 @@ for the relevant functions.
 |---|---|---|
 |1 |Page content appearing as 'undefined' before book text loads| Fixed
 |2 |Book never appearing as 100% completed when bookmarking last page of book| Fixed
-|3 |Resizing window when reading book makes page render incorrectly and bookmarking cause errors| Fixed
+|3 |Resizing window when reading book makes page render incorrectly and makes bookmarking cause errors| Fixed
 |4 |Entering any URL ending with 'txt', even an erroneous one, is accepted by add book| Fixed
 
 <br>
@@ -921,12 +921,12 @@ the book even if they have not bookmarked the page before resizing the window.
     </details>
 
 **4.**
-- The add book page require a URL from which to load the text of a book. While the page was
+- The add book page requires a URL from which to load the text of a book. While the page was
 validating the URL to ensure it ended with the string '.txt', it was not ensuring this URL
 actually linked to valid text.
 - As a result, any technically valid URL ending with '.txt' was accepted, such as 'https://www.error.txt'.
 - This caused internal server errors when attempting to click on the book from the dashboard to read it,
-as the <code>return_split_text_list</code> method of the <code>Book</code> class found in <code>books/models.py/</code>
+as the <code>return_split_text_list</code> method of the <code>Book</code> class found in <code>books/models.py</code>
 inevitably failed to access the text with its implicit use of the standard library <code>urllib.request.urlopen</code>
 function.
 - The urllib library was used to test the URL was accessible before allowing its submission, and an error message was
@@ -1002,7 +1002,7 @@ written by <a href="https://djangosnippets.org/users/rix/">'rix'</a> on djangosn
 
 ### Media
 
-+ Favicon (<code>static/images/favicon.ico</code>)and site icons from <a href="https://fontawesome.com/v4/license/">Font Awesome by Dave Gandy</a>.
++ Favicon (<code>static/images/favicon.ico</code>) and site icons from <a href="https://fontawesome.com/v4/license/">Font Awesome by Dave Gandy</a>.
 + All site images provided by Freepik under free license. This includes all images (except the favicon) in <code>static/images/</code>:
     + <a href="https://www.freepik.com/free-photo/book-shelf-with-bookmark_34241132.htm#fromView=keyword&page=1&position=2&uuid=f98b8262-080a-4c19-b4f5-2baf32bfdcfe&new_detail=true"><code>static/images/chosen_book.webp</code></a>.
     + <a href="https://www.freepik.com/free-photo/creative-assortment-world-book-day_12892710.htm"><code>static/images/home_books.webp</code></a>.
