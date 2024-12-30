@@ -157,3 +157,5 @@ async function updateProgress() {
     let progress = pageNumber.getAttribute('data-progress');
     postProgressToServer(progress, length);
 }
+
+module.exports = bookmarkDone

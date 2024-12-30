@@ -1,0 +1,28 @@
+{
+  "name": "online-book-reader",
+  "version": "1.0.0",
+  "description": "Online Book Reader is a website that allows users to save books, read them and record their progress through  them without downloading any files. It uses only web-hosted plain text files so no epub files need to be downloaded.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harrypmdev/online-book-reader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harrypmdev/online-book-reader/issues"
+  },
+  "homepage": "https://github.com/harrypmdev/online-book-reader#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "babel-jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.2.5"
+  }
+}
