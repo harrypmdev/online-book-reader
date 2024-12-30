@@ -4,10 +4,14 @@
 
 const bookmarkDone = require('../reader/reader.js');
 
+/*Mocking for test, establishes 'bookmark' button element.*/
 beforeEach(() => {
     document.body.innerHTML = '<button id="bookmark"></button>'
   });
 
+/*Test that bookmarkDone function updates bookmark functionality
+correctly.
+*/
 describe('test bookmarkDone function', () => {
     test('expect book', () => {
         bookmarkDone();

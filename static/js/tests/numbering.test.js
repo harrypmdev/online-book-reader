@@ -4,6 +4,9 @@
 
 import { getLastLineNumber } from '../reader/numbering.js';
 
+/*Test that getLastLineNumber function returns line number
+of last line in list.
+*/
 describe('test getLastLineNumber function', () => {
     test('expect book', () => {
         let text = [
