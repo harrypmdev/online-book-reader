@@ -17,7 +17,7 @@ calculateLineTotal -- calculate and return the number of lines that
  */
 export function calculateCharacterLimit(el) {
     let originalContent = el.innerText;
-    el.innerHTML = '<span class="charcount">#</span>'.repeat(150);
+    el.innerHTML = '<span class="charcount">#</span>'.repeat(500);
     let allSpans = document.getElementsByClassName('charcount');
     let prevSpan;
     let i = 0;
